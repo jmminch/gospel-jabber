@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Gospel Jabber</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="jabber.css">
+  <link rel="icon" type="image/png" href="images/jabber-32.png">
+  <link rel="manifest" href="manifest.json">
+  <link rel="apple-touch-icon" href="images/apple-jabber-app-icon.png">
+  <link href="https://fonts.googleapis.com/css?family=Fresca" rel="stylesheet">
+</head>
+<body>
+  <div id="titlebar">Gospel Jabber</div>
+
+  <div id="content">
+
+    <div class="content" id="option-screen">
+      <center>
+        <button type="button" class="menu" id="option-start">Start</button>
+      </center>
+
+      <h2>Game mode:</h2>
+        <div class="option-list">
+          <div class="radiobtn">
+            <input type="radio" name="mode" value="traditional" id="mode1" />
+            <label for="mode1">traditional</label>
+            <span>traditional</span>
+          </div>
+          <div class="radiobtn">
+            <input type="radio" name="mode" value="casual" id="mode2" checked />
+            <label for="mode2">casual</label>
+            <span>casual</span>
+          </div>
+        </div>
+
+      <h2>Category list:</h2>
+        <div class="option-list" style="margin-bottom: 20px">
+          <div class="radiobtn">
+            <input type="radio" name="list" value="everything" id="list1" checked />
+            <label for="list1">Everything</label>
+            <span>Everything</span>
+          </div>
+          <div class="radiobtn">
+            <input type="radio" name="list" value="book_of_mormon" id="list2" />
+            <label for="list2">The Book of Mormon</label>
+            <span>The Book of Mormon</span>
+          </div>
+          <div class="radiobtn">
+            <input type="radio" name="list" value="bible" id="list3" />
+            <label for="list3">The Bible</label>
+            <span>The Bible</span>
+          </div>
+          <div class="radiobtn">
+            <input type="radio" name="list" value="history" id="list4" />
+            <label for="list4">Church History</label>
+            <span>Church History</span>
+          </div>
+          <div class="radiobtn">
+            <input type="radio" name="list" value="modern" id="list5" />
+            <label for="list5">Church Organization and Culture</label>
+            <span>Church Organization and Culture</span>
+          </div>
+          <div class="radiobtn">
+            <input type="radio" name="list" value="music" id="list6" />
+            <label for="list6">Music</label>
+            <span>Music</span>
+          </div>
+          <div class="radiobtn">
+            <input type="radio" name="list" value="children" id="list7" />
+            <label for="list7">Children's List</label><br />
+            <span>Children's List</span>
+          </div>
+        </div>
+
+      <center>
+        <button type="button" class="menu" id="option-help">How to Play</button>
+      </center>
+      <center>
+        <button type="button" class="menu" id="option-about">About</button>
+      </center>
+      <center>
+        <button type="button" class="menu" id="option-install">Add to home 
+          screen</button>
+      </center>
+    </div>
+
+    <div class="content" id="game-screen">
+      <div class="subtitle" id="game-subtitle">
+        <div id="game-topic-text"></div>
+        <button type="button" id="game-back-t">
+          <img src="images/icons8-left-52.png" height="30" width="30" />
+        </button>
+      </div>
+      <div id="game-phrase-area">
+        <div class="game-phrase-text" id="game-cur-phrase"></div>
+        <div class="game-phrase-text" id="game-next-phrase"></div>
+      </div>
+
+      <div id="game-control-area">
+        <button type="button" class="jabber-green" id="game-next">
+          <img src="images/icons8-right-52.png" />
+        </button>
+      </div>
+    </div>
+
+    <div class="content" id="help-screen">
+      <div class="subtitle">
+        <h2>How to Play</h2>
+        <button type="button" id="help-back-t">
+          <img src="images/icons8-left-52.png" height="30" width="30" />
+        </button>
+      </div>
+      <div class="subpage-text">
+        <p>Gospel Jabber is a word or phrase guessing party game, similar to
+        Hasbro's <i>Catch Phrase</i>, with a Latter-Day Saint theme.  You will
+        need at least two players (and ideally a large group), a phone or
+        other mobile device to pass around the group, and a means of keeping
+        score, if desired.</p>
+
+        <p>During play, one person, holding the device, gives verbal clues
+        to their team to get them to guess the secret, randomly-chosen
+        phrase.  If their team correctly guesses the phrase before the timer
+        expires, then they pass the device to another person; this repeats
+        until time runs out.</p>
+
+        <h2>Traditional rules</h2>
+
+        <p>Players divide into two even teams, and sit in a circle; with
+        seats alternating between members of the two teams.</p>
+
+        <p>One player chooses a category and starts the game.  The timer
+        will begin, and a random phrase is displayed.</p>
+
+        <p>The player gives verbal clues to their team mates, who try to
+        guess the phrase.  Clues that contain the word or phrase, or parts
+        of the phrase, are not allowed.  For example, if the phrase was
+        “swimming pool”, then the clue “a place where people swim” is not
+        allowed; neither are clues like “it rhymes with tool,” or “it starts
+        with an ‘S.’”  If the clue-giver gives a clue that is not permitted,
+        then they must skip that phrase and start over on a new one.</p>
+
+        <p>If their team mates correctly guess the phrase, then the player
+        passes the device to a member of the opposing team, who presses the
+        green “next” button to advance to the next phrase and starts giving
+        clues to their team.  Play continues, alternating between teams,
+        until time runs out.</p>
+
+        <p>When the timer expires, a buzzer will sound and a message will be
+        displayed on-screen.  The team that was guessing the phrase when
+        time expires loses the round, and the opposing team is awarded one
+        point.  If the timer expires while the device is being passed from
+        one person to the next, then no points are awarded.</p>
+
+        <p>Repeat until one team has reached a pre-determined number of
+        points; such as five or ten points.</p>
+
+        <h2>Variations</h2>
+
+        <p>A second game mode, “casual,” is available in the options menu.
+        In casual mode, the timer is disabled.  This mode is suitable for a
+        non-competitive activity.</p>
+
+        <p>The game lends itself to adaptation and house rules.  One common
+        variation is to permit the clue-giver to skip one (or more) phrases
+        if they cannot describe the selected phrase; this can make the game
+        more fun for people that don't recognize some of the names or places
+        that are selected.</p>
+
+        <h2>Using this app</h2>
+        
+        <p>There are several potential categories that can be selected on the
+        start page.  The “Everything” category has all of the phrases from
+        every category.  The "Children's list" category contains a subset of
+        terms from the various categories, picked to be more suitable for
+        younger or less-experienced players.</p>
+
+        <p>Scorekeeping is not built into the app, so if you want to keep
+        score you will need to do that separately.</p>
+
+        <p>This app can be installed to the home screen on most Android or
+        Apple mobile devices.  Select the “Add to home screen” option on the
+        start page for instructions.</p>
+      </div>
+    </div>
+
+    <div class="content" id="about-screen">
+      <div class="subtitle">
+        <h2>About</h2>
+        <button type="button" id="about-back-t">
+          <img src="images/icons8-left-52.png" height="30" width="30" />
+        </button>
+      </div>
+      <div class="subpage-text">
+        <p>Gospel Jabber version 0.3, build ID @BUILD@</p>
+
+        <p>Gospel Jabber is open-source software.  The development website is
+        located at <a href="https://github.com/jmminch/gospel-jabber">
+        https://github.com/jmminch/gospel-jabber</a>.</p>
+
+        <p>For questions, comments, or suggestions, e-mail
+        <a href="mailto:jxminch+gj@gmail.com">jxminch+gj@gmail.com</a>.</p>
+
+        <h2>Licensed media</h2>
+
+        <p>Logo icon based on one made by <a
+          href="https://www.freepik.com/"title="Freepik">Freepik</a> from <a
+          href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>,
+          and is licensed by <a href="http://creativecommons.org/licenses/by/3.0/"
+          title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></p>
+
+        <p>Interface icons by <a href="https://icons8.com">icons8</a></p>
+        
+        <p>Sound effects obtained from <a
+          href="https://www.zapsplat.com">https://www.zapsplat.com</a></p>
+
+        <h2>Copyright and License</h2>
+        <p>Copyright 2019 Jared Minch</p>
+
+        <p>Permission is hereby granted, free of charge, to any person obtaining
+        a copy of this software and associated documentation files (the
+        "Software"), to deal in the Software without restriction, including
+        without limitation the rights to use, copy, modify, merge, publish,
+        distribute, sublicense, and/or sell copies of the Software, and to
+        permit persons to whom the Software is furnished to do so, subject to
+        the following conditions:</p>
+
+        <p>The above copyright notice and this permission notice shall be
+        included in all copies or substantial portions of the Software.</p>
+
+        <p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+        EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+        MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+        IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+        CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+        TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+        SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
+
+      </div>
+    </div>
+
+    <div class="content" id="install-screen">
+      <div class="subtitle">
+        <h2>Add to home screen</h2>
+        <button type="button" id="install-back-t">
+          <img src="images/icons8-left-52.png" height="30" width="30" />
+        </button>
+      </div>
+      <div class="subpage-text">
+        <p>This app may be installed on your mobile device.  This gives a
+        convenient shortcut and an improved interface.</p>
+        <p>To install the app on an Android device, open the browser menu and
+        choose “Add to Home screen”.</p>
+        <p>To install the app on an iPhone or other iOS device, tap the
+        <img src="images/icons8-upload-50.png" height="25" width="25" /> icon
+        and then “Add to Home Screen”.</p>
+      </div>
+    </div>
+
+    <div class="popup" id="game-timeout-popup">
+      <div id="game-timeout-window">
+        <div id="game-timeout-text">Time Up!</div>
+        <div>
+          <button type="button" class="jabber-blue" id="game-timeout-continue">
+            <div id="game-timeout-continue2">
+              <span style="display: inline-block">Continue</span>
+              <img style="display: inline-block" src="images/icons8-right-52.png" height="20" width="20" />
+            </div>
+          </button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script type="text/javascript" src="jabber.dart.js"></script>
+</body>
+</html>
