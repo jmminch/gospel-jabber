@@ -188,105 +188,158 @@ button.jabber-info {
     rgba(67, 92, 132, 1.0), rgba(67, 92, 132, 1.0) 80%, rgba(67, 92, 132, 0.0));
 }
 
-/* container for individual pages */
 #content {
   width: 100%;
   height: 100%;
   margin: auto;
-  overflow: hidden;
   flex-grow: 1;
-
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
   position: relative;
+  overflow: hidden;
 }
 
-/* loading screen */
-#loading-screen {
+/* container for individual pages */
+.content {
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  flex-grow: 1;
+  position: absolute;
+}
+
+/* Each sub-screen has a subtitle bar with back button. */
+.subtitle {
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  padding-top: 40px;
+  padding-bottom: 10px;
+  background-image: linear-gradient(
+    rgba(67, 92, 132, 1.0), rgba(67, 92, 132, 1.0) 80%, rgba(67, 92, 132, 0.0));
+}
+
+.subtitle > button {
+  position: absolute;
+  left: 10px;
+  top: 40px;
+
+  background: transparent;
+  border: 0;
+  box-shadow 0;
+  padding: 0;
+}
+
+.subtitle > h2 {
+  text-align: center;
+  margin: 0;
+}
+
+.subpage-text {
   display: block;
+
   position: absolute;
   z-index: 0;
-  top: 50%;
-  left: 50%;
-  margin: -32px 0 0 -32px;
+  margin-left: 8px;
+  width: calc(100% - 16px);
+  height: 100%;
+  overflow: auto;
+  flex-grow: 1;
+}
+
+.subpage-text p {
+  font-family: sans-serif;
+}
+
+.subpage-text::before {
+  content: "";
+  display: inline-block;
+  margin-top: 40px;
+  height: 15px;
+}
+
+.popup {
+  display: none;  /* will be flex */
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 3;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.4);
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 /* option screen styles */
 #option-screen {
-  display: none; /* will be block */
-
-  position: absolute;
+  display: block;
   z-index: 0;
-  margin-left: 8px;
-  width: calc(100% - 16px);
-  height: 100%;
   overflow: auto;
-  flex-grow: 1;
 }
 
-#option-screen::before, #about-screen::before, #help-screen::before,
-#game-screen::before {
+#option-screen::before {
   content: "";
   display: inline-block;
-  height: 40px;
+  margin-top: 25px;
+  height: 15px;
 }
 
-#option-screen h2 { margin-bottom: 0.3em; }
-
-.option-list { margin-left: 1em; }
-
-#about-screen, #help-screen {
-  display: none; /* will be block */
-
-  position: absolute;
-  z-index: 0;
+#option-screen h2 { 
+  margin-bottom: 0.3em; 
   margin-left: 8px;
-  width: calc(100% - 16px);
-  height: 100%;
-  overflow: auto;
-  flex-grow: 1;
 }
 
-#about-screen p, #help-screen p {
-  font-family: sans-serif;
+.option-list { 
+  margin-left: 16px;
+  margin-right: 16px;
+}
+
+/* The quit button is displayed in fullscreen/standalone mode when used
+ * as an installed app; since in fullscreen mode there is no access to soft
+ * navigation buttons. */
+#option-quit {
+  display: none; /* will be displayed only in standalone mode. */
+}
+
+#option-install {
+  display: none; /* will be displayed only in browser mode. */
+}
+
+@media all and (display-mode: browser) {
+  #option-install { display: block; margin: 4px; width: 200px; }
+}
+
+@media all and (display-mode: standalone) {
+  #option-quit { display: block; margin: 4px; }
+}
+
+@media all and (display-mode: fullscreen) {
+  #option-quit { display: block; margin: 4px; }
+}
+
+#help-screen, #about-screen, #install-screen {
+  display: none;
 }
 
 /* game screen styles */
 #game-screen {
   display: none; /* will be flex */
 
-  position: absolute;
-  z-index: 1;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  flex-grow: 1;
-
   flex-direction: column;
   align-items: flex-start;
 }
 
-#game-topic-bar {
-  overflow: hidden;
-  width: calc(100% - 16px);
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  margin: 4px auto 4px auto;
+#game-screen::before {
+  content: "";
+  display: inline-block;
+  margin-top: 50px;
+  height: 15px;
 }
 
 #game-topic-text {
   font-size: 120%;
   flex-grow 1;
   margin: auto;
-}
-
-#game-back-button {
-  background: #435c84;
-  border: 0;
-  box-shadow 0;
-  padding: 0;
+  text-align: center;
 }
 
 #game-phrase-area {
@@ -302,6 +355,7 @@ button.jabber-info {
   border: 2px solid #5a98fc;
   box-shadow: 0px 0px 10px #5a98fc, inset 0px 0px 10px #5a98fc;
   position: relative;
+  z-index: 2;
 }
 
 .game-phrase-text {
@@ -329,33 +383,18 @@ button.jabber-info {
 }
 
 /* timeout popup */
-#game-timeout {
-  display: none;  /* will be flex */
+#game-timeout-window {
+  display: flex;
 
-  position: fixed;
-  z-index: 2;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  background-color: rgba(0, 0, 0, 0.4);
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-#game-timeout-inner {
   width: 80%;
   height: 200px;
   background: white;
-  border-radius: 25px;
+  border-radius: 5px;
   overflow: hidden;
-  display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.5);
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
 }
 
 #game-timeout-continue {
