@@ -204,6 +204,10 @@ button.jabber-info {
   margin: auto;
   flex-grow: 1;
   position: absolute;
+
+  transition: transform 0.5s ease;
+  transform: translateX(100%);
+  visibility: hidden;
 }
 
 /* Each sub-screen has a subtitle bar with back button. */
@@ -243,6 +247,7 @@ button.jabber-info {
   height: 100%;
   overflow: auto;
   flex-grow: 1;
+  font-size: 125%;
 }
 
 .subpage-text p {
@@ -257,7 +262,7 @@ button.jabber-info {
 }
 
 .popup {
-  display: none;  /* will be flex */
+  display: flex;
   width: 100%;
   height: 100%;
   position: fixed;
@@ -267,6 +272,10 @@ button.jabber-info {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  transition: opacity 0.5s ease;
+  opacity: 0;
+  visibility: hidden;
 }
 
 /* option screen styles */
@@ -274,6 +283,11 @@ button.jabber-info {
   display: block;
   z-index: 0;
   overflow: auto;
+
+  transition: opacity 0.5s ease;
+  transform: translateX(0);
+  opacity: 0;
+  visibility: hidden;
 }
 
 #option-screen::before {
@@ -293,13 +307,6 @@ button.jabber-info {
   margin-right: 16px;
 }
 
-/* The quit button is displayed in fullscreen/standalone mode when used
- * as an installed app; since in fullscreen mode there is no access to soft
- * navigation buttons. */
-#option-quit {
-  display: none; /* will be displayed only in standalone mode. */
-}
-
 #option-install {
   display: none; /* will be displayed only in browser mode. */
 }
@@ -308,21 +315,13 @@ button.jabber-info {
   #option-install { display: block; margin: 4px; width: 200px; }
 }
 
-@media all and (display-mode: standalone) {
-  #option-quit { display: block; margin: 4px; }
-}
-
-@media all and (display-mode: fullscreen) {
-  #option-quit { display: block; margin: 4px; }
-}
-
 #help-screen, #about-screen, #install-screen {
-  display: none;
+  display: block;
 }
 
 /* game screen styles */
 #game-screen {
-  display: none; /* will be flex */
+  display: flex;
 
   flex-direction: column;
   align-items: flex-start;
@@ -428,25 +427,3 @@ button.jabber-info {
   from { transform: translate(0, 100vh); opacity: 0.0; }
   to { transform: translate(0, 0); opacity: 1.0; }
 }
-
-@keyframes fade-out { from { opacity: 1.0; } to { opacity: 0.0; } }
-@keyframes fade-in { from { opacity: 0.0; } to { opacity: 1.0; } }
-
-@keyframes slide-in {
-  from { transform: translateX(100%) }
-  to { transform: translateX(0%) }
-}
-
-@keyframes slide-out {
-  from { transform: translateX(0%) }
-  to { transform: translateX(100%) }
-}
-
-.fade-out { animation: fade-out 0.5s forwards; }
-.fade-in { animation: fade-in 0.5s forwards; }
-
-.phrase-out { animation: slide-fade-out 0.3s forwards; }
-.phrase-in { animation: slide-fade-in 0.3s forwards; }
-
-.slide-in { animation: slide-in 0.5s forwards; }
-.slide-out { animation: slide-out 0.5s forwards; }

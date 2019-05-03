@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <title>Gospel Jabber</title>
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="jabber.css">
   <link rel="icon" type="image/png" href="images/jabber-32.png">
@@ -82,14 +83,11 @@
         <button type="button" class="menu" id="option-install">Add to home 
           screen</button>
       </center>
-      <center>
-        <button type="button" class="jabber-gray" id="option-quit">Quit</button>
-      </center>
     </div>
 
     <div class="content" id="game-screen">
       <div class="subtitle" id="game-subtitle">
-        <div id="game-topic-text">muh topic!</div>
+        <div id="game-topic-text"></div>
         <button type="button" id="game-back-t">
           <img src="images/icons8-left-52.png" height="30" width="30" />
         </button>
@@ -120,43 +118,69 @@
         other mobile device to pass around the group, and a means of keeping
         score, if desired.</p>
 
-        <p>During play, one person, holding the device, tries to give clues to
-        their team to get them to guess the secret, randomly-chosen phrase.
-        The person giving clues may not use the secret phrase (or any words
-        within the phrase) while giving clues.  If their team correctly guesses
-        the phrase before the timer expires, then they pass the device
-        to another person; this repeats until the timer expires.</p>
+        <p>During play, one person, holding the device, gives verbal clues
+        to their team to get them to guess the secret, randomly-chosen
+        phrase.  If their team correctly guesses the phrase before the timer
+        expires, then they pass the device to another person; this repeats
+        until time runs out.</p>
 
-        <p>Traditionally, the players divide into two even teams.  One player
-        starts the game and describes their phrase while their teammates
-        guess the phrase; after their team guesses the phrase correctly, then
-        the player passes the device to a member of the other team, who then
-        gives clues to their team.  This repeats, alternating between teams,
-        until the timer expires, and the team that was not guessing when the
-        time ran out wins a point.</p>
+        <h2>Traditional rules</h2>
+
+        <p>Players divide into two even teams, and sit in a circle; with
+        seats alternating between members of the two teams.</p>
+
+        <p>One player chooses a category and starts the game.  The timer
+        will begin, and a random phrase is displayed.</p>
+
+        <p>The player gives verbal clues to their team mates, who try to
+        guess the phrase.  Clues that contain the word or phrase, or parts
+        of the phrase, are not allowed.  For example, if the phrase was
+        “swimming pool”, then the clue “a place where people swim” is not
+        allowed; neither are clues like “it rhymes with tool,” or “it starts
+        with an ‘S.’”  If the clue-giver gives a clue that is not permitted,
+        then they must skip that phrase and start over on a new one.</p>
+
+        <p>If their team mates correctly guess the phrase, then the player
+        passes the device to a member of the opposing team, who presses the
+        green “next” button to advance to the next phrase and starts giving
+        clues to their team.  Play continues, alternating between teams,
+        until time runs out.</p>
+
+        <p>When the timer expires, a buzzer will sound and a message will be
+        displayed on-screen.  The team that was guessing the phrase when
+        time expires loses the round, and the opposing team is awarded one
+        point.  If the timer expires while the device is being passed from
+        one person to the next, then no points are awarded.</p>
+
+        <p>Repeat until one team has reached a pre-determined number of
+        points; such as five or ten points.</p>
+
+        <h2>Variations</h2>
+
+        <p>A second game mode, “casual,” is available in the options menu.
+        In casual mode, the timer is disabled.  This mode is suitable for a
+        non-competitive activity.</p>
+
+        <p>The game lends itself to adaptation and house rules.  One common
+        variation is to permit the clue-giver to skip one (or more) phrases
+        if they cannot describe the selected phrase; this can make the game
+        more fun for people that don't recognize some of the names or places
+        that are selected.</p>
 
         <h2>Using this app</h2>
         
-        <p>There are two game modes available: "traditional," which is the
-        standard timed "hot potato" mode; and "casual," which is an untimed
-        mode suitable for a non-competitive activity.</p>
-
         <p>There are several potential categories that can be selected on the
-        start page.  The "Everything" category has all of the phrases from
+        start page.  The “Everything” category has all of the phrases from
         every category.  The "Children's list" category contains a subset of
         terms from the various categories, picked to be more suitable for
         younger or less-experienced players.</p>
 
-        <p>After selecting the desired mode and category, the "Start" button
-        will take you to the main game page.  The first person to give clues
-        presses the green "next" button to start a round and gives their
-        clues; after their team guesses the phrase, they pass the device to
-        the next person who presses the "next" button again to select a new
-        phrase. When the time runs out, a buzzer will sound.</p>
-
         <p>Scorekeeping is not built into the app, so if you want to keep
         score you will need to do that separately.</p>
 
+        <p>This app can be installed to the home screen on most Android or
+        Apple mobile devices.  Select the “Add to home screen” option on the
+        start page for instructions.</p>
       </div>
     </div>
 
@@ -168,7 +192,7 @@
         </button>
       </div>
       <div class="subpage-text">
-        <p>Gospel Jabber version 0.2, build ID 190502</p>
+        <p>Gospel Jabber version 0.3, build ID 190503</p>
 
         <p>Gospel Jabber is open-source software.  The development website is
         located at <a href="https://github.com/jmminch/gospel-jabber">
@@ -223,14 +247,13 @@
         </button>
       </div>
       <div class="subpage-text">
-        <h1>Add to home screen</h1>
         <p>This app may be installed on your mobile device.  This gives a
         convenient shortcut and an improved interface.</p>
         <p>To install the app on an Android device, open the browser menu and
-        choose "Add to Home screen".</p>
+        choose “Add to Home screen”.</p>
         <p>To install the app on an iPhone or other iOS device, tap the
         <img src="images/icons8-upload-50.png" height="25" width="25" /> icon
-        and then "Add to Home Screen".</p>
+        and then “Add to Home Screen”.</p>
       </div>
     </div>
 
