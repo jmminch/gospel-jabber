@@ -20,16 +20,21 @@
         <button type="button" class="menu" id="option-start">Start</button>
       </center>
 
-      <h2>Game mode:</h2>
+      <h2>Timer mode:</h2>
         <div class="option-list">
           <div class="radiobtn">
-            <input type="radio" name="mode" value="traditional" id="mode1" />
-            <label for="mode1">traditional</label>
-            <span>traditional</span>
+            <input type="radio" name="mode" value="normal" id="mode1" checked />
+            <label for="mode1">normal</label>
+            <span>normal</span>
           </div>
           <div class="radiobtn">
-            <input type="radio" name="mode" value="casual" id="mode2" checked />
-            <label for="mode2">casual</label>
+            <input type="radio" name="mode" value="silent" id="mode2"/>
+            <label for="mode2">silent</label>
+            <span>silent</span>
+          </div>
+          <div class="radiobtn">
+            <input type="radio" name="mode" value="casual" id="mode3"/>
+            <label for="mode3">casual</label>
             <span>casual</span>
           </div>
         </div>
@@ -192,7 +197,7 @@
         </button>
       </div>
       <div class="subpage-text">
-        <p>Gospel Jabber version 0.3, build ID @BUILD@</p>
+        <p>Gospel Jabber version 0.4, build ID @BUILD@</p>
 
         <p>Gospel Jabber is open-source software.  The development website is
         located at <a href="https://github.com/jmminch/gospel-jabber">

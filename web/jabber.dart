@@ -5,16 +5,17 @@ import "dart:async";
 import "dart:math";
 
 import "package:jabber/phraseList.dart";
-import "package:jabber/soundMgr.dart";
+import "package:jabber/sound.dart";
 
 import "phrases.dart";
 
 Random rng;
 PhraseList phrases;
 SoundManager soundMgr;
+SoundSprite sprite;
 bool gameActive = false;
-Timer gameTimer;
 String histState;
+GameTimer gameTimer;
 
 main( ) {
   rng = new Random();
@@ -24,8 +25,13 @@ main( ) {
    * options screen), so that the sounds will hopefully be loaded before the
    * user starts a game. */
   soundMgr = new SoundManager();
-  soundMgr.load("next", "audio/zapsplat_multimedia_game_menu_tone_053_25468.mp3");
-  soundMgr.load("timeup", "audio/zapsplat_multimedia_game_show_buzzer_001_27373.mp3");
+  soundMgr.load("gamesound", "audio/game_sounds.mp3");
+  soundMgr.onLoadComplete(() {
+    sprite = new SoundSprite(soundMgr.cxt, soundMgr.sounds["gamesound"]);
+    sprite.addDef("tick", 0.0, 0.15);
+    sprite.addDef("horn", 0.5, 2.0);
+    sprite.addDef("next", 3.0, 0.300);
+  });
 
   /* Set up listeners. */
   querySelector("#option-start").onClick.listen(startClicked);
@@ -260,29 +266,33 @@ nextClicked( MouseEvent e ) {
   curElem.id = "game-next-phrase";
   nextElem.id = "game-cur-phrase";
 
-  soundMgr.play("next");
+  sprite.play("next");
 
   /* If this was the first time the next button was pressed, record that the
    * game is now active and start the timer. */
   if(!gameActive) {
     gameActive = true;
+
     /* Time range 35-60 seconds */
-    if(window.localStorage['gameMode'] == 'traditional') {
-       gameTimer = 
-          new Timer(new Duration(seconds: (35 + rng.nextInt(26))), gameTimeout);
+    if(window.localStorage['gameMode'] == 'silent') {
+      gameTimer = new GameTimer(35 + rng.nextInt(26), sound: false,
+                                onComplete: gameTimeout);
+    } else if(window.localStorage['gameMode'] == 'normal') {
+      gameTimer = new GameTimer(35 + rng.nextInt(26), sound: true,
+                                onComplete: gameTimeout);
     }
   }
 }
 
 gameTimeout( ) {
   gameActive = false;
+
+  gameTimer.cancel();
   gameTimer = null;
 
   DivElement timeoutDiv = querySelector("#game-timeout-popup");
   timeoutDiv.style.visibility = "visible";
   timeoutDiv.style.opacity = "1.0";
-
-  soundMgr.play("timeup");
 }
 
 continueClicked( MouseEvent e ) {
@@ -293,3 +303,89 @@ continueClicked( MouseEvent e ) {
   DivElement curElem = querySelector("#game-cur-phrase");
   curElem.setInnerHtml('');
 }
+
+class GameTimer {
+  bool sound = false;
+  Function onComplete;
+  Timer iTimer;
+  Timer uTimer;
+
+  num nextScheduledTime;
+  num phase0End;
+  num phase1End;
+  num phase2End;
+  num endTime;
+
+  GameTimer( int duration, { this.sound, this.onComplete } ) {
+    iTimer = new Timer(new Duration(seconds: duration), timeUp);
+
+    if(sound) {
+      nextScheduledTime = soundMgr.cxt.currentTime;
+      double d = duration.toDouble();
+
+      /* The timer beep runs in 4 phases (0-3).  Phase 3 takes a random amount
+       * of time from 5-10 seconds, so that you can't be sure how much time you
+       * have left when it starts.  The remaining phases are carved up as
+       * 50% for phase 0, 25% for phase 1, and 25% for phase 2. */
+
+      double p3 = rng.nextDouble() * 5.0 + 5.0;
+      double p0 = (d - p3) * 0.5;
+      double p1 = p0 * 0.5;
+      double p2 = p1;
+
+      phase0End = soundMgr.cxt.currentTime + p0;
+      phase1End = phase0End + p1;
+      phase2End = phase1End + p2;
+      endTime = soundMgr.cxt.currentTime + d;
+
+      soundUpdate();
+    }
+  }
+
+  soundUpdate( ) {
+    num delay = 2.0;
+    uTimer = null;
+
+    if(soundMgr.cxt.currentTime > endTime) {
+      return;
+    } else if(soundMgr.cxt.currentTime > phase2End) {
+      delay = 0.12;
+    } else if(soundMgr.cxt.currentTime > phase1End) {
+      delay = 0.25;
+    } else if(soundMgr.cxt.currentTime > phase0End) {
+      delay = 0.5;
+    } else {
+      delay = 2.0;
+    }
+
+    while(nextScheduledTime < soundMgr.cxt.currentTime + 1.25) {
+      if(nextScheduledTime >= soundMgr.cxt.currentTime &&
+         nextScheduledTime < endTime) {
+        sprite.play("tick", at: nextScheduledTime);
+      }
+
+      nextScheduledTime += delay;
+    }
+
+    if(nextScheduledTime < endTime) {
+      uTimer = new Timer(new Duration(seconds: 1), soundUpdate);
+    }
+  }
+
+  cancel( ) {
+    uTimer?.cancel();
+    iTimer?.cancel();
+  }
+
+  timeUp( ) {
+    if(sound) {
+      sprite.play("horn");
+    }
+
+    uTimer?.cancel();
+
+    if(onComplete != null) onComplete();
+  }
+}
+
+

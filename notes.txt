@@ -1,0 +1,1 @@
+disable buttons when popup is enabled -- or not visible buttons
