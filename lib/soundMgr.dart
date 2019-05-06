@@ -1,44 +1,73 @@
-/* soundMgr.dart */
+/* sound.dart */
+/* Sound manager */
 
-import 'dart:html';
-import 'dart:async';
+import "dart:html";
+import "dart:web_audio";
+import "dart:async";
 
 class SoundManager {
-  Map<String, AudioElement> sounds;
-  int loadCount = 0;
+  AudioContext cxt;
+  Map<String, AudioBuffer> sounds = new Map<String, AudioBuffer>();
+
   Function loadCompleteCallback;
 
+  int loadCount = 0;
+
   SoundManager( ) {
-    sounds = new Map<String, AudioElement>();
+    cxt = new AudioContext();
   }
 
   load( String key, String src ) {
     loadCount++;
 
-    sounds[key] = new AudioElement(src);
-    sounds[key].onCanPlayThrough.listen(soundLoaded);
+    var req = new HttpRequest();
+    req.open("GET", src);
+    req.responseType = "arraybuffer";
+    req.onLoad.listen((e) {
+      cxt.decodeAudioData(req.response)
+        .then((buffer) { 
+          sounds[key] = buffer; 
+          loadCount--;
+          if(loadCount <= 0 && loadCompleteCallback != null) {
+            loadCompleteCallback();
+            loadCompleteCallback = null;
+          }
+        }); });
+    req.send();
   }
 
-  soundLoaded( Event e ) {
-    loadCount--;
-    if(loadCount <= 0 && loadCompleteCallback != null) {
-      loadCompleteCallback();
-      loadCompleteCallback = null;
-    }
+  onLoadComplete( Function cb ) {
+    if(loadCount <= 0)
+      cb();
+    else
+      loadCompleteCallback = cb;
   }
 
-  onLoadComplete( Function callback ) {
-    if(loadCount > 0) {
-      loadCompleteCallback = callback;
-    } else {
-      callback();
-    }
+  play( String tag ) {
+    if(sounds[tag] == null) return;
+    AudioBufferSourceNode src = cxt.createBufferSource();
+    src.buffer = sounds[tag];
+    src.connectNode(cxt.destination);
+    src.start(0);
+  }
+}
+
+class SoundSprite {
+  AudioContext cxt;
+  AudioBuffer buffer;
+  Map<String, List<num>> sprites = new Map<String, List<num>>();
+
+  SoundSprite( this.cxt, this.buffer );
+
+  addDef( String tag, num start, num duration ) {
+    sprites[tag] = [start, duration];
   }
 
-  play( String key ) {
-    if(sounds[key] != null) {
-      sounds[key].currentTime = 0;
-      if(sounds[key].paused) sounds[key]?.play();
-    }
+  play( String tag, { num at: 0.0 } ) {
+    if(sprites[tag] == null) return;
+    AudioBufferSourceNode src = cxt.createBufferSource();
+    src.buffer = buffer;
+    src.connectNode(cxt.destination);
+    src.start(at, sprites[tag][0], sprites[tag][1]);
   }
 }

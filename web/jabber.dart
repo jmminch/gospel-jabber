@@ -5,7 +5,7 @@ import "dart:async";
 import "dart:math";
 
 import "package:jabber/phraseList.dart";
-import "package:jabber/sound.dart";
+import "package:jabber/soundMgr.dart";
 
 import "phrases.dart";
 
@@ -29,8 +29,8 @@ main( ) {
   soundMgr.onLoadComplete(() {
     sprite = new SoundSprite(soundMgr.cxt, soundMgr.sounds["gamesound"]);
     sprite.addDef("tick", 0.0, 0.15);
-    sprite.addDef("horn", 0.5, 2.0);
-    sprite.addDef("next", 3.0, 0.300);
+    sprite.addDef("buzzer", 0.24, 1.45);
+    sprite.addDef("next", 1.79, 0.2);
   });
 
   /* Set up listeners. */
@@ -266,7 +266,7 @@ nextClicked( MouseEvent e ) {
   curElem.id = "game-next-phrase";
   nextElem.id = "game-cur-phrase";
 
-  sprite.play("next");
+  sprite?.play("next");
 
   /* If this was the first time the next button was pressed, record that the
    * game is now active and start the timer. */
@@ -287,8 +287,10 @@ nextClicked( MouseEvent e ) {
 gameTimeout( ) {
   gameActive = false;
 
-  gameTimer.cancel();
+  gameTimer?.cancel();
   gameTimer = null;
+
+  sprite?.play("buzzer");
 
   DivElement timeoutDiv = querySelector("#game-timeout-popup");
   timeoutDiv.style.visibility = "visible";
@@ -332,7 +334,6 @@ class GameTimer {
       double p0 = (d - p3) * 0.5;
       double p1 = p0 * 0.5;
       double p2 = p1;
-
       phase0End = soundMgr.cxt.currentTime + p0;
       phase1End = phase0End + p1;
       phase2End = phase1End + p2;
@@ -361,7 +362,7 @@ class GameTimer {
     while(nextScheduledTime < soundMgr.cxt.currentTime + 1.25) {
       if(nextScheduledTime >= soundMgr.cxt.currentTime &&
          nextScheduledTime < endTime) {
-        sprite.play("tick", at: nextScheduledTime);
+        sprite?.play("tick", at: nextScheduledTime);
       }
 
       nextScheduledTime += delay;
@@ -378,10 +379,6 @@ class GameTimer {
   }
 
   timeUp( ) {
-    if(sound) {
-      sprite.play("horn");
-    }
-
     uTimer?.cancel();
 
     if(onComplete != null) onComplete();
