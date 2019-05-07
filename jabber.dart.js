@@ -2935,18 +2935,18 @@ z.b=!0
 a.toString
 z.d=P.bR(a,H.k(a,0)).bA(0)
 z.e=-1
-return z}}}}],["","",,Z,{"^":"",eZ:{"^":"a;0a,b,0c,d",
+return z}}}}],["","",,O,{"^":"",eZ:{"^":"a;0a,b,0c,d",
 bn:function(a,b,c){var z,y;++this.d
 z=new XMLHttpRequest()
 C.t.br(z,"GET",c)
 z.responseType="arraybuffer"
 y=W.at
-W.B(z,"load",H.c(new Z.f0(this,z,b),{func:1,ret:-1,args:[y]}),!1,y)
+W.B(z,"load",H.c(new O.f0(this,z,b),{func:1,ret:-1,args:[y]}),!1,y)
 z.send()}},f0:{"^":"j:27;a,b,c",
 $1:function(a){var z
 H.b(a,"$isat")
 z=this.a
-C.q.bh(z.a,H.b(W.hc(this.b.response),"$isdW")).at(new Z.f_(z,this.c),null)}},f_:{"^":"j:12;a,b",
+C.q.bh(z.a,H.b(W.hc(this.b.response),"$isdW")).at(new O.f_(z,this.c),null)}},f_:{"^":"j:12;a,b",
 $1:function(a){var z=this.a
 z.b.l(0,this.b,H.b(a,"$isa2"))
 if(--z.d<=0&&z.c!=null){z.c.$0()
@@ -2961,7 +2961,7 @@ y.start(c,J.bB(z.i(0,b),0),J.bB(z.i(0,b),1))},
 ap:function(a,b){return this.aq(a,b,0)}}}],["","",,Q,{"^":"",
 dB:function(){var z,y,x,w
 $.bx=C.l
-z=new Z.eZ(new H.aR(0,0,[P.i,P.a2]),0)
+z=new O.eZ(new H.aR(0,0,[P.i,P.a2]),0)
 z.a=new (window.AudioContext||window.webkitAudioContext)()
 $.aj=z
 z.bn(0,"gamesound","audio/game_sounds.mp3")
@@ -3147,19 +3147,23 @@ z=z.e++
 if(z<0||z>=y.length)return H.w(y,z);(v&&C.f).X(v,y[z])
 w.id="game-next-phrase"
 v.id="game-cur-phrase"
-$.aE.ap(0,"next")
+z=$.aE
+if(!(z==null))z.ap(0,"next")
 if(!$.br){$.br=!0
 if(window.localStorage.getItem("gameMode")==="silent")$.aY=Q.cy(35+$.bx.a6(26),Q.dA(),!1)
 else if(window.localStorage.getItem("gameMode")==="normal")$.aY=Q.cy(35+$.bx.a6(26),Q.dA(),!0)}},"$1","hN",4,0,1],
 mu:[function(){var z,y
 $.br=!1
-$.aY.N()
+z=$.aY
+if(!(z==null))z.N()
 $.aY=null
-z=H.b(document.querySelector("#game-timeout-popup"),"$isy")
-y=z.style
-y.visibility="visible"
-y=z.style
-C.b.D(y,(y&&C.b).w(y,"opacity"),"1.0","")},"$0","dA",0,0,3],
+z=$.aE
+if(!(z==null))z.ap(0,"buzzer")
+y=H.b(document.querySelector("#game-timeout-popup"),"$isy")
+z=y.style
+z.visibility="visible"
+z=y.style
+C.b.D(z,(z&&C.b).w(z,"opacity"),"1.0","")},"$0","dA",0,0,3],
 hq:[function(a){var z,y,x
 H.b(a,"$isE")
 z=document
@@ -3172,11 +3176,11 @@ z=$.aj
 y=z.a
 z=z.b.i(0,"gamesound")
 x=new H.aR(0,0,[P.i,[P.o,P.b2]])
-$.aE=new Z.f1(y,z,x)
+$.aE=new O.f1(y,z,x)
 z=[P.b2]
 x.l(0,"tick",H.v([0,0.15],z))
-$.aE.c.l(0,"horn",H.v([0.5,2],z))
-$.aE.c.l(0,"next",H.v([3,0.3],z))}},
+$.aE.c.l(0,"buzzer",H.v([0.24,1.45],z))
+$.aE.c.l(0,"next",H.v([1.79,0.2],z))}},
 i_:{"^":"j:28;a",
 $2:function(a,b){H.q(a)
 H.a_(b,"$iso",[P.i],"$aso")
@@ -3207,8 +3211,8 @@ if(!(z<y+1.25))break
 if(z>=y){y=this.y
 if(typeof y!=="number")return H.ah(y)
 y=z<y}else y=!1
-if(y)$.aE.aq(0,"tick",z)
-z=this.e
+if(y){y=$.aE
+if(!(y==null))y.aq(0,"tick",z)}z=this.e
 if(typeof z!=="number")return z.v()
 this.e=z+x}y=this.y
 if(typeof y!=="number")return H.ah(y)
@@ -3217,8 +3221,7 @@ N:function(){var z=this.d
 if(!(z==null))z.N()
 z=this.c
 if(!(z==null))z.N()},
-bH:[function(){if(this.a)$.aE.ap(0,"horn")
-var z=this.d
+bH:[function(){var z=this.d
 if(!(z==null))z.N()
 this.b.$0()},"$0","gbz",0,0,3],
 k:{
