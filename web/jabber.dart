@@ -242,6 +242,8 @@ startClicked( MouseEvent e ) {
 
   window.history.pushState("game", null, null);
   histState = "game";
+
+  soundMgr.cxt.resume();
 }
 
 nextClicked( MouseEvent e ) {
@@ -350,11 +352,11 @@ class GameTimer {
     if(soundMgr.cxt.currentTime > endTime) {
       return;
     } else if(soundMgr.cxt.currentTime > phase2End) {
-      delay = 0.12;
+      delay = 0.2;
     } else if(soundMgr.cxt.currentTime > phase1End) {
-      delay = 0.25;
+      delay = 0.4;
     } else if(soundMgr.cxt.currentTime > phase0End) {
-      delay = 0.5;
+      delay = 0.7;
     } else {
       delay = 2.0;
     }
