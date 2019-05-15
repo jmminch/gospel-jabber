@@ -20,19 +20,6 @@ GameTimer gameTimer;
 main( ) {
   rng = new Random();
 
-  /* Load all sounds.
-   * Note that this starts as soon as the page is loaded (displaying the
-   * options screen), so that the sounds will hopefully be loaded before the
-   * user starts a game. */
-  soundMgr = new SoundManager();
-  soundMgr.load("gamesound", "audio/game_sounds.mp3");
-  soundMgr.onLoadComplete(() {
-    sprite = new SoundSprite(soundMgr.cxt, soundMgr.sounds["gamesound"]);
-    sprite.addDef("tick", 0.0, 0.15);
-    sprite.addDef("buzzer", 0.24, 1.45);
-    sprite.addDef("next", 1.79, 0.2);
-  });
-
   /* Set up listeners. */
   querySelector("#option-start").onClick.listen(startClicked);
   querySelector("#option-help").onClick.listen(helpClicked);
@@ -180,6 +167,16 @@ installClicked( MouseEvent e ) {
 }
 
 startClicked( MouseEvent e ) {
+  /* Load all sounds. */
+  soundMgr = new SoundManager();
+  soundMgr.load("gamesound", "audio/game_sounds.mp3");
+  soundMgr.onLoadComplete(() {
+    sprite = new SoundSprite(soundMgr.cxt, soundMgr.sounds["gamesound"]);
+    sprite.addDef("tick", 0.0, 0.15);
+    sprite.addDef("buzzer", 0.24, 1.45);
+    sprite.addDef("next", 1.79, 0.2);
+  });
+
   /* save options to local storage */
   for(var e in document.getElementsByName('list')) {
     RadioButtonInputElement r = e;
