@@ -909,8 +909,8 @@ m=a.named
 l=c.named
 if(l==null)return!0
 if(m==null)return!1
-return H.hU(m,b,l,d)},
-hU:function(a,b,c,d){var z,y,x,w
+return H.hT(m,b,l,d)},
+hT:function(a,b,c,d){var z,y,x,w
 z=Object.getOwnPropertyNames(c)
 for(y=z.length,x=0;x<y;++x){w=z[x]
 if(!Object.hasOwnProperty.call(a,w))return!1
@@ -946,7 +946,7 @@ dC:function(a,b){var z=Object.getPrototypeOf(a)
 Object.defineProperty(z,init.dispatchPropertyName,{value:J.ce(b,z,null,null),enumerable:false,writable:true,configurable:true})
 return b},
 bu:function(a){return J.ce(a,!1,null,!!a.$isa_)},
-hT:function(a,b,c){var z=b.prototype
+hS:function(a,b,c){var z=b.prototype
 if(init.leafTags[a]===true)return H.bu(z)
 else return J.ce(z,c,null,null)},
 hG:function(){if(!0===$.cc)return
@@ -962,7 +962,7 @@ if(typeof window!="undefined"){window
 x=function(){}
 for(w=0;w<y.length;++w){v=y[w]
 u=$.dE.$1(v)
-if(u!=null){t=H.hT(v,z[v],u)
+if(u!=null){t=H.hS(v,z[v],u)
 if(t!=null){Object.defineProperty(u,init.dispatchPropertyName,{value:t,enumerable:false,writable:true,configurable:true})
 x.prototype=u}}}}for(w=0;w<y.length;++w){v=y[w]
 if(/^[A-Za-z_]/.test(v)){s=z[v]
@@ -1313,7 +1313,7 @@ $.ae=y}else{y.b=x.b
 x.b=y
 $.aw=y
 if(y.b==null)$.av=y}},
-i0:function(a){var z,y
+i_:function(a){var z,y
 z={func:1,ret:-1}
 H.c(a,z)
 y=$.t
@@ -1507,7 +1507,7 @@ db:function(a,b){var z,y,x
 b.a=1
 try{a.au(new P.fA(b),new P.fB(b),null)}catch(x){z=H.R(x)
 y=H.aC(x)
-P.i0(new P.fC(b,z,y))}},
+P.i_(new P.fC(b,z,y))}},
 bm:function(a,b){var z,y
 for(;z=a.a,z===2;)a=H.b(a.c,"$isG")
 if(z>=4){y=b.U()
@@ -2086,10 +2086,10 @@ if(!z.n())return a
 if(c.length===0){do a+=H.f(z.gp())
 while(z.n())}else{a+=H.f(z.gp())
 for(;z.n();)a=a+c+H.f(z.gp())}return a}}}}],["","",,W,{"^":"",
-hY:function(a,b){var z,y
+hX:function(a,b){var z,y
 z=new P.G(0,$.t,[b])
 y=new P.c0(z,[b])
-a.then(H.Q(new W.hZ(y,b),1),H.Q(new W.i_(y),1))
+a.then(H.Q(new W.hY(y,b),1),H.Q(new W.hZ(y),1))
 return z},
 eb:function(a,b,c){var z,y
 z=document.body
@@ -2114,9 +2114,9 @@ H.c(a,{func:1,ret:-1,args:[b]})
 z=$.t
 if(z===C.c)return a
 return z.ba(a,b)},
-hZ:{"^":"j:3;a,b",
+hY:{"^":"j:3;a,b",
 $1:function(a){return this.a.a6(0,H.ay(a,{futureOr:1,type:this.b}))}},
-i_:{"^":"j:3;a",
+hZ:{"^":"j:3;a",
 $1:function(a){return this.a.X(a)}},
 d:{"^":"J;","%":";HTMLElement"},
 i7:{"^":"L;","%":"AbortPaymentEvent"},
@@ -2970,14 +2970,6 @@ y.start(c,J.bB(z.i(0,b),0),J.bB(z.i(0,b),1))},
 ap:function(a,b){return this.aq(a,b,0)}}}],["","",,Q,{"^":"",
 dB:function(){var z,y,x,w
 $.bx=C.l
-z=new O.eZ(new H.aS(0,0,[P.i,P.a2]),0)
-z.a=new (window.AudioContext||window.webkitAudioContext)()
-$.a8=z
-z.bn(0,"gamesound","audio/game_sounds.mp3")
-z=$.a8
-y=new Q.hS()
-if(z.d<=0)y.$0()
-else z.c=y
 z=document
 y=J.S(z.querySelector("#option-start"))
 x=H.k(y,0)
@@ -3039,13 +3031,13 @@ x=H.k(y,0)
 W.B(y.a,y.b,H.c(Q.aE(),{func:1,ret:-1,args:[x]}),!1,x)
 x=W.aT
 W.B(window,"popstate",H.c(Q.hO(),{func:1,ret:-1,args:[x]}),!1,x)
-Q.i1()
+Q.i0()
 w=H.b(z.querySelector("#option-screen"),"$isy")
 z=w.style
 z.visibility="visible"
 z=w.style
 C.b.D(z,(z&&C.b).w(z,"opacity"),"1.0","")},
-i1:function(){var z,y,x,w,v,u
+i0:function(){var z,y,x,w,v,u
 if(window.localStorage.getItem("phraseList")!=null)for(z=document.getElementsByName("list"),y=z.length,x=0;x<z.length;z.length===y||(0,H.aG)(z),++x){w=H.b(z[x],"$isbf")
 v=w.value
 u=window.localStorage.getItem("phraseList")
@@ -3072,7 +3064,7 @@ if((y&&C.b).aa(y,"opacity")!=="0"){y=z.style
 y=(y&&C.b).aa(y,"transform")==="translateX(100%)"}else y=!0
 if(y){y=z.style
 y.visibility="hidden"}},"$1","aE",4,0,29],
-hX:[function(a){var z,y
+hW:[function(a){var z,y
 H.b(a,"$isaT")
 switch($.aD){case"help":Q.bz(H.b(document.querySelector("#help-screen"),"$isy"))
 break
@@ -3088,7 +3080,7 @@ if(H.b(z.querySelector("#game-timeout-popup"),"$isy").style.visibility!=="hidden
 break}$.aD=null},"$1","hO",4,0,30],
 mu:[function(a){H.b(a,"$isE")
 window.history.back()
-Q.hX(null)},"$1","b0",4,0,1],
+Q.hW(null)},"$1","b0",4,0,1],
 mz:[function(a){var z
 H.b(a,"$isE")
 Q.by(H.b(document.querySelector("#help-screen"),"$isy"))
@@ -3110,35 +3102,44 @@ z=window.history
 z.toString
 z.pushState(new P.bo([],[]).C("install"),null,null)
 $.aD="install"},"$1","hM",4,0,1],
-mB:[function(a){var z,y,x,w,v,u,t,s,r,q
+mB:[function(a){var z,y,x,w,v,u,t,s,r,q,p
 H.b(a,"$isE")
-for(z=document,y=z.getElementsByName("list"),x=y.length,w=0;w<x;++w){a=H.b(y[w],"$isbf")
+z=P.i
+y=new O.eZ(new H.aS(0,0,[z,P.a2]),0)
+y.a=new (window.AudioContext||window.webkitAudioContext)()
+$.a8=y
+y.bn(0,"gamesound","audio/game_sounds.mp3")
+y=$.a8
+x=new Q.i1()
+if(y.d<=0)x.$0()
+else y.c=x
+for(y=document,x=y.getElementsByName("list"),w=x.length,v=0;v<w;++v){a=H.b(x[v],"$isbf")
 if(a.checked){window.localStorage.setItem("phraseList",a.value)
-for(y=z.getElementsByTagName("label"),x=y.length,w=0;w<y.length;y.length===x||(0,H.aG)(y),++w){v=H.b(y[w],"$iscC")
-u=v.htmlFor
-t=a.id
-if(u==null?t==null:u===t)window.localStorage.setItem("phraseListName",v.textContent)}break}}for(y=z.getElementsByName("mode"),x=y.length,w=0;w<x;++w){a=H.b(y[w],"$isbf")
+for(x=y.getElementsByTagName("label"),w=x.length,v=0;v<x.length;x.length===w||(0,H.aG)(x),++v){u=H.b(x[v],"$iscC")
+t=u.htmlFor
+s=a.id
+if(t==null?s==null:t===s)window.localStorage.setItem("phraseListName",u.textContent)}break}}for(x=y.getElementsByName("mode"),w=x.length,v=0;v<w;++v){a=H.b(x[v],"$isbf")
 if(a.checked){window.localStorage.setItem("gameMode",a.value)
-break}}H.b(z.querySelector("#game-topic-text"),"$isy").textContent=window.localStorage.getItem("phraseListName")
-s=H.b(z.querySelector("#game-cur-phrase"),"$isy");(s&&C.f).Y(s,"")
-r=window.localStorage.getItem("phraseList")
-if(r==null)r="everything"
-if($.$get$bv().i(0,r)==null)r="everything"
-if(r==="everything"){q=H.v([],[P.i])
-$.$get$bv().I(0,new Q.i2(q))
-$.bw=Y.cN(q)}else $.bw=Y.cN($.$get$bv().i(0,r))
+break}}H.b(y.querySelector("#game-topic-text"),"$isy").textContent=window.localStorage.getItem("phraseListName")
+r=H.b(y.querySelector("#game-cur-phrase"),"$isy");(r&&C.f).Y(r,"")
+q=window.localStorage.getItem("phraseList")
+if(q==null)q="everything"
+if($.$get$bv().i(0,q)==null)q="everything"
+if(q==="everything"){p=H.v([],[z])
+$.$get$bv().I(0,new Q.i2(p))
+$.bw=Y.cN(p)}else $.bw=Y.cN($.$get$bv().i(0,q))
 $.br=!1
-Q.by(H.b(z.querySelector("#game-screen"),"$isy"))
+Q.by(H.b(y.querySelector("#game-screen"),"$isy"))
 z=window.history
 z.toString
 z.pushState(new P.bo([],[]).C("game"),null,null)
 $.aD="game"
-W.hY($.a8.a.resume(),null)},"$1","hP",4,0,1],
-hV:[function(a){var z,y,x,w,v
+W.hX($.a8.a.resume(),null)},"$1","hP",4,0,1],
+hU:[function(a){var z,y,x,w,v
 H.b(a,"$isE")
 z=$.bw
 y=!z.b
-if(y){x=new Q.hW()
+if(y){x=new Q.hV()
 if(y)z.f=x
 else x.$0()
 return}z=document
@@ -3180,7 +3181,7 @@ z=document
 y=H.b(z.querySelector("#game-timeout-popup"),"$isy").style
 C.b.D(y,(y&&C.b).w(y,"opacity"),"0","")
 x=H.b(z.querySelector("#game-cur-phrase"),"$isy");(x&&C.f).Y(x,"")},"$1","hK",4,0,1],
-hS:{"^":"j:0;",
+i1:{"^":"j:0;",
 $0:function(){var z,y,x
 z=$.a8
 y=z.a
@@ -3195,8 +3196,8 @@ i2:{"^":"j:28;a",
 $2:function(a,b){H.q(a)
 H.a0(b,"$iso",[P.i],"$aso")
 if(a!=="children")C.a.A(this.a,b)}},
-hW:{"^":"j:4;",
-$0:function(){return Q.hV(null)}},
+hV:{"^":"j:4;",
+$0:function(){return Q.hU(null)}},
 ef:{"^":"a;a,b,0c,0d,0e,0f,0r,0x,0y",
 aA:[function(){var z,y,x
 this.d=null
