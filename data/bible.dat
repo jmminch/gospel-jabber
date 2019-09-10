@@ -30,6 +30,7 @@ Mark
 Luke
 John
 Acts of the Apostles
+Pauline epistles
 Romans
 Hebrews
 Corinthians
@@ -44,6 +45,14 @@ Apocrypha
 Apocalypse
 Bible Dictionary
 Topical Guide
+Footnote
+Cross-reference
+Scripture
+Book
+Chapter
+Verse
+Chapter heading
+
 
 # Prophets
 Prophet
@@ -140,6 +149,7 @@ Jericho
 Jerusalem
 Zion
 Jordan River
+Dead Sea
 Salt Sea
 Northern Kingdom
 Kingdom of Judah
@@ -155,11 +165,12 @@ Tower of Babel
 Temple Mount
 Damascus
 Sea of Galilee
+Holy Land
+Land of Israel
+Kingdom of Israel
 
-# Other terms
+# General terms
 Leper
-Creation of the world
-In the beginning...
 Miracle
 Parable
 Apostle
@@ -167,190 +178,197 @@ Pastor
 Teacher
 Evangelist
 Epistle
-Seven times seventy
 Sacrifice
 Abomination
-Burnt offering
-Sin offering
 Baptize
-Great fish
-Jesus wept.
 Chariot
 Christian
 Disciple
 Synagogue
 Spirit
 Heaven
-Crown of thorns
 Cubit
-Levitical priesthood
-Flood
-Easter
-Passover
-Good Friday
 Tabernacle
-Beatitudes
-An eye for an eye
-Blind leading the blind
-To every thing there is a season
-Eat, drink, and be merry
-Let there be light
-Scapegoat
-Law of Moses
-Ten Commandments
 Rainbow
-Destroying angel
-Plague of locusts
-Pharaoh
-Burning bush
-Let my people go
 Forgive
 Evil
 Sin
 Hell
-Mustard seed
+Idol
+Lamb
 Faith
 Fasting
 Gospel
 Hallelujah
-The Lord's Prayer
-Idol
-Lamb
-Sacrificial lamb
 Sparrow
-Last Supper
-Lucifer
 Blood
 Papyrus
 Parchment
 Scroll
-Pearl of great price
-Fishers of men
-Fire and brimstone
-Wrath
-Pentacost
-Temptation
-Transgression
+Temple
+Tax collector
 Repent
 Mercy
-Solomon's Temple
-Temple
-Temple of Jerusalem
-Inner court
-Great court
-Holy of Holies
-Mercy seat
 Shewbread
-Tax collector
-Caesar
 Rabbi
-Redeemer
-Born again
-Tomb
-Gold
-Frankincense
-Myrrh
-Washing feet
 Altar
 Angel
-Scripture
-Book
-Chapter
-Verse
-Chapter heading
-Sepulchre
 Wisdom
 Soul
 Star
 Tithing
-Abrahamic covenant
-Talent
-Straight and narrow
-Pauline epistles
-Immersion
-Hosanna
+Wrath
+Pentacost
+Temptation
+Transgression
 Saint
-Holy Ghost
+Hosanna
 Archangel
-Christmas
-Atonement
-Second coming
-Sacrament
-Thou shalt not...
 Resurrection
-Bear false witness
-Twelve apostles
-Palm Sunday
-Forbidden fruit
-Fisherman
-Good shepherd
-Hireling
-Love one another
-Love thy neighbour
 Healing
-Roman empire
-Wise men
-Donkey
-Manger
-Promised land
-Peacemaker
-Cross
 Sabbath day
-The golden rule
-Armor of god
-Breastplate of righteousness
-Shield of faith
-Helmet of salvation
-Sword of the spirit
+Begat
+Birthright
+Unclean
+Ritual
+Ephod
+Sandals
+Harp
+Firmament
+Foundation
+Serpent
+Trumpet
+Dove
+Blind
+Bondage
+Bridegroom
+Worship
+Holy Ghost
+Sacrificial lamb
+
+# Old Testament terms and phrases
+In the beginning...
+Let there be light
+Burnt offering
+Sin offering
+Great fish
+Levitical priesthood
+Flood
+Passover
+To every thing there is a season
+Eat, drink, and be merry
+Scapegoat
+Law of Moses
+Ten Commandments
+Destroying angel
+Plague of locusts
+Burning bush
+Let my people go
+Pharaoh
+Stone tablets
+Lucifer
+Fire and brimstone
+Solomon's Temple
+Inner court
+Great court
+Holy of Holies
+Mercy seat
+Abrahamic covenant
+Thou shalt not...
+Bear false witness
+Forbidden fruit
 Graven image
 Remember the Sabbath day
 Honour thy father and thy mother
 Thou shalt not kill
 Thou shalt not steal
 Covet
-Stone tablets
-Ministering angel
-Trumpet
-Dove
-Ancient of days
-Armageddon
+Promised land
 Baal
 Cruse of oil
-Begat
-Birthright
-Ten virgins
-Unleavened bread
-Blind
-Bondage
-Bridegroom
-Shibboleth
-The lamb and the lion
-Unclean
-Ritual
-First fruits
-Carpenter
-Turn the other cheek
-Weeping and gnashing of teeth
-Ephod
-Sandals
-Harp
-Fear no evil
 Leviathan
+Furnace
+Tithes and offerings
+Shibboleth
+Son of the morning
+Unleavened bread
+Ancient of days
+The lamb and the lion
+First fruits
+Weeping and gnashing of teeth
+
+# New Testament terms and phrases
+Seven times seventy
+Jesus wept.
+Crown of thorns
+Easter
+Good Friday
+Palm Sunday
+Beatitudes
+An eye for an eye
+Blind leading the blind
+Mustard seed
+Last Supper
+Pearl of great price
+Fishers of men
+The Lord's Prayer
+Temple of Jerusalem
+Caesar
+Redeemer
+Born again
+Tomb
+Gold
+Frankincense
+Myrrh
+Star in the East
+Talent
+Immersion
+Sepulchre
+Christmas
+Atonement
+Second coming
+Sacrament
+Twelve apostles
+Fisherman
+Good shepherd
+Hireling
+Roman empire
+Wise men
+Donkey
+Manger
+The golden rule
+Armor of god
+Breastplate of righteousness
+Shield of faith
+Helmet of salvation
+Sword of the spirit
+Love one another
+Love thy neighbour
+Peacemaker
+Ten virgins
+Carpenter
 Ox in the mire
 Baptism of fire
-Furnace
 Light of the world
 Feed my sheep
-First estate
-Firmament
-Foundation
-Flesh and bones
-Tithes and offerings
 Seek, and ye shall find
+Six hundred threescore and six
+Spiritual gifts
+Turn the other cheek
+Cross
+Gift of the Holy Ghost
+Washing feet
+Straight and narrow
+Ministering angel
+Kingdom of God
 Endure to the end
+Armageddon
+Fear no evil
+First estate
+Flesh and bones
 Still small voice
 
-# Stories, etc.
+# Stories, events, etc.
 Joseph in Egypt
 David and Goliath
 Widow's mite
@@ -361,6 +379,7 @@ Lost sheep
 Ninety and nine
 Lions' den
 Fiery serpent
+Brazen serpent
 Jonah and the whale
 No room at the inn
 Noah's ark
@@ -377,13 +396,19 @@ Parable of the sower
 Fall of Adam
 Render unto Caesar
 Unjust steward
+40 years in the wilderness
+Creation of the world
 
 # History of the Bible
 Judaism
 Septuagint
 Hebrew
 Greek
+Aramaic
+Latin
 Vulgate
 Reformation
 Martin Luther
 William Tyndale
+Printing press
+Johannes Gutenberg
