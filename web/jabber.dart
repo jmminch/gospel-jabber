@@ -16,6 +16,8 @@ SoundSprite sprite;
 bool gameActive = false;
 String histState;
 GameTimer gameTimer;
+int score1 = 0;
+int score2 = 0;
 
 main( ) {
   rng = new Random();
@@ -28,6 +30,8 @@ main( ) {
 
   querySelector("#game-next").onClick.listen(nextClicked);
   querySelector("#game-timeout-continue").onClick.listen(continueClicked);
+  querySelector("#team1-score").onClick.listen(score1Clicked);
+  querySelector("#team2-score").onClick.listen(score2Clicked);
 
   querySelector("#game-back-t").onClick.listen(backClicked);
   querySelector("#help-back-t").onClick.listen(backClicked);
@@ -233,6 +237,8 @@ startClicked( MouseEvent e ) {
 
   /* do initial game setup */
   gameActive = false;
+  score1 = 0;
+  score2 = 0;
 
   DivElement gameScreen = querySelector("#game-screen");
   slideIn(gameScreen);
@@ -291,9 +297,18 @@ gameTimeout( ) {
 
   sprite?.play("buzzer");
 
+  updateScore();
+
   DivElement timeoutDiv = querySelector("#game-timeout-popup");
   timeoutDiv.style.visibility = "visible";
   timeoutDiv.style.opacity = "1.0";
+}
+
+updateScore( ) {
+  DivElement scoreElem = querySelector("#game-timeout-team1-score");
+  scoreElem.setInnerHtml(score1.toString());
+  scoreElem = querySelector("#game-timeout-team2-score");
+  scoreElem.setInnerHtml(score2.toString());
 }
 
 continueClicked( MouseEvent e ) {
@@ -303,6 +318,16 @@ continueClicked( MouseEvent e ) {
 
   DivElement curElem = querySelector("#game-cur-phrase");
   curElem.setInnerHtml('');
+}
+
+score1Clicked( MouseEvent e ) {
+  score1++;
+  updateScore();
+}
+
+score2Clicked( MouseEvent e ) {
+  score2++;
+  updateScore();
 }
 
 class GameTimer {

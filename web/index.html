@@ -119,9 +119,8 @@
       <div class="subpage-text">
         <p>Gospel Jabber is a word or phrase guessing party game, similar to
         Hasbro's <i>Catch Phrase</i>, with a Latter-Day Saint theme.  You will
-        need at least two players (and ideally a large group), a phone or
-        other mobile device to pass around the group, and a means of keeping
-        score, if desired.</p>
+        need at least two players (and ideally a large group), and a phone or
+        other mobile device to pass around the group.</p>
 
         <p>During play, one person, holding the device, gives verbal clues
         to their team to get them to guess the secret, randomly-chosen
@@ -181,8 +180,11 @@
         terms from the various categories, picked to be more suitable for
         younger or less-experienced players.</p>
 
-        <p>Scorekeeping is not built into the app, so if you want to keep
-        score you will need to do that separately.</p>
+        <p>A basic scorekeeping function is built into the app for
+        two-team scoring: when the timer expires, scores for each team are
+        displayed.  Tap the winning team's score to award a point for the
+        round.  The score is reset by returning to the main menu and
+        starting a new game.</p>
 
         <p>This app can be installed to the home screen on most Android or
         Apple mobile devices.  Select the “Add to home screen” option on the
@@ -266,12 +268,26 @@
     <div class="popup" id="game-timeout-popup">
       <div id="game-timeout-window">
         <div id="game-timeout-text">Time Up!</div>
+        <div style="width: 100%">
+          <center style="font-size: 150%">Scores</center>
+          <div id="game-timeout-scores">
+            <div>
+              <button type="button" class="jabber-gray" id="team1-score">
+                Team 1
+                <div id="game-timeout-team1-score">0</div>
+              </button>
+            </div>
+            <div>
+              <button type="button" class="jabber-gray" id="team2-score">
+                Team 2
+                <div id="game-timeout-team2-score">0</div>
+              </button>
+            </div>
+          </div>
+        </div>
         <div>
           <button type="button" class="jabber-blue" id="game-timeout-continue">
-            <div id="game-timeout-continue2">
-              <span style="display: inline-block">Continue</span>
-              <img style="display: inline-block" src="images/icons8-right-52.png" height="20" width="20" />
-            </div>
+            Continue
           </button>
         </div>
       </div>
