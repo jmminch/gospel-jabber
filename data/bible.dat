@@ -1,8 +1,9 @@
 # Comments begin with '#'
 # Topics begin with '>'
+# difficult phrases are marked with '*'
 # Duplicates will be removed
 
->> Bible
+>> bible
 Genesis
 Exodus
 Leviticus
@@ -22,9 +23,9 @@ Lamentations
 Daniel
 Jonah
 Malachi
-Tanakh
+* Tanakh
 Torah
-Pentateuch
+* Pentateuch
 Matthew
 Mark
 Luke
@@ -41,7 +42,7 @@ Holy Bible
 King James Version
 Joseph Smith Translation
 Dead Sea Scrolls
-Apocrypha
+* Apocrypha
 Apocalypse
 Bible Dictionary
 Topical Guide
@@ -58,7 +59,7 @@ Chapter heading
 Prophet
 Adam
 Enoch
-Methuselah
+* Methuselah
 Noah
 Abraham
 Isaac
@@ -67,26 +68,26 @@ Israel
 Joseph
 Moses
 Aaron
-Balaam
-Jeremiah
+* Balaam
+* Jeremiah
 Elijah
 Elisha
 Jesus
 
 # Tribes of Israel
-Reuben
-Simeon
+* Reuben
+* Simeon
 Levi
 Judah
-Issachar
-Zebulun
-Dan
-Naphtali
-Gad
-Asher
+* Issachar
+* Zebulun
+* Dan
+* Naphtali
+* Gad
+* Asher
 Ephraim
 Manasseh
-Benjamin
+* Benjamin
 Tribe
 Israelites
 Children of Israel
@@ -96,7 +97,7 @@ Sackcloth and ashes
 # More people
 Cain
 Able
-Boaz
+* Boaz
 King David
 King Solomon
 Lot
@@ -104,16 +105,16 @@ Sarah
 Rachel
 Shadrach, Meshach, and Abed-nego
 Pontius Pilate
-Caiaphas
+* Caiaphas
 Pharisee
 Sadducee
 King James
 Philistine
 Samson
-Delilah
+* Delilah
 Peter
 John the Beloved
-Mordicai
+Mordecai
 Angel Gabriel
 Herod
 John the Baptist
@@ -136,7 +137,7 @@ Doubting Thomas
 Babylon
 Egypt
 The Garden of Eden
-Golgotha
+* Golgotha
 Calvary
 The garden of Gethsemane
 Bethlehem
@@ -209,7 +210,7 @@ Temple
 Tax collector
 Repent
 Mercy
-Shewbread
+* Shewbread
 Rabbi
 Altar
 Angel
@@ -218,7 +219,7 @@ Soul
 Star
 Tithing
 Wrath
-Pentacost
+* Pentecost
 Temptation
 Transgression
 Saint
@@ -231,7 +232,7 @@ Begat
 Birthright
 Unclean
 Ritual
-Ephod
+* Ephod
 Sandals
 Harp
 Firmament
@@ -253,7 +254,7 @@ Let there be light
 Burnt offering
 Sin offering
 Great fish
-Levitical priesthood
+* Levitical priesthood
 Flood
 Passover
 To every thing there is a season
@@ -286,14 +287,14 @@ Thou shalt not steal
 Covet
 Promised land
 Baal
-Cruse of oil
+* Cruse of oil
 Leviathan
 Furnace
 Tithes and offerings
-Shibboleth
-Son of the morning
+* Shibboleth
+* Son of the morning
 Unleavened bread
-Ancient of days
+* Ancient of days
 The lamb and the lion
 First fruits
 Weeping and gnashing of teeth
@@ -402,14 +403,14 @@ Creation of the world
 
 # History of the Bible
 Judaism
-Septuagint
+* Septuagint
 Hebrew
 Greek
-Aramaic
+* Aramaic
 Latin
-Vulgate
+* Vulgate
 Reformation
 Martin Luther
-William Tyndale
+* William Tyndale
 Printing press
-Johannes Gutenberg
+* Johannes Gutenberg

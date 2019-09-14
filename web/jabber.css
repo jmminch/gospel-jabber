@@ -177,6 +177,66 @@ button.jabber-info {
   font-weight: bold;
 }
 
+/* fancy checkbox */
+.check {
+  display: block;
+  position: relative;
+  user-select: none;
+  height: 32px;
+  max-width: calc(100% - 1em);
+  width: 550px;
+  margin-bottom: 8px;
+}
+
+.check input {
+  cursor: pointer;
+  width: 0;
+  height: 0;
+  visibility: hidden;
+}
+
+.check label::before {
+  position: absolute;
+  content: "\2714";
+  color: #2e3a4c;
+  background: #2e3a4c;
+  border: 0.1em solid #3d4f6d;
+  border-radius: 0.2em;
+  right: 12px;
+  width: 12px;
+  height: 12px;
+  margin-top: 4px;
+  font-size: 12px;
+  padding-left: 0.2em;
+  padding-bottom: 0.4em;
+  padding-right: 0.2em;
+  vertical-align: bottom;
+  transition: 0.1s;
+}
+
+.check input:checked + label::before {
+  color: white;
+  background: #4078d1;
+  border: 0.1em solid #5194ff;
+}
+
+.check label {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+}
+
+.check span {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  transform: translateY(-30%);
+  left: 16px;
+  pointer-events: none;
+  color: white;
+}
+
 /* always visible */
 #titlebar {
   position: absolute;

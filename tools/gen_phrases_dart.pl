@@ -3,13 +3,15 @@
 # all the phrase data.
 
 sub make_phrase_list {
-  my $id = shift;
-  my $output = "  \"$id\" : [\n    ";
+  my $id = "unknown";
   my @phrases;
   while(my $file = shift) {
     open my $fh, "<$file";
     while(my $phrase = <$fh>) {
       chomp $phrase;
+      if($phrase =~ /^>>\s*(.*\S)/) {
+        $id = $1;
+      }
       next if $phrase =~ /^(>|#)/;
       next if $phrase =~ /^\s*$/;
       $phrase =~ s/'/\\'/g;
@@ -20,6 +22,7 @@ sub make_phrase_list {
   }
 
   my @unique = keys { map { $_ => 1 } @phrases };
+  my $output = "  \"$id\" : [\n    ";
   $output .= join ",\n    ", @unique;
   $output .= "\n  ]";
   return $output;
@@ -32,11 +35,6 @@ print <<END ;
 Map<String, List<String>> phraseData = {
 END
 
-print make_phrase_list("bible", "data/bible.dat"), ",\n";
-print make_phrase_list("book_of_mormon", "data/book_of_mormon.dat"), ",\n";
-print make_phrase_list("children", "data/children.dat"), ",\n";
-print make_phrase_list("doctrine", "data/doctrine.dat"), ",\n";
-print make_phrase_list("history", "data/history.dat"), ",\n";
-print make_phrase_list("modern", "data/modern.dat"), ",\n";
-print make_phrase_list("music", "data/music.dat"), "\n";
-print "};\n";
+@data = map { make_phrase_list($_) } <data/*dat>;
+print join ",\n", @data;
+print "\n};\n";

@@ -79,6 +79,11 @@ setOptions( ) {
       }
     }
   }
+
+  if(window.localStorage['hard'] != null) {
+    CheckboxInputElement check = querySelector("#difficult");
+    check.checked = (window.localStorage['hard'] == "true");
+  }
 }
 
 /* transition from the options screen to a subscreen */
@@ -207,6 +212,9 @@ startClicked( MouseEvent e ) {
     }
   }
 
+  CheckboxInputElement check = querySelector("#difficult");
+  window.localStorage['hard'] = check.checked ? "true" : "false";
+
   /* set topic text */
   DivElement topicText = querySelector("#game-topic-text");
   topicText.text = window.localStorage['phraseListName'];
@@ -225,15 +233,31 @@ startClicked( MouseEvent e ) {
 
   if(phraseData[phraseSrc] == null) phraseSrc = "everything";
 
+  List<String> l;
+
   if(phraseSrc == "everything") {
-    /* Generate a list from the concatenation of all phrase lists except
-     * the "children" list. */
-    List<String> l = new List<String>();
-    phraseData.forEach((k, v) { if(k != "children") l.addAll(v); });
-    phrases = new PhraseList.fromList(l);
+    l = new List<String>();
+    phraseData.forEach((k, v) { if(k != "simple") l.addAll(v); } );
   } else {
-    phrases = new PhraseList.fromList(phraseData[phraseSrc]);
+    l = new List<String>.from(phraseData[phraseSrc]);
   }
+
+  /* The entries in the list may be marked with a '*', meaning that they are
+   * "difficult".  If the hard setting is disabled, remove them; if it's
+   * enabled, remove the leading star. */
+  for(var i = 0; i < l.length; i++) {
+    if(l[i].substring(0, 1) == "*") {
+      if(window.localStorage['hard'] == "true") {
+        /* remove leading '*' and whitespace. */
+        l[i] = l[i].substring(1).trim();
+      } else {
+        l.removeAt(i);
+        i--;
+      }
+    }
+  }
+
+  phrases = new PhraseList.fromList(l);
 
   /* do initial game setup */
   gameActive = false;
