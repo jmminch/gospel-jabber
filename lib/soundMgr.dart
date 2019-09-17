@@ -23,8 +23,12 @@ class SoundManager {
     var req = new HttpRequest();
     req.open("GET", src);
     req.responseType = "arraybuffer";
-    req.onLoad.listen((e) {
-      cxt.decodeAudioData(req.response)
+
+    /* The onLoad event doesn't seem to fire on iOS.  Use onReadyStateChange
+     * instead. */
+    req.onReadyStateChange.listen((e) {
+      if(req.readyState == 4 && req.status == 200) {
+       cxt.decodeAudioData(req.response)
         .then((buffer) { 
           sounds[key] = buffer; 
           loadCount--;
@@ -32,7 +36,9 @@ class SoundManager {
             loadCompleteCallback();
             loadCompleteCallback = null;
           }
-        }); });
+        });
+      }
+    });
     req.send();
   }
 
