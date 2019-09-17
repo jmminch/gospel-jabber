@@ -250,13 +250,6 @@ startClicked( MouseEvent e ) {
 }
 
 nextClicked( MouseEvent e ) {
-  /* If the phrase list isn't loaded yet, it should be really soon.  Cue up
-   * a request to display the first phrase as soon as it's done. */
-  if(!phrases.loaded) {
-    phrases.onLoadComplete(() => nextClicked(null));
-    return;
-  }
-
   DivElement curElem = querySelector("#game-cur-phrase");
   DivElement nextElem = querySelector("#game-next-phrase");
 
