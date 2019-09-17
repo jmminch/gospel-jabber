@@ -20,8 +20,52 @@
         <button type="button" class="menu" id="option-start">Start</button>
       </center>
 
-      <h2>Timer mode:</h2>
+      <h2>Category list:</h2>
         <div class="option-list">
+          <div class="radiobtn">
+            <input type="radio" name="list" value="everything" id="list1" checked />
+            <label for="list1">All topics</label>
+            <span>All topics</span>
+          </div>
+          <div class="radiobtn">
+            <input type="radio" name="list" value="simple" id="list2" checked />
+            <label for="list2">Simplified list</label>
+            <span>Simplified list</span>
+          </div>
+          <div class="radiobtn">
+            <input type="radio" name="list" value="book_of_mormon" id="list3" />
+            <label for="list3">The Book of Mormon</label>
+            <span>The Book of Mormon</span>
+          </div>
+          <div class="radiobtn">
+            <input type="radio" name="list" value="bible" id="list4" />
+            <label for="list4">The Bible</label>
+            <span>The Bible</span>
+          </div>
+          <div class="radiobtn">
+            <input type="radio" name="list" value="history" id="list5" />
+            <label for="list5">Church History</label>
+            <span>Church History</span>
+          </div>
+          <div class="radiobtn">
+            <input type="radio" name="list" value="modern" id="list6" />
+            <label for="list6">Church Organization and Culture</label>
+            <span>Church Organization and Culture</span>
+          </div>
+          <div class="radiobtn">
+            <input type="radio" name="list" value="music" id="list7" />
+            <label for="list7">Music</label>
+            <span>Music</span>
+          </div>
+          <div class="check">
+            <span>Include difficult terms</span>
+            <input type="checkbox" name="difficult" id="difficult" checked />
+            <label for="difficult" />
+          </div>
+        </div>
+
+      <h2>Timer mode:</h2>
+        <div class="option-list" style="margin-bottom: 20px">
           <div class="radiobtn">
             <input type="radio" name="mode" value="normal" id="mode1" checked />
             <label for="mode1">normal</label>
@@ -36,45 +80,6 @@
             <input type="radio" name="mode" value="casual" id="mode3"/>
             <label for="mode3">casual</label>
             <span>casual</span>
-          </div>
-        </div>
-
-      <h2>Category list:</h2>
-        <div class="option-list" style="margin-bottom: 20px">
-          <div class="radiobtn">
-            <input type="radio" name="list" value="everything" id="list1" checked />
-            <label for="list1">Everything</label>
-            <span>Everything</span>
-          </div>
-          <div class="radiobtn">
-            <input type="radio" name="list" value="book_of_mormon" id="list2" />
-            <label for="list2">The Book of Mormon</label>
-            <span>The Book of Mormon</span>
-          </div>
-          <div class="radiobtn">
-            <input type="radio" name="list" value="bible" id="list3" />
-            <label for="list3">The Bible</label>
-            <span>The Bible</span>
-          </div>
-          <div class="radiobtn">
-            <input type="radio" name="list" value="history" id="list4" />
-            <label for="list4">Church History</label>
-            <span>Church History</span>
-          </div>
-          <div class="radiobtn">
-            <input type="radio" name="list" value="modern" id="list5" />
-            <label for="list5">Church Organization and Culture</label>
-            <span>Church Organization and Culture</span>
-          </div>
-          <div class="radiobtn">
-            <input type="radio" name="list" value="music" id="list6" />
-            <label for="list6">Music</label>
-            <span>Music</span>
-          </div>
-          <div class="radiobtn">
-            <input type="radio" name="list" value="children" id="list7" />
-            <label for="list7">Children's List</label><br />
-            <span>Children's List</span>
           </div>
         </div>
 
@@ -119,9 +124,8 @@
       <div class="subpage-text">
         <p>Gospel Jabber is a word or phrase guessing party game, similar to
         Hasbro's <i>Catch Phrase</i>, with a Latter-Day Saint theme.  You will
-        need at least two players (and ideally a large group), a phone or
-        other mobile device to pass around the group, and a means of keeping
-        score, if desired.</p>
+        need at least two players (and ideally a large group), and a phone or
+        other mobile device to pass around the group.</p>
 
         <p>During play, one person, holding the device, gives verbal clues
         to their team to get them to guess the secret, randomly-chosen
@@ -175,14 +179,23 @@
 
         <h2>Using this app</h2>
         
-        <p>There are several potential categories that can be selected on the
-        start page.  The “Everything” category has all of the phrases from
-        every category.  The "Children's list" category contains a subset of
-        terms from the various categories, picked to be more suitable for
-        younger or less-experienced players.</p>
+        <p>There are several categories that may be selected from the
+        start page.  The “All topics” category combines the phrase lists
+        for all of the specific topics.  The "Simplified list" category
+        contains a subset of terms from the various categories, picked to
+        be more suitable for younger or less-experienced players.</p>
 
-        <p>Scorekeeping is not built into the app, so if you want to keep
-        score you will need to do that separately.</p>
+        <p>There is an option to include or exclude a set of terms that
+        are considered more difficult, amounting to around 10% of the phrase
+        list.  Disabling that will make the game somewhat easier, if you are
+        finding that there are too many terms that the group playing the
+        game is not familiar with.</p>
+
+        <p>A basic scorekeeping function is built into the app for
+        two-team scoring: when the timer expires, scores for each team are
+        displayed.  Tap the winning team's score to award a point for the
+        round.  The score is reset by returning to the main menu and
+        starting a new game.</p>
 
         <p>This app can be installed to the home screen on most Android or
         Apple mobile devices.  Select the “Add to home screen” option on the
@@ -198,7 +211,7 @@
         </button>
       </div>
       <div class="subpage-text">
-        <p>Gospel Jabber version 0.4, build ID 190910</p>
+        <p>Gospel Jabber version 0.5, build ID 190917</p>
 
         <p>Gospel Jabber is open-source software.  The development website is
         located at <a href="https://github.com/jmminch/gospel-jabber">
@@ -266,12 +279,26 @@
     <div class="popup" id="game-timeout-popup">
       <div id="game-timeout-window">
         <div id="game-timeout-text">Time Up!</div>
+        <div style="width: 100%">
+          <center style="font-size: 150%">Scores</center>
+          <div id="game-timeout-scores">
+            <div>
+              <button type="button" class="jabber-gray" id="team1-score">
+                Team 1
+                <div id="game-timeout-team1-score">0</div>
+              </button>
+            </div>
+            <div>
+              <button type="button" class="jabber-gray" id="team2-score">
+                Team 2
+                <div id="game-timeout-team2-score">0</div>
+              </button>
+            </div>
+          </div>
+        </div>
         <div>
           <button type="button" class="jabber-blue" id="game-timeout-continue">
-            <div id="game-timeout-continue2">
-              <span style="display: inline-block">Continue</span>
-              <img style="display: inline-block" src="images/icons8-right-52.png" height="20" width="20" />
-            </div>
+            Continue
           </button>
         </div>
       </div>
