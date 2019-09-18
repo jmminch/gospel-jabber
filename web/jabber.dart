@@ -24,9 +24,9 @@ main( ) {
 
   /* Set up listeners. */
   querySelector("#option-start").onClick.listen(startClicked);
-  querySelector("#option-help").onClick.listen(helpClicked);
-  querySelector("#option-about").onClick.listen(aboutClicked);
-  querySelector("#option-install").onClick.listen(installClicked);
+  querySelector("#option-help").onClick.listen(optionButtonClicked);
+  querySelector("#option-about").onClick.listen(optionButtonClicked);
+  querySelector("#option-install").onClick.listen(optionButtonClicked);
 
   querySelector("#game-next").onClick.listen(nextClicked);
   querySelector("#game-timeout-continue").onClick.listen(continueClicked);
@@ -37,8 +37,6 @@ main( ) {
   querySelector("#help-back-t").onClick.listen(backClicked);
   querySelector("#about-back-t").onClick.listen(backClicked);
   querySelector("#install-back-t").onClick.listen(backClicked);
-
-  DivElement elem = querySelector("#option-screen");
 
   querySelector("#game-screen").on['transitionend'].listen(subScreenAnimEnd);
   querySelector("#help-screen").on['transitionend'].listen(subScreenAnimEnd);
@@ -148,31 +146,18 @@ backClicked( MouseEvent e ) {
   popState(null);
 }
 
-helpClicked( MouseEvent e ) {
-  /* transition to the help screen */
-  DivElement helpScreen = querySelector("#help-screen");
-  slideIn(helpScreen);
+optionButtonClicked( MouseEvent ev )
+{
+  Element e = ev.target;
+  var id = e.id.substring(7);  /* cut off the leading "option-" */
 
-  window.history.pushState("help", null, null);
-  histState = "help";
-}
+  /* transition to the appropriate subscreen */
+  DivElement subScreen = querySelector("#" + id + "-screen");
+  slideIn(subScreen);
 
-aboutClicked( MouseEvent e ) {
-  /* transition to the about screen */
-  DivElement aboutScreen = querySelector("#about-screen");
-  slideIn(aboutScreen);
-
-  window.history.pushState("about", null, null);
-  histState = "about";
-}
-
-installClicked( MouseEvent e ) {
-  /* transition to the install screen */
-  DivElement installScreen = querySelector("#install-screen");
-  slideIn(installScreen);
-
-  window.history.pushState("install", null, null);
-  histState = "install";
+  /* Update window history */
+  window.history.pushState(id, null, null);
+  histState = id;
 }
 
 startClicked( MouseEvent e ) {
@@ -350,8 +335,8 @@ score2Clicked( MouseEvent e ) {
 class GameTimer {
   bool sound = false;
   Function onComplete;
-  Timer iTimer;
-  Timer uTimer;
+  Timer iTimer;  /* overall timer */
+  Timer uTimer;  /* sound update timer */
 
   num nextScheduledTime;
   num phase0End;
@@ -363,7 +348,8 @@ class GameTimer {
     iTimer = new Timer(new Duration(seconds: duration), timeUp);
 
     if(sound) {
-      nextScheduledTime = soundMgr.cxt.currentTime;
+      /* Time for first tick. */
+      nextScheduledTime = soundMgr.cxt.currentTime + 2.0;
       double d = duration.toDouble();
 
       /* The timer beep runs in 4 phases (0-3).  Phase 3 takes a random amount
@@ -400,6 +386,8 @@ class GameTimer {
       delay = 2.0;
     }
 
+    /* This function runs once a second.  Schedule all sounds to play for
+     * the next 1.25 seconds. */
     while(nextScheduledTime < soundMgr.cxt.currentTime + 1.25) {
       if(nextScheduledTime >= soundMgr.cxt.currentTime &&
          nextScheduledTime < endTime) {
@@ -425,5 +413,4 @@ class GameTimer {
     if(onComplete != null) onComplete();
   }
 }
-
 

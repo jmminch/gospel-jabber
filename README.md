@@ -39,8 +39,3 @@ to build the code is:
 You can use `webdev serve` to serve the resulting page locally and access it
 via your browser. Device mode in Chrome developer tools is handy for
 emulating mobile-type behavior.
-
-## Known Issues
-
-Sound does not work reliably on iOS.  I have yet to be able to debug the
-reason why.
