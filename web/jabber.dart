@@ -19,6 +19,11 @@ GameTimer gameTimer;
 int score1 = 0;
 int score2 = 0;
 
+BeforeInstallPromptEvent installPrompt = null;
+/* Counters used to decide when to trigger the install prompt. */
+int roundCount = 0;
+int phraseCount = 0;
+
 main( ) {
   rng = new Random();
 
@@ -45,6 +50,8 @@ main( ) {
   querySelector("#game-timeout-popup").on['transitionend'].listen(subScreenAnimEnd);
 
   window.onPopState.listen(popState);
+
+  window.on['beforeinstallprompt'].listen(beforeInstallPrompt);
 
   /* option screen starts hidden because it takes a second or so to spin up
    * a dart script.  This ensures that the page is ready to go when the
@@ -151,6 +158,13 @@ optionButtonClicked( MouseEvent ev )
   Element e = ev.target;
   var id = e.id.substring(7);  /* cut off the leading "option-" */
 
+  if(id == "install" && installPrompt != null) {
+    /* We can display the install prompt directly; do that. */
+    installPrompt.prompt();
+    installPrompt = null;
+    return;
+  }
+
   /* transition to the appropriate subscreen */
   DivElement subScreen = querySelector("#" + id + "-screen");
   slideIn(subScreen);
@@ -249,6 +263,9 @@ startClicked( MouseEvent e ) {
   score1 = 0;
   score2 = 0;
 
+  roundCount = 0;
+  phraseCount = 0;
+
   DivElement gameScreen = querySelector("#game-screen");
   slideIn(gameScreen);
 
@@ -279,6 +296,8 @@ nextClicked( MouseEvent e ) {
    * game is now active and start the timer. */
   if(!gameActive) {
     gameActive = true;
+    roundCount++;
+    phraseCount = 0;
 
     /* Time range 35-60 seconds */
     if(window.localStorage['gameMode'] == 'silent') {
@@ -287,6 +306,15 @@ nextClicked( MouseEvent e ) {
     } else if(window.localStorage['gameMode'] == 'normal') {
       gameTimer = new GameTimer(35 + rng.nextInt(26), sound: true,
                                 onComplete: gameTimeout);
+    }
+  } else {
+    phraseCount++;
+    /* In casual mode, trigger the install prompt after 20 phrases rather
+     * than 3 rounds. */
+    if(installPrompt != null && window.localStorage['gameMode'] == 'casual' &&
+       phraseCount > 20) {
+      installPrompt.prompt();
+      installPrompt = null;
     }
   }
 }
@@ -320,6 +348,13 @@ continueClicked( MouseEvent e ) {
 
   DivElement curElem = querySelector("#game-cur-phrase");
   curElem.setInnerHtml('');
+
+  /* If we can trigger the install prompt, do it after 3 rounds of play.  At
+   * that point people can probably decide if they're interested or not. */
+  if(installPrompt != null && roundCount >= 3) {
+    installPrompt.prompt();
+    installPrompt = null;
+  }
 }
 
 score1Clicked( MouseEvent e ) {
@@ -414,3 +449,11 @@ class GameTimer {
   }
 }
 
+/* Tells us that we can trigger an installation popup automatically.
+ * Don't want to do it too early, but I also want people to be aware of it --
+ * so it will display the prompt either when you press "add to home screen"
+ * or after three rounds of gameplay. */
+beforeInstallPrompt( Event ev ) {
+  installPrompt = ev;
+  installPrompt.preventDefault();
+}

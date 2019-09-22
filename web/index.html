@@ -211,7 +211,7 @@
         </button>
       </div>
       <div class="subpage-text">
-        <p>Gospel Jabber version 1.0, build ID @BUILD@</p>
+        <p>Gospel Jabber version 1.1, build ID @BUILD@</p>
 
         <p>Gospel Jabber is open-source software.  The development website is
         located at <a href="https://github.com/jmminch/gospel-jabber">
@@ -307,5 +307,13 @@
   </div>
 
   <script type="text/javascript" src="jabber.dart.js"></script>
+
+  <!-- need a service worker to enable the "add to homescreen" popup.
+       Based on code taken shamelessly from stackoverflow. -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('service-worker.js');
+    }
+  </script>
 </body>
 </html>
