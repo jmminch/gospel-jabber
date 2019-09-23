@@ -22,8 +22,9 @@ Piano
 Pianist
 Organ
 Organist
-Violin
-Flute
++Violin
++Flute
+Harp
 Prelude
 Hymnbook
 Stake choir
@@ -31,38 +32,42 @@ Practice song
 Choir practice
 Music and the Spoken Word
 Accompanist
-Conduct
++ Conduct
 Conductor
 Children's Songbook
 Sign language
 Primary program
-Tune
-Soprano
-Alto
-Tenor
-Bass
-Harmony
-Melody
-Solo
-Duet
-A cappella
++ Tune
++ Soprano
++ Alto
++ Tenor
++ Bass
++ Harmony
++ Melody
++ Solo
++ Duet
++ A cappella
 Piano solo
 Christian rock
-Piano lessons
++ Piano lessons
 Song
 Instrument
 First Lines and Titles
-Tune
++ Tune
++ Chorus
++ Verse
++ Introduction
 
 # musical notations
-* Fortissimo
-Forte
-* Mezzo-forte
-* Mezzo-piano
-Piano
-* Pianissimo
-* Ritardando
-Fermata
++* Fortissimo
++ Forte
++* Mezzo-forte
++* Mezzo-piano
++ Piano
++* Pianissimo
++* Ritardando
++ Fermata
++ Treble clef
 
 # musicians, composers
 Mormon Tabernacle Choir
@@ -70,8 +75,8 @@ Tabernacle Choir at Temple Square
 Janice Kapp Perry
 The Osmonds
 Emma Smith
-W. W. Phelps
-Sally DeFord
+*W. W. Phelps
+*Sally DeFord
 
 # hymns
 How Great Thou Art

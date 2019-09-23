@@ -241,19 +241,30 @@ startClicked( MouseEvent e ) {
     l = new List<String>.from(phraseData[phraseSrc]);
   }
 
-  /* The entries in the list may be marked with a '*', meaning that they are
-   * "difficult".  If the hard setting is disabled, remove them; if it's
-   * enabled, remove the leading star. */
+  /* The entries in the list may be prefixed with some flags:
+     '*' means that the entry is "difficult," and should be removed if the
+       hard setting is disabled.
+     '+' means that the entry should not be included in the "All topics"
+       list (because it is too topic-specific.)
+    Search for any marked terms and eliminate them if appropriate, or remove
+    the flag characters otherwise. */
   for(var i = 0; i < l.length; i++) {
-    if(l[i].substring(0, 1) == "*") {
-      if(window.localStorage['hard'] == "true") {
-        /* remove leading '*' and whitespace. */
-        l[i] = l[i].substring(1).trim();
-      } else {
-        l.removeAt(i);
-        i--;
+    String c;
+    do {
+      c = l[i].substring(0, 1);
+      if(c == "*" || c == "+") {
+        if((c == "*" && window.localStorage['hard'] != "true") ||
+           (c == "+" && phraseSrc == "everything")) {
+          /* Eliminate this entry. */
+          l.removeAt(i);
+          i--;
+          break;
+        }
+
+        /* Remove the leading flag character */
+        l[i] = l[i].substring(1);
       }
-    }
+    } while(c == "*" || c == "+");
   }
 
   phrases = new PhraseList.fromList(l);
