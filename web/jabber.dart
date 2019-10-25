@@ -51,7 +51,18 @@ main( ) {
 
   window.onPopState.listen(popState);
 
-  window.on['beforeinstallprompt'].listen(beforeInstallPrompt);
+  if(document.referrer.contains("android-app://") {
+
+    /* Started from a TWA application.  The "add to home screen" option
+     * isn't relevant.  Also don't try to intercept the beforeInstallPrompt
+     * event. */
+    querySelector("#option-install").style.display = "none";
+
+  } else {
+
+    window.on['beforeinstallprompt'].listen(beforeInstallPrompt);
+
+  }
 
   /* option screen starts hidden because it takes a second or so to spin up
    * a dart script.  This ensures that the page is ready to go when the
