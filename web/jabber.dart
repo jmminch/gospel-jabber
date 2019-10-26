@@ -51,7 +51,7 @@ main( ) {
 
   window.onPopState.listen(popState);
 
-  if(document.referrer.contains("android-app://") {
+  if(document.referrer.contains("android-app://")) {
 
     /* Started from a TWA application.  The "add to home screen" option
      * isn't relevant.  Also don't try to intercept the beforeInstallPrompt
