@@ -118,6 +118,8 @@ slideOut( DivElement elem )
   optionScreen.style.opacity = "1.0";
 }
 
+/* This function gets called when the animation for a sub-screen
+ * completes. */
 subScreenAnimEnd( Event e )
 {
   Element elem = e.target;
@@ -185,6 +187,8 @@ optionButtonClicked( MouseEvent ev )
   histState = id;
 }
 
+/* Handle the "start" button from the options menu.  Transition to the
+ * main game screen and set up for a new game. */
 startClicked( MouseEvent e ) {
   /* Load all sounds. */
   soundMgr = new SoundManager();

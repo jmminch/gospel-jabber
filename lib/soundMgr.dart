@@ -58,6 +58,9 @@ class SoundManager {
   }
 }
 
+/* A SoundSprite contains multiple sound effects within a single audio file.
+ * The addDef function defines the starting time and duration of a single
+ * sound effect. */
 class SoundSprite {
   AudioContext cxt;
   AudioBuffer buffer;
