@@ -98,7 +98,9 @@ setOptions( ) {
 
   if(window.localStorage['hard'] != null) {
     CheckboxInputElement check = querySelector("#difficult");
-    check.checked = (window.localStorage['hard'] == "true");
+    if(check != null) {
+      check.checked = (window.localStorage['hard'] == "true");
+    }
   }
 }
 
@@ -227,11 +229,16 @@ startClicked( MouseEvent e ) {
   }
 
   CheckboxInputElement check = querySelector("#difficult");
-  window.localStorage['hard'] = check.checked ? "true" : "false";
+  if(check != null) {
+    window.localStorage['hard'] = check.checked ? "true" : "false";
+  }
 
   /* set topic text */
   DivElement topicText = querySelector("#game-topic-text");
-  topicText.text = window.localStorage['phraseListName'];
+
+  if(!window.location.href.contains("christmas.html")) {
+    topicText.text = window.localStorage['phraseListName'];
+  }
 
   /* clear out the phrase area */
   DivElement curElem = querySelector("#game-cur-phrase");
@@ -247,11 +254,14 @@ startClicked( MouseEvent e ) {
 
   if(phraseData[phraseSrc] == null) phraseSrc = "everything";
 
+  if(window.location.href.contains("christmas.html")) phraseSrc = "christmas";
+
   List<String> l;
 
   if(phraseSrc == "everything") {
     l = new List<String>();
-    phraseData.forEach((k, v) { if(k != "simple") l.addAll(v); } );
+    phraseData.forEach((k, v) {
+      if(k != "simple" && k != "christmas") l.addAll(v); } );
   } else {
     l = new List<String>.from(phraseData[phraseSrc]);
   }
