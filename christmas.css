@@ -1,0 +1,508 @@
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  max-width: 582px;
+  margin: 0 auto;
+  overflow: hidden;
+  background-color: #c31717;
+  color: white;
+  font-family: 'Fresca', sans-serif;
+
+  display: flex;
+  flex-direction: column;
+  touch-action: manipulation;
+}
+
+/* common definitions */
+button {
+  outline: 0;
+}
+
+button::-moz-focus-inner {
+  border: 0;
+}
+
+a {
+  color: #eee;
+}
+
+/* button based on "clean gray" from
+ * https://github.com/ubuwaits/css3-buttons */
+button.jabber-gray {
+  background-color: #eee;
+  background-image: linear-gradient(#eee, #ccc);
+  border: 1px solid #ccc;
+  border-bottom: 1px solid #bbb;
+  border-radius: 3px;
+  color: #333;
+  font-weight: bold;
+  font-size 14px;
+  padding: 8px;
+  text-align: center;
+  text-shadow: 0 1px 0 #eee;
+  width: 100px;
+}
+
+button.jabber-gray:active {
+  border: 1px solid #aaa;
+  border-bottom: 1px solid #888;
+  box-shadow: inset 0 0 5px 2px #aaa, 0 1px 0 0 #eee;
+  outline: 0;
+}
+
+button.jabber-green {
+  background-color: #3d4;
+  background-image: linear-gradient(#3d4, #2b2);
+  border: 1px solid #2b2;
+  border-bottom: 1px solid #1a1;
+  border-radius: 3px;
+  color: white;
+  font-weight: bold;
+  font-size 14px;
+  padding: 8px;
+  text-align: center;
+  text-shadow: 0 1px 0 #eee;
+  width: 100px;
+}
+
+button.jabber-green:active {
+  border: 1px solid #181;
+  border-bottom: 1px solid #888;
+  box-shadow: inset 0 0 25px 2px #181, 0 1px 0 0 #3b4;
+  outline: 0;
+}
+
+button.jabber-blue {
+  background-color: #a11;
+  background-image: linear-gradient(#a11, #711);
+  border: 1px solid #711;
+  border-bottom: 1px solid #311;
+  border-radius: 3px;
+  color: white;
+  font-weight: bold;
+  font-size 14px;
+  padding: 8px;
+  text-align: center;
+  text-shadow: 0 1px 0 #eee;
+  width: 100px;
+}
+
+button.jabber-blue:active {
+  border: 1px solid #711;
+  border-bottom: 1px solid #888;
+  box-shadow: inset 0 0 5px 2px #711, 0 1px 0 0 #a11;
+  outline: 0;
+}
+
+button.menu {
+  background-color: #eee, #eee, #eee;
+  background: linear-gradient(#eee, #ccc) no-repeat border-box, 
+              url(images/icons8-double-right-24.png) no-repeat,
+              linear-gradient(#ccc, #aaa) no-repeat border-box;
+  background-size: 160px 100%, 24px 24px, 40px 100%;
+  background-position: 0, 168px center, 160px;
+  background-origin: padding-box, padding-box;
+  border: 1px solid #ccc;
+  border-bottom: 1px solid #bbb;
+  border-radius: 3px;
+  color: #333;
+  font-weight: bold;
+  font-size 18px;
+  padding: 8px;
+  text-align: left;
+  text-shadow: 0 1px 0 #eee;
+  width: 200px;
+  margin: 4px;
+}
+
+button.menu:active {
+  border: 1px solid #aaa;
+  border-bottom: 1px solid #888;
+  box-shadow: inset 0 0 5px 2px #aaa, 0 1px 0 0 #eee;
+  outline: 0;
+}
+
+button.jabber-info {
+  border: 1px solid #fff;
+  border-radius: 3px;
+  background-color: transparent;
+  font-size 10px;
+  color: #fff;
+}
+
+/* fancy radio buttons for the options menu */
+.radiobtn {
+  display: block;
+  position: relative;
+  user-select: none;
+  height: 32px;
+  max-width: calc(100% - 1em);
+  width: 550px;
+  margin-bottom: 8px;
+}
+
+.radiobtn input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.radiobtn label {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #6e1d1d;
+  border: 2px solid #a63636;
+  border-radius: 5px;
+  color: rgba(0, 0, 0, 0);
+}
+
+.radiobtn input:checked ~ label {
+  background: #b12121;
+  border: 2px solid #ec2525;
+}
+
+.radiobtn span {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  transform: translateY(-30%);
+  left: 16px;
+  pointer-events: none;
+  color: white;
+}
+
+.radiobtn input:checked ~ span {
+  font-weight: bold;
+}
+
+/* fancy checkbox */
+.check {
+  display: block;
+  position: relative;
+  user-select: none;
+  height: 32px;
+  max-width: calc(100% - 1em);
+  width: 550px;
+  margin-bottom: 8px;
+}
+
+.check input {
+  cursor: pointer;
+  width: 0;
+  height: 0;
+  visibility: hidden;
+}
+
+.check label::before {
+  position: absolute;
+  content: "\2714";
+  color: #683535;
+  background: #683535;
+  border: 0.1em solid #a63636;
+  border-radius: 0.2em;
+  right: 12px;
+  width: 12px;
+  height: 12px;
+  margin-top: 4px;
+  font-size: 12px;
+  padding-left: 0.2em;
+  padding-bottom: 0.4em;
+  padding-right: 0.2em;
+  vertical-align: bottom;
+  transition: 0.1s;
+}
+
+.check input:checked + label::before {
+  color: white;
+  background: #b12121;
+  border: 0.1em solid #ec2525;
+}
+
+.check label {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+}
+
+.check span {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  transform: translateY(-30%);
+  left: 16px;
+  pointer-events: none;
+  color: white;
+}
+
+/* always visible */
+#titlebar {
+  position: absolute;
+  pad-top: 0.3em;
+  pad-bottom: 0.3em;
+  width: 100%;
+  max-width: 582px;
+  z-index: 2;
+  text-align: center;
+  font-size: 2em;
+  background-image: linear-gradient(
+    rgba(195, 23, 23, 1.0), rgba(195, 23, 23, 1.0) 80%, rgba(195, 23, 23, 0.0));
+}
+
+#content {
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  flex-grow: 1;
+  position: relative;
+  overflow: hidden;
+}
+
+/* container for individual pages */
+.content {
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  flex-grow: 1;
+  position: absolute;
+
+  transition: transform 0.5s ease;
+  transform: translateX(100%);
+  visibility: hidden;
+}
+
+/* Each sub-screen has a subtitle bar with back button. */
+.subtitle {
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  padding-top: 40px;
+  padding-bottom: 10px;
+  background-image: linear-gradient(
+    rgba(195, 23, 23, 1.0), rgba(195, 23, 23, 1.0) 80%, rgba(195, 23, 23, 0.0));
+}
+
+.subtitle > button {
+  position: absolute;
+  left: 10px;
+  top: 40px;
+
+  background: transparent;
+  border: 0;
+  box-shadow 0;
+  padding: 0;
+}
+
+.subtitle > h2 {
+  text-align: center;
+  margin: 0;
+}
+
+.subpage-text {
+  display: block;
+
+  position: absolute;
+  z-index: 0;
+  margin-left: 8px;
+  width: calc(100% - 16px);
+  height: 100%;
+  overflow: auto;
+  flex-grow: 1;
+  font-size: 125%;
+}
+
+.subpage-text p {
+  font-family: sans-serif;
+}
+
+.subpage-text::before {
+  content: "";
+  display: inline-block;
+  margin-top: 40px;
+  height: 15px;
+}
+
+.popup {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  max-width: 582px;
+  position: fixed;
+  z-index: 3;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.4);
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  transition: opacity 0.5s ease;
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* option screen styles */
+#option-screen {
+  display: block;
+  z-index: 0;
+  overflow: auto;
+
+  transition: opacity 0.5s ease;
+  transform: translateX(0);
+  opacity: 0;
+  visibility: hidden;
+}
+
+#option-screen::before {
+  content: "";
+  display: inline-block;
+  margin-top: 25px;
+  height: 15px;
+}
+
+#option-screen h2 { 
+  margin-bottom: 0.3em; 
+  margin-left: 8px;
+}
+
+.option-list { 
+  margin-left: 16px;
+  margin-right: 16px;
+}
+
+#option-install {
+  display: none; /* will be displayed only in browser mode. */
+}
+
+@media all and (display-mode: browser) {
+  #option-install { display: block; margin: 4px; width: 200px; }
+}
+
+#help-screen, #about-screen, #install-screen {
+  display: block;
+}
+
+/* game screen styles */
+#game-screen {
+  display: flex;
+
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+#game-screen::before {
+  content: "";
+  display: inline-block;
+  margin-top: 50px;
+  height: 15px;
+}
+
+#game-topic-text {
+  font-size: 120%;
+  flex-grow 1;
+  margin: auto;
+  text-align: center;
+}
+
+#game-phrase-area {
+  width: 90%;
+  background: white;
+  overflow: hidden;
+  margin: auto;
+  border-radius: 50px 5px;
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #ed2b2b;
+  box-shadow: 0px 0px 10px #ed2b2b, inset 0px 0px 10px #ed2b2b;
+  position: relative;
+  z-index: 2;
+}
+
+.game-phrase-text {
+  display: block;
+  color: #0e2728;
+  font-size: 300%;
+  text-align: center;
+  overflow: hidden;
+
+  position: absolute;
+  margin: auto;
+  width: 90%;
+
+  hyphens: auto;
+}
+
+#game-control-area {
+  position: relative;
+  align-self: flex-end;
+  width: 100%;
+  height: 20vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* timeout popup */
+#game-timeout-window {
+  display: flex;
+
+  width: 80%;
+  height: 300px;
+  background: white;
+  border-radius: 5px;
+  overflow: hidden;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+  color: #0e2728;
+}
+
+#game-timeout-continue {
+  color: white;
+  font-size: 22px;
+  width: 200px;
+}
+
+#game-timeout-continue-inner {
+  display: block;
+  margin: auto;
+  color: white;
+  font-size: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+#game-timeout-text {
+  color: #0e2728;
+  font-size: 300%;
+}
+
+#game-timeout-scores {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  text-align: center;
+}
+
+#game-timeout-team1-score { font-size: 200%; }
+#game-timeout-team2-score { font-size: 200%; }
+
+/* animations */
+@keyframes slide-fade-out {
+  from { transform: translate(0, 0); opacity: 1.0; }
+  to { transform: translate(0, -100vh); opacity: 0.0; }
+}
+
+@keyframes slide-fade-in {
+  from { transform: translate(0, 100vh); opacity: 0.0; }
+  to { transform: translate(0, 0); opacity: 1.0; }
+}
