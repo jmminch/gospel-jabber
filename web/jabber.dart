@@ -193,14 +193,16 @@ optionButtonClicked( MouseEvent ev )
  * main game screen and set up for a new game. */
 startClicked( MouseEvent e ) {
   /* Load all sounds. */
-  soundMgr = new SoundManager();
-  soundMgr.load("gamesound", "audio/game_sounds.mp3");
-  soundMgr.onLoadComplete(() {
-    sprite = new SoundSprite(soundMgr.cxt, soundMgr.sounds["gamesound"]);
-    sprite.addDef("tick", 0.0, 0.15);
-    sprite.addDef("buzzer", 0.24, 1.45);
-    sprite.addDef("next", 1.79, 0.2);
-  });
+  if(soundMgr == null) {
+    soundMgr = new SoundManager();
+    soundMgr.load("gamesound", "audio/game_sounds.mp3");
+    soundMgr.onLoadComplete(() {
+      sprite = new SoundSprite(soundMgr.cxt, soundMgr.sounds["gamesound"]);
+      sprite.addDef("tick", 0.0, 0.15);
+      sprite.addDef("buzzer", 0.24, 1.45);
+      sprite.addDef("next", 1.79, 0.2);
+    });
+  }
 
   /* save options to local storage */
   for(var e in document.getElementsByName('list')) {
