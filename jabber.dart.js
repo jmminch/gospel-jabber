@@ -393,7 +393,7 @@ S:function(a,b){if(typeof b!=="number")throw H.h(H.cc(b))
 return a<b},
 $isaV:1,
 $isb1:1},
-cK:{"^":"bS;",$isa8:1},
+cK:{"^":"bS;",$isa9:1},
 eC:{"^":"bS;"},
 bb:{"^":"n;",
 aS:function(a,b){if(b>=a.length)throw H.h(H.aj(a,b))
@@ -485,7 +485,7 @@ if(typeof u=="function"){t=String(u).match(/^\s*function\s*([\w$]*)\s*\(/)
 s=t==null?null:t[1]
 if(typeof s==="string"&&/^\w+$/.test(s))w=s}if(w==null)w=v}else w=v}w=w
 if(w.length>1&&C.f.aS(w,0)===36)w=C.f.ac(w,1)
-r=H.ci(H.b0(H.a7(a)),0,null)
+r=H.ci(H.b0(H.a8(a)),0,null)
 return function(b,c){return b.replace(/[^<,> ]+/g,function(d){return c[d]||d})}(w+r,init.mangledGlobalNames)},
 ad:function(a){if(a.date===void 0)a.date=new Date(a.a)
 return a.date},
@@ -507,13 +507,13 @@ al:function(a){throw H.h(H.cc(a))},
 w:function(a,b){if(a==null)J.aG(a)
 throw H.h(H.aj(a,b))},
 aj:function(a,b){var z,y
-if(typeof b!=="number"||Math.floor(b)!==b)return new P.a3(!0,b,"index",null)
+if(typeof b!=="number"||Math.floor(b)!==b)return new P.a4(!0,b,"index",null)
 z=H.B(J.aG(a))
 if(!(b<0)){if(typeof z!=="number")return H.al(z)
 y=b>=z}else y=!0
 if(y)return P.aN(b,a,"index",null,z)
 return P.bh(b,"index",null)},
-cc:function(a){return new P.a3(!0,a,null,null)},
+cc:function(a){return new P.a4(!0,a,null,null)},
 h:function(a){var z
 if(a==null)a=new P.bZ()
 z=new Error()
@@ -559,7 +559,7 @@ if(m==null){m=n.B(y)
 l=m!=null}else l=!0}else l=!0}else l=!0}else l=!0}else l=!0}else l=!0}else l=!0
 if(l)return z.$1(H.cV(H.t(y),m))}}return z.$1(new H.fr(typeof y==="string"?y:""))}if(a instanceof RangeError){if(typeof y==="string"&&y.indexOf("call stack")!==-1)return new P.cX()
 y=function(b){try{return String(b)}catch(k){}return null}(a)
-return z.$1(new P.a3(!1,null,null,typeof y==="string"?y.replace(/^RangeError:\s*/,""):y))}if(typeof InternalError=="function"&&a instanceof InternalError)if(typeof y==="string"&&y==="too much recursion")return new P.cX()
+return z.$1(new P.a4(!1,null,null,typeof y==="string"?y.replace(/^RangeError:\s*/,""):y))}if(typeof InternalError=="function"&&a instanceof InternalError)if(typeof y==="string"&&y==="too much recursion")return new P.cX()
 return a},
 aC:function(a){var z
 if(a==null)return new H.dt(a)
@@ -740,26 +740,26 @@ ie:function(a){throw H.h(new P.eg(H.t(a)))},
 dF:function(a){return init.getIsolateTag(a)},
 p:function(a,b){a.$ti=b
 return a},
-a7:function(a){if(a==null)return
+a8:function(a){if(a==null)return
 return a.$ti},
-mH:function(a,b,c){return H.an(a["$as"+H.f(c)],H.a7(b))},
+mH:function(a,b,c){return H.an(a["$as"+H.f(c)],H.a8(b))},
 aZ:function(a,b,c,d){var z
 H.t(c)
 H.B(d)
-z=H.an(a["$as"+H.f(c)],H.a7(b))
+z=H.an(a["$as"+H.f(c)],H.a8(b))
 return z==null?null:z[d]},
 aY:function(a,b,c){var z
 H.t(b)
 H.B(c)
-z=H.an(a["$as"+H.f(b)],H.a7(a))
+z=H.an(a["$as"+H.f(b)],H.a8(a))
 return z==null?null:z[c]},
 k:function(a,b){var z
 H.B(b)
-z=H.a7(a)
+z=H.a8(a)
 return z==null?null:z[b]},
-b3:function(a,b){var z=H.a9(a,null)
+b3:function(a,b){var z=H.aa(a,null)
 return z},
-a9:function(a,b){var z,y
+aa:function(a,b){var z,y
 H.a1(b,"$iso",[P.i],"$aso")
 if(a==null)return"dynamic"
 if(a===-1)return"void"
@@ -772,7 +772,7 @@ z=b.length
 y=z-a-1
 if(y<0||y>=z)return H.w(b,y)
 return H.f(b[y])}if('func' in a)return H.hr(a,b)
-if('futureOr' in a)return"FutureOr<"+H.a9("type" in a?a.type:null,b)+">"
+if('futureOr' in a)return"FutureOr<"+H.aa("type" in a?a.type:null,b)+">"
 return"unknown-reified-type"},
 hr:function(a,b){var z,y,x,w,v,u,t,s,r,q,p,o,n,m,l,k,j,i,h
 z=[P.i]
@@ -788,18 +788,18 @@ r=z-u-1
 if(r<0)return H.w(b,r)
 t=C.f.v(t,b[r])
 q=y[u]
-if(q!=null&&q!==P.a)t+=" extends "+H.a9(q,b)}t+=">"}else{t=""
-x=null}p=!!a.v?"void":H.a9(a.ret,b)
+if(q!=null&&q!==P.a)t+=" extends "+H.aa(q,b)}t+=">"}else{t=""
+x=null}p=!!a.v?"void":H.aa(a.ret,b)
 if("args" in a){o=a.args
 for(z=o.length,n="",m="",l=0;l<z;++l,m=", "){k=o[l]
-n=n+m+H.a9(k,b)}}else{n=""
+n=n+m+H.aa(k,b)}}else{n=""
 m=""}if("opt" in a){j=a.opt
 n+=m+"["
 for(z=j.length,m="",l=0;l<z;++l,m=", "){k=j[l]
-n=n+m+H.a9(k,b)}n+="]"}if("named" in a){i=a.named
+n=n+m+H.aa(k,b)}n+="]"}if("named" in a){i=a.named
 n+=m+"{"
 for(z=H.hJ(i),r=z.length,m="",l=0;l<r;++l,m=", "){h=H.t(z[l])
-n=n+m+H.a9(i[h],b)+(" "+H.f(h))}n+="}"}if(x!=null)b.length=x
+n=n+m+H.aa(i[h],b)+(" "+H.f(h))}n+="}"}if(x!=null)b.length=x
 return t+"("+n+") => "+p},
 ci:function(a,b,c){var z,y,x,w,v,u
 H.a1(c,"$iso",[P.i],"$aso")
@@ -809,7 +809,7 @@ for(y=b,x=!0,w=!0,v="";y<a.length;++y){if(x)x=!1
 else z.a=v+", "
 u=a[y]
 if(u!=null)w=!1
-v=z.a+=H.a9(u,c)}return w?"":"<"+z.h(0)+">"},
+v=z.a+=H.aa(u,c)}return w?"":"<"+z.h(0)+">"},
 an:function(a,b){if(a==null)return b
 a=a.apply(null,b)
 if(a==null)return
@@ -818,7 +818,7 @@ if(typeof a=="function")return a.apply(null,b)
 return b},
 aU:function(a,b,c,d){var z,y
 if(a==null)return!1
-z=H.a7(a)
+z=H.a8(a)
 y=J.r(a)
 if(y[b]==null)return!1
 return H.dC(H.an(y[d],z),null,c,null)},
@@ -839,7 +839,7 @@ for(y=0;y<z;++y)if(!H.L(null,null,c[y],d))return!1
 return!0}z=a.length
 for(y=0;y<z;++y)if(!H.L(a[y],b,c[y],d))return!1
 return!0},
-mE:function(a,b,c){return a.apply(b,H.an(J.r(b)["$as"+H.f(c)],H.a7(b)))},
+mE:function(a,b,c){return a.apply(b,H.an(J.r(b)["$as"+H.f(c)],H.a8(b)))},
 dJ:function(a){var z
 if(typeof a==="number")return!1
 if('futureOr' in a){z="type" in a?a.type:null
@@ -851,7 +851,7 @@ if(z)return!0
 if(typeof b=="object"){z='futureOr' in b
 if(z)if(H.cd(a,"type" in b?b.type:null))return!0
 if('func' in b)return H.aW(a,b)}y=J.r(a).constructor
-x=H.a7(a)
+x=H.a8(a)
 if(x!=null){x=x.slice()
 x.splice(0,0,y)
 y=x}z=H.L(y,null,b,null)
@@ -1201,7 +1201,7 @@ $1:function(a){return this.a(H.t(a))}}}],["","",,H,{"^":"",
 hJ:function(a){return J.eA(a?Object.keys(a):[],null)}}],["","",,H,{"^":"",
 Y:function(a,b,c){if(a>>>0!==a||a>=c)throw H.h(H.aj(b,a))},
 cT:{"^":"n;",$iscT:1,$ise8:1,"%":"ArrayBuffer"},
-be:{"^":"n;",$isbe:1,"%":";ArrayBufferView;bX|dp|dq|bY|dr|ds|a6"},
+be:{"^":"n;",$isbe:1,"%":";ArrayBufferView;bX|dp|dq|bY|dr|ds|a7"},
 kD:{"^":"be;","%":"DataView"},
 bX:{"^":"be;",
 gj:function(a){return a.length},
@@ -1220,45 +1220,45 @@ $isu:1,
 $asu:function(){return[P.aV]},
 $iso:1,
 $aso:function(){return[P.aV]}},
-a6:{"^":"ds;",
+a7:{"^":"ds;",
 l:function(a,b,c){H.B(b)
 H.B(c)
 H.Y(b,a,a.length)
 a[b]=c},
-$asba:function(){return[P.a8]},
-$asF:function(){return[P.a8]},
+$asba:function(){return[P.a9]},
+$asF:function(){return[P.a9]},
 $isu:1,
-$asu:function(){return[P.a8]},
+$asu:function(){return[P.a9]},
 $iso:1,
-$aso:function(){return[P.a8]}},
+$aso:function(){return[P.a9]}},
 kE:{"^":"bY;","%":"Float32Array"},
 kF:{"^":"bY;","%":"Float64Array"},
-kG:{"^":"a6;",
+kG:{"^":"a7;",
 i:function(a,b){H.Y(b,a,a.length)
 return a[b]},
 "%":"Int16Array"},
-kH:{"^":"a6;",
+kH:{"^":"a7;",
 i:function(a,b){H.Y(b,a,a.length)
 return a[b]},
 "%":"Int32Array"},
-kI:{"^":"a6;",
+kI:{"^":"a7;",
 i:function(a,b){H.Y(b,a,a.length)
 return a[b]},
 "%":"Int8Array"},
-kJ:{"^":"a6;",
+kJ:{"^":"a7;",
 i:function(a,b){H.Y(b,a,a.length)
 return a[b]},
 "%":"Uint16Array"},
-kK:{"^":"a6;",
+kK:{"^":"a7;",
 i:function(a,b){H.Y(b,a,a.length)
 return a[b]},
 "%":"Uint32Array"},
-kL:{"^":"a6;",
+kL:{"^":"a7;",
 gj:function(a){return a.length},
 i:function(a,b){H.Y(b,a,a.length)
 return a[b]},
 "%":"CanvasPixelArray|Uint8ClampedArray"},
-kM:{"^":"a6;",
+kM:{"^":"a7;",
 gj:function(a){return a.length},
 i:function(a,b){H.Y(b,a,a.length)
 return a[b]},
@@ -1654,7 +1654,7 @@ dg:{"^":"a;a,0b"},
 c1:{"^":"a;$ti",
 gj:function(a){var z,y
 z={}
-y=new P.G(0,$.v,[P.a8])
+y=new P.G(0,$.v,[P.a9])
 z.a=0
 this.bm(new P.fk(z,this),!0,new P.fl(z,y),y.gaU())
 return y}},
@@ -1976,7 +1976,7 @@ return"0"+a}},
 C:{"^":"a;"},
 bZ:{"^":"C;",
 h:function(a){return"Throw of null."}},
-a3:{"^":"C;a,b,c,d",
+a4:{"^":"C;a,b,c,d",
 ga1:function(){return"Invalid argument"+(!this.a?"(s)":"")},
 ga0:function(){return""},
 h:function(a){var z,y,x,w,v,u
@@ -1990,9 +1990,9 @@ v=this.ga0()
 u=P.bQ(this.b)
 return w+v+": "+H.f(u)},
 k:{
-e2:function(a){return new P.a3(!1,null,null,a)},
-cn:function(a,b,c){return new P.a3(!0,a,b,c)}}},
-c_:{"^":"a3;e,f,a,b,c,d",
+e2:function(a){return new P.a4(!1,null,null,a)},
+cn:function(a,b,c){return new P.a4(!0,a,b,c)}}},
+c_:{"^":"a4;e,f,a,b,c,d",
 ga1:function(){return"RangeError"},
 ga0:function(){var z,y,x
 z=this.e
@@ -2005,7 +2005,7 @@ k:{
 f5:function(a){return new P.c_(null,null,!1,null,null,a)},
 bh:function(a,b,c){return new P.c_(null,null,!0,a,b,"Value not in range")},
 bg:function(a,b,c,d,e){return new P.c_(b,c,!0,a,d,"Invalid value")}}},
-ev:{"^":"a3;e,j:f>,a,b,c,d",
+ev:{"^":"a4;e,j:f>,a,b,c,d",
 ga1:function(){return"RangeError"},
 ga0:function(){if(J.dS(this.b,0))return": index must not be negative"
 var z=this.f
@@ -2043,7 +2043,7 @@ jh:{"^":"a;"},
 fL:{"^":"a;a",
 h:function(a){return"Exception: "+this.a}},
 aM:{"^":"a;"},
-a8:{"^":"b1;"},
+a9:{"^":"b1;"},
 "+int":0,
 u:{"^":"a;$ti",
 a9:["aH",function(a,b){var z=H.aY(this,"u",0)
@@ -2289,7 +2289,7 @@ $isu:1,
 $asu:function(){return[W.m]},
 $iso:1,
 $aso:function(){return[W.m]},
-$asa5:function(){return[W.m]},
+$asa6:function(){return[W.m]},
 "%":";HTMLCollection"},
 jX:{"^":"b9;","%":"HTMLDocument"},
 jY:{"^":"cJ;","%":"HTMLFormControlsCollection"},
@@ -2356,7 +2356,7 @@ y=z.childNodes
 if(b>>>0!==b||b>=y.length)return H.w(y,b)
 z.replaceChild(c,y[b])},
 gu:function(a){var z=this.a.childNodes
-return new W.cH(z,z.length,-1,[H.aZ(C.F,z,"a5",0)])},
+return new W.cH(z,z.length,-1,[H.aZ(C.F,z,"a6",0)])},
 gj:function(a){return this.a.childNodes.length},
 i:function(a,b){var z=this.a.childNodes
 if(b>>>0!==b||b>=z.length)return H.w(z,b)
@@ -2387,7 +2387,7 @@ $isu:1,
 $asu:function(){return[W.m]},
 $iso:1,
 $aso:function(){return[W.m]},
-$asa5:function(){return[W.m]},
+$asa6:function(){return[W.m]},
 "%":"NodeList|RadioNodeList"},
 kP:{"^":"N;","%":"NotificationEvent"},
 kQ:{"^":"e;","%":"HTMLOListElement"},
@@ -2539,7 +2539,7 @@ $isu:1,
 $asu:function(){return[W.m]},
 $iso:1,
 $aso:function(){return[W.m]},
-$asa5:function(){return[W.m]},
+$asa6:function(){return[W.m]},
 "%":"MozNamedAttrMap|NamedNodeMap"},
 mx:{"^":"f3;","%":"ResourceProgressEvent"},
 mA:{"^":"d;","%":"USBConnectionEvent"},
@@ -2626,8 +2626,8 @@ z=z===":"||z===""}else z=!1
 else z=!1
 else z=!0
 return z},"$4","hO",16,0,13]}},
-a5:{"^":"a;$ti",
-gu:function(a){return new W.cH(a,this.gj(a),-1,[H.aZ(this,a,"a5",0)])}},
+a6:{"^":"a;$ti",
+gu:function(a){return new W.cH(a,this.gj(a),-1,[H.aZ(this,a,"a6",0)])}},
 cU:{"^":"a;a",
 M:function(a){return C.a.ao(this.a,new W.eS(a))},
 H:function(a,b,c){return C.a.ao(this.a,new W.eR(a,b,c))},
@@ -2725,7 +2725,7 @@ for(var p=0;p<q;p++){var o=c.children[p]
 if(o.id=='attributes'||o.name=='attributes'||o.id=='lastChild'||o.name=='lastChild'||o.id=='children'||o.name=='children')return true}return false}(a)
 z=w?!0:!(a.attributes instanceof NamedNodeMap)}catch(t){H.S(t)}v="element unprintable"
 try{v=J.aH(a)}catch(t){H.S(t)}try{u=W.aq(a)
-this.b2(H.b(a,"$isJ"),b,z,v,u,H.b(y,"$isar"),H.t(x))}catch(t){if(H.S(t) instanceof P.a3)throw t
+this.b2(H.b(a,"$isJ"),b,z,v,u,H.b(y,"$isar"),H.t(x))}catch(t){if(H.S(t) instanceof P.a4)throw t
 else{this.P(a,b)
 window
 s="Removing corrupted element "+H.f(v)
@@ -2770,12 +2770,12 @@ y=a.lastChild}if(z!=null)this.$2(z,a)
 z=H.b(y,"$ism")}}},
 fF:{"^":"n+ef;"},
 fZ:{"^":"n+F;"},
-h_:{"^":"fZ+a5;"},
+h_:{"^":"fZ+a6;"},
 h3:{"^":"n+F;"},
-h4:{"^":"h3+a5;"},
+h4:{"^":"h3+a6;"},
 hd:{"^":"n+as;"},
 ho:{"^":"n+F;"},
-hp:{"^":"ho+a5;"}}],["","",,P,{"^":"",
+hp:{"^":"ho+a6;"}}],["","",,P,{"^":"",
 hF:function(a){var z,y
 z=new P.G(0,$.v,[null])
 y=new P.c4(z,[null])
@@ -2926,19 +2926,19 @@ for(;z=u.firstChild,z!=null;)v.appendChild(z)
 return v},
 gar:function(a){return new W.bm(a,"click",!1,[W.E])},
 $isl:1,
-"%":";SVGElement"},lL:{"^":"O;","%":"SVGSVGElement"},lM:{"^":"O;","%":"SVGSwitchElement"},lN:{"^":"l;","%":"SVGSymbolElement"},lP:{"^":"d1;","%":"SVGTSpanElement"},d0:{"^":"O;","%":";SVGTextContentElement"},lW:{"^":"d1;","%":"SVGTextElement"},lY:{"^":"d0;","%":"SVGTextPathElement"},d1:{"^":"d0;","%":";SVGTextPositioningElement"},m1:{"^":"l;","%":"SVGTitleElement"},m8:{"^":"O;","%":"SVGUseElement"},me:{"^":"l;","%":"SVGViewElement"},dk:{"^":"l;","%":";SVGGradientElement"},bo:{"^":"l;","%":";SVGComponentTransferFunctionElement"},my:{"^":"l;","%":"SVGFEDropShadowElement"},mz:{"^":"l;","%":"SVGMPathElement"}}],["","",,P,{"^":"",ij:{"^":"A;","%":"AnalyserNode|RealtimeAnalyserNode"},a4:{"^":"n;0j:length=",$isa4:1,"%":"AudioBuffer"},iw:{"^":"bH;","%":"AudioBufferSourceNode"},e4:{"^":"e7;",
-aX:function(a,b,c,d){H.c(c,{func:1,ret:-1,args:[P.a4]})
+"%":";SVGElement"},lL:{"^":"O;","%":"SVGSVGElement"},lM:{"^":"O;","%":"SVGSwitchElement"},lN:{"^":"l;","%":"SVGSymbolElement"},lP:{"^":"d1;","%":"SVGTSpanElement"},d0:{"^":"O;","%":";SVGTextContentElement"},lW:{"^":"d1;","%":"SVGTextElement"},lY:{"^":"d0;","%":"SVGTextPathElement"},d1:{"^":"d0;","%":";SVGTextPositioningElement"},m1:{"^":"l;","%":"SVGTitleElement"},m8:{"^":"O;","%":"SVGUseElement"},me:{"^":"l;","%":"SVGViewElement"},dk:{"^":"l;","%":";SVGGradientElement"},bo:{"^":"l;","%":";SVGComponentTransferFunctionElement"},my:{"^":"l;","%":"SVGFEDropShadowElement"},mz:{"^":"l;","%":"SVGMPathElement"}}],["","",,P,{"^":"",ij:{"^":"A;","%":"AnalyserNode|RealtimeAnalyserNode"},a5:{"^":"n;0j:length=",$isa5:1,"%":"AudioBuffer"},iw:{"^":"bH;","%":"AudioBufferSourceNode"},e4:{"^":"e7;",
+aX:function(a,b,c,d){H.c(c,{func:1,ret:-1,args:[P.a5]})
 H.c(d,{func:1,ret:-1,args:[W.aJ]})
 return a.decodeAudioData(b,H.R(c,1),H.R(d,1))},
 bi:function(a,b,c,d){var z,y,x
-z=P.a4
+z=P.a5
 y=new P.G(0,$.v,[z])
 x=new P.c4(y,[z])
 this.aX(a,b,new P.e5(x),new P.e6(x))
 return y},
 bh:function(a,b){return this.bi(a,b,null,null)},
 "%":"AudioContext|webkitAudioContext"},e5:{"^":"j:12;a",
-$1:function(a){this.a.a6(0,H.b(a,"$isa4"))}},e6:{"^":"j:27;a",
+$1:function(a){this.a.a6(0,H.b(a,"$isa5"))}},e6:{"^":"j:27;a",
 $1:function(a){var z
 H.b(a,"$isaJ")
 z=this.a
@@ -2956,7 +2956,7 @@ z=this.b
 if(z.readyState===4&&z.status===200){y=this.a
 C.q.bh(y.a,H.b(W.hq(z.response),"$ise8")).aw(new O.fe(y,this.c),null)}}},fe:{"^":"j:12;a,b",
 $1:function(a){var z=this.a
-z.b.l(0,this.b,H.b(a,"$isa4"))
+z.b.l(0,this.b,H.b(a,"$isa5"))
 if(--z.d<=0&&z.c!=null){z.c.$0()
 z.c=null}}},fg:{"^":"a;a,b,c",
 at:function(a,b,c){var z,y
@@ -3101,71 +3101,70 @@ y=window.history
 y.toString
 y.pushState(new P.du([],[]).G(z),null,null)
 $.bt=z},"$1","bv",4,0,1],
-mM:[function(a){var z,y,x,w,v,u,t,s,r,q,p,o,n,m,l,k
+mM:[function(a){var z,y,x,w,v,u,t,s,r,q,p,o,n,m,l
 z={}
 H.b(a,"$isE")
-y=P.i
-x=new O.fd(new H.aR(0,0,[y,P.a4]),0)
-x.a=new (window.AudioContext||window.webkitAudioContext)()
-$.aa=x
-x.bn(0,"gamesound","audio/game_sounds.mp3")
-x=$.aa
-w=new Q.ib()
-if(x.d<=0)w.$0()
-else x.c=w
-for(x=document,w=x.getElementsByName("list"),v=w.length,u=0;u<v;++u){a=H.b(w[u],"$isbf")
+if($.a3==null){y=new O.fd(new H.aR(0,0,[P.i,P.a5]),0)
+y.a=new (window.AudioContext||window.webkitAudioContext)()
+$.a3=y
+y.bn(0,"gamesound","audio/game_sounds.mp3")
+y=$.a3
+x=new Q.ib()
+if(y.d<=0)x.$0()
+else y.c=x}for(y=document,x=y.getElementsByName("list"),w=x.length,v=0;v<w;++v){a=H.b(x[v],"$isbf")
 if(a.checked){window.localStorage.setItem("phraseList",a.value)
-for(w=x.getElementsByTagName("label"),v=w.length,u=0;u<w.length;w.length===v||(0,H.aF)(w),++u){t=H.b(w[u],"$iscL")
-s=t.htmlFor
-r=a.id
-if(s==null?r==null:s===r)window.localStorage.setItem("phraseListName",t.textContent)}break}}for(w=x.getElementsByName("mode"),v=w.length,u=0;u<v;++u){a=H.b(w[u],"$isbf")
+for(x=y.getElementsByTagName("label"),w=x.length,v=0;v<x.length;x.length===w||(0,H.aF)(x),++v){u=H.b(x[v],"$iscL")
+t=u.htmlFor
+s=a.id
+if(t==null?s==null:t===s)window.localStorage.setItem("phraseListName",u.textContent)}break}}for(x=y.getElementsByName("mode"),w=x.length,v=0;v<w;++v){a=H.b(x[v],"$isbf")
 if(a.checked){window.localStorage.setItem("gameMode",a.value)
-break}}q=H.b(x.querySelector("#difficult"),"$iscs")
-if(q!=null){w=window.localStorage
-w.setItem("hard",q.checked?"true":"false")}p=H.b(x.querySelector("#game-topic-text"),"$isy")
-if(!J.bG(window.location.href,"christmas.html"))p.textContent=window.localStorage.getItem("phraseListName")
-o=H.b(x.querySelector("#game-cur-phrase"),"$isy");(o&&C.e).O(o,"")
-n=window.localStorage.getItem("phraseList")
-if(n==null)n="everything"
-if($.$get$bx().i(0,n)==null)n="everything"
-if(J.bG(window.location.href,"christmas.html"))n="christmas"
+break}}r=H.b(y.querySelector("#difficult"),"$iscs")
+if(r!=null){x=window.localStorage
+x.setItem("hard",r.checked?"true":"false")}q=H.b(y.querySelector("#game-topic-text"),"$isy")
+if(!J.bG(window.location.href,"christmas.html"))q.textContent=window.localStorage.getItem("phraseListName")
+p=H.b(y.querySelector("#game-cur-phrase"),"$isy");(p&&C.e).O(p,"")
+o=window.localStorage.getItem("phraseList")
+if(o==null)o="everything"
+if($.$get$bx().i(0,o)==null)o="everything"
+if(J.bG(window.location.href,"christmas.html"))o="christmas"
 z.a=null
-w=n==="everything"
-if(w){z.a=H.p([],[y])
-$.$get$bx().I(0,new Q.ic(z))}else z.a=P.eL($.$get$bx().i(0,n),!0,y)
-for(m=0;y=z.a,m<y.length;++m)do{y=z.a
-if(m<0||m>=y.length)return H.w(y,m)
-l=J.e0(y[m],0,1)
-y=l==="*"
-v=!y
-if(!v||l==="+"){if(!(y&&window.localStorage.getItem("hard")!=="true"))y=l==="+"&&w
-else y=!0
-if(y){y=z.a
-y.toString
-if(typeof y!=="object"||y===null||!!y.fixed$length)H.Z(P.K("removeAt"))
-v=y.length
-if(m>=v)H.Z(P.bh(m,null,null))
-y.splice(m,1)[0]
-k=m-1
-m=k
-break}y=z.a
-if(m>=y.length)return H.w(y,m);(y&&C.a).l(y,m,J.cm(y[m],1))}}while(!v||l==="+")
-w=new Y.eV(0)
-y.toString
-w.a=P.bW(y,H.k(y,0)).bA(0)
-w.b=-1
-$.dN=w
+x=o==="everything"
+w=P.i
+if(x){z.a=H.p([],[w])
+$.$get$bx().I(0,new Q.ic(z))}else z.a=P.eL($.$get$bx().i(0,o),!0,w)
+for(n=0;w=z.a,n<w.length;++n)do{w=z.a
+if(n<0||n>=w.length)return H.w(w,n)
+m=J.e0(w[n],0,1)
+w=m==="*"
+t=!w
+if(!t||m==="+"){if(!(w&&window.localStorage.getItem("hard")!=="true"))w=m==="+"&&x
+else w=!0
+if(w){w=z.a
+w.toString
+if(typeof w!=="object"||w===null||!!w.fixed$length)H.Z(P.K("removeAt"))
+t=w.length
+if(n>=t)H.Z(P.bh(n,null,null))
+w.splice(n,1)[0]
+l=n-1
+n=l
+break}w=z.a
+if(n>=w.length)return H.w(w,n);(w&&C.a).l(w,n,J.cm(w[n],1))}}while(!t||m==="+")
+x=new Y.eV(0)
+w.toString
+x.a=P.bW(w,H.k(w,0)).bA(0)
+x.b=-1
+$.dN=x
 $.br=!1
 $.bB=0
 $.bC=0
 $.bA=0
 $.b2=0
-Q.dQ(H.b(x.querySelector("#game-screen"),"$isy"))
-x=window.history
-x.toString
-x.pushState(new P.du([],[]).G("game"),null,null)
+Q.dQ(H.b(y.querySelector("#game-screen"),"$isy"))
+y=window.history
+y.toString
+y.pushState(new P.du([],[]).G("game"),null,null)
 $.bt="game"
-W.by($.aa.a.resume(),null)},"$1","i1",4,0,1],
+W.by($.a3.a.resume(),null)},"$1","i1",4,0,1],
 mI:[function(a){var z,y,x,w,v
 H.b(a,"$isE")
 z=document
@@ -3233,7 +3232,7 @@ $.a2=a
 a.preventDefault()},"$1","hW",4,0,14],
 ib:{"^":"j:0;",
 $0:function(){var z,y,x
-z=$.aa
+z=$.a3
 y=z.a
 z=z.b.i(0,"gamesound")
 x=new H.aR(0,0,[P.i,[P.o,P.b1]])
@@ -3250,7 +3249,7 @@ if(a!=="simple"&&a!=="christmas"){z=this.a.a;(z&&C.a).A(z,b)}}},
 es:{"^":"a;a,b,0c,0d,0e,0f,0r,0x,0y",
 aD:[function(){var z,y,x
 this.d=null
-z=$.aa.a.currentTime
+z=$.a3.a.currentTime
 y=this.y
 if(typeof z!=="number")return z.bD()
 if(typeof y!=="number")return H.al(y)
@@ -3264,7 +3263,7 @@ if(z>y)x=0.4
 else{y=this.f
 if(typeof y!=="number")return H.al(y)
 x=z>y?0.7:2}}}while(!0){z=this.e
-y=$.aa.a.currentTime
+y=$.a3.a.currentTime
 if(typeof y!=="number")return y.v()
 if(typeof z!=="number")return z.S()
 if(!(z<y+1.25))break
@@ -3288,12 +3287,12 @@ k:{
 cI:function(a,b,c){var z,y,x,w,v
 z=new Q.es(c,b)
 z.c=P.d2(P.cB(0,0,0,0,0,a),z.gbz())
-if(c){y=$.aa.a.currentTime
+if(c){y=$.a3.a.currentTime
 if(typeof y!=="number")return y.v()
 z.e=y+2
 x=(a-($.bz.bq()*5+5))*0.5
 w=x*0.5
-y=$.aa.a
+y=$.a3.a
 v=y.currentTime
 if(typeof v!=="number")return v.v()
 v+=x
@@ -3536,7 +3535,7 @@ $.cA=null
 $.cw=null
 $.bz=null
 $.dN=null
-$.aa=null
+$.a3=null
 $.aE=null
 $.br=!1
 $.bt=null
@@ -3567,11 +3566,11 @@ try{(void 0).$method$($argumentsExpr$)}catch(z){return z.message}}())},"d8","$ge
 return P.cN(["animationend","webkitAnimationEnd","animationiteration","webkitAnimationIteration","animationstart","webkitAnimationStart","fullscreenchange","webkitfullscreenchange","fullscreenerror","webkitfullscreenerror","keyadded","webkitkeyadded","keyerror","webkitkeyerror","keymessage","webkitkeymessage","needkey","webkitneedkey","pointerlockchange","webkitpointerlockchange","pointerlockerror","webkitpointerlockerror","resourcetimingbufferfull","webkitresourcetimingbufferfull","transitionend","webkitTransitionEnd","speechchange","webkitSpeechChange"],z,z)},"dm","$get$dm",function(){return P.bW(["A","ABBR","ACRONYM","ADDRESS","AREA","ARTICLE","ASIDE","AUDIO","B","BDI","BDO","BIG","BLOCKQUOTE","BR","BUTTON","CANVAS","CAPTION","CENTER","CITE","CODE","COL","COLGROUP","COMMAND","DATA","DATALIST","DD","DEL","DETAILS","DFN","DIR","DIV","DL","DT","EM","FIELDSET","FIGCAPTION","FIGURE","FONT","FOOTER","FORM","H1","H2","H3","H4","H5","H6","HEADER","HGROUP","HR","I","IFRAME","IMG","INPUT","INS","KBD","LABEL","LEGEND","LI","MAP","MARK","MENU","METER","NAV","NOBR","OL","OPTGROUP","OPTION","OUTPUT","P","PRE","PROGRESS","Q","S","SAMP","SECTION","SELECT","SMALL","SOURCE","SPAN","STRIKE","STRONG","SUB","SUMMARY","SUP","TABLE","TBODY","TD","TEXTAREA","TFOOT","TH","THEAD","TIME","TR","TRACK","TT","U","UL","VAR","VIDEO","WBR"],P.i)},"c6","$get$c6",function(){return P.eI(P.i,P.aM)},"bx","$get$bx",function(){var z,y
 z=P.i
 y=[z]
-return P.cN(["bible",H.p(["Blind","Sermon on the mount","Covet","Sheepfold","Helmet of salvation","Worship","Locust","Resurrection","Judges","Martin Luther","Protestant","Fear no evil","Second coming","Philistine","Bondage","Tower of Babel","Sacrifice","Tree of knowledge of good and evil","Stephen","Kingdom of God","* Son of the morning","Seven times seventy","Camel","Sparrow","Keys of the kingdom","Jerusalem","Thirty pieces of silver","Jacob","Cross","Damascus","Coat of many colors","Begat","No room at the inn","Torah","* Dan","Pontius Pilate","Children of Israel","Daniel","Spiritual gifts","Love your enemies","Abomination","Plague of locusts","* Become as little children","Evil","Dead Sea Scrolls","Love one another","Good shepherd","* Zebulun","Scroll","* Wolf in sheep's clothing","The garden of Gethsemane","* Apocrypha","Peculiar people","* Jeremiah","Cross-reference","Paul","Chapter","Printing press","Abraham","Holy of Holies","Sin offering","Loaves and fishes","Chariot","* Golgotha","Psalms","Proverbs","Baptize","Walk on water","Last Supper","* Day of Atonement","Tabernacle","Footnote","Redeemer","Peacemaker","Mercy seat","* Tanakh","Spirit world","Water into wine","Pillar of fire","Hell","* Star in the east","Eli","David and Goliath","Manger","Rachel","Pharisee","Shadrach, Meshach, and Abed-nego","Abel","An eye for an eye","Greek","Sacrificial lamb","Pastor","Ark of the Covenant","Lost sheep","Samson","Elisha","Seek, and ye shall find","Honour thy father and thy mother","Great court","Repent","Song of Solomon","John the Baptist","Chapter heading","Apostle","Gathering of Israel","Carpenter","The Lord's Prayer","Parable of the sower","Weeping and gnashing of teeth","Burnt offering","Star in the East","Light of the world","Fiery serpent","Temple Mount","Ruth","Burning bush","Armor of god","Tax collector","Sepulchre","Doubting Thomas","Graven image","Sandals","Jesus","Christmas","Leviathan","* Vulgate","Reformation","Jonah and the whale","Revelation","Lucifer","Atonement","* Benjamin","Blind leading the blind","Synagogue","Shield of faith","Rebekah","King Solomon","Nile river","Mary","Let my people go","Eat, drink, and be merry","Old Testament","Noah's ark","Topical Guide","Hireling","Noah","Thou shalt not kill","Matthew","Ritual","* Simeon","Holy Land","Pharaoh","Star","Twelve apostles","Pearl of great price","* Asher","Rome","John the Beloved","Apocalypse","Render unto Caesar","Lamentations","Michael","Hallelujah","Naaman","* Shewbread","Deuteronomy","Genesis","Creation of the world","Feed my sheep","Samaritan","Peter","Wisdom","Fall of Adam","Immersion","Gift of the Holy Ghost","Crown of thorns","Parchment","Luke","Scripture","Myrrh","Lazarus","Rabbi","Northern Kingdom","Temptation","Goliath","Serpent","Isaiah","Bear false witness","Bethlehem","* Babylonian captivity","Kingdom of Israel","* Delilah","Good Friday","First fruits","Altar","Law of Moses","Israelites","* Bitter herbs","Disciple","Idol","Dead Sea","Sadducee","Lions' den","Paradise","Hosanna","Feeding the multitude","Faith","Jordan River","Kingdom of Judah","Leviticus","Fire and brimstone","* Johannes Gutenberg","Pillar of salt","Wrath","Elijah","Endure to the end","Transgression","Joseph in Egypt","Potiphar","40 years in the wilderness","Nazareth","Potiphar's wife","Archangel","Forbidden fruit","Temple of Jerusalem","Wilderness","* Naphtali","Hebrew","Clean","Forgive","Rainbow","Levi","Joseph","Birthright","Lot","* Will a man rob God?","Corinthians","Firmament","Ten Commandments","Samuel","Devil","Wise men","Unclean","Furnace","Romans","Mercy","Beatitudes","Thou shalt not...","Joseph Smith Translation","Jonathan","Donkey","Spirit","Trumpet","Ninety and nine","Ten virgins","* Ancient of days","Foundation","Book","* Aramaic","Malachi","* Methuselah","Prophet","Adam and Eve","Unjust steward","Palm Sunday","* Balaam","Salt Sea","Judas","Promised land","Verily, verily","Fisherman","Enoch","Esther","* Pentecost","* Cruse of oil","Wedding in Cana","King James Version","Judaism","Mustard seed","Evangelist","Cherubim","King David","Greece","First estate","* Ephod","Let there be light","Frankincense","Thy will be done","Miracle","Zion","Bridegroom","* Shibboleth","Herod","Jericho","Heaven","Hebrews","John","Papyrus","Exodus","Greater light","Day of rest","Harp","Brother's keeper","Blood","Saint","Flood","Egypt","Gospel","Adam","Israel","* Reuben","King James","* William Tyndale","* Judge not, that ye be not judged","Tithes and offerings","Judah","Ephraim","The golden rule","Thou shalt not steal","Brazen serpent","Sin","Healing","Gold","Sarah","Ministering angel","Bible Dictionary","Mordecai","Nineveh","The Garden of Eden","Mountain","Fishers of men","* Boaz","Gentile","Teacher","Turn the other cheek","Stone tablets","Holy Ghost","Born again","Armageddon","Land of Israel","In the beginning...","Ox in the mire","Tribe","Red Sea","* Judas Iscariot","Unleavened bread","Pauline epistles","Epistle","Mark","* Gad","Parable","Sword of the spirit","Dove","Great fish","Straight and narrow","To every thing there is a season","Sackcloth and ashes","Sea of Galilee","Sabbath day","Babylon","Flesh and bones","Star of Bethlehem","* Septuagint","Mount of Olives","Tomb","Talent","* Caiaphas","Thanksgiving","Still small voice","Mount Sinai","Kingdom of Heaven","House built on a rock","Washing feet","Cain","Lamb","King Saul","Scapegoat","Fasting","Good Samaritan","Baptism of fire","Roman empire","Remember the Sabbath day","Verse","Temple","Six hundred threescore and six","* Pentateuch","Eve","Angel","Easter","Breastplate of righteousness","Inner court","Wheat and tares","Christian","The lamb and the lion","Isaac","New Testament","* Issachar","* Levitical priesthood","Aaron","Seven years of plenty","Latin","Adversary","Leper","Cubit","Calvary","Soul","Caesar","Solomon's Temple","Jonah","Widow's mite","Jesus wept.","Brimstone","Numbers","Holy Bible","Tithing","Job","The prodigal son","Passover","Sacrament","Love thy neighbour","Destroying angel","Manasseh","Acts of the Apostles","Martha","Angel Gabriel","Forgive all men","Joshua","Abrahamic covenant","Baal","Moses"],y),"book_of_mormon",H.p(["Joseph","Sam","* Stick of Joseph","Brass plates","Coriantumr","* Cavity of a rock","Alma the Younger","Devil","Book of life","Jaredites","Gadianton robbers","False prophet","Army of Helaman","Deseret","Bondage","Tower of Babel","Beatitudes","Liahona","Abinadi","Third Nephi","Voice of thunder","Zoram","Hard heart","Pride","Oliver Cowdery","Jerusalem","Iron rod","* Pride of their hearts","Jacob","Large plates of Nephi","Sword of Laban","Prophet","Ether","John Whitmer","Begat","Soft heart","The Book of Lehi","Nephi","Promised land","Index","* Tight like unto a dish","Church","Contention","Golden plates","Mosiah","Abomination","* Zeniff","Secret combinations","Tree of life","* Ziff","Alma","Narrow neck of land","Cross-reference","Chapter","Omni","Printing press","Another Testament of Jesus Christ","Alma the Elder","King-men","The Book of Mormon","Three Witnesses","Footnote","Murmur","* Curelom","* Infinite and eternal","And my father dwelt in a tent.","* A marvellous work and a wonder","Helaman","Angel Moroni","Spiritual death","* Our brother is a fool","Baptismal covenant","* Rameumptom","Plain and precious","Small plates of Nephi","Mormon","Pure love of Christ","Baptism","Chapter heading","Ishmael","Healing","Captain Moroni","Great and spacious building","Ministering angel","Pray always","Men are, that they might have joy","Lost tribes","Small and simple things","Author","Title of Liberty","Waters of Mormon","Lehi","Americas","Charity","Teancum","Engrave","Sariah","Enos","Ammon","Sons of Mosiah","The love of God","Synagogue","Palmyra","Keystone of our religion","Reign of the judges","Opposition in all things","King Benjamin","Nephites","Wickedness never was happiness","Valley of Lemuel","Eat, drink, and be merry","Topical Guide","Chief judge","Gideon","High priest","* Reformed Egyptian","Jarom","Second Nephi","Stripling warriors","Three Nephites","Lehi's dream","Perfect knowledge","* Twelve Nephite disciples","Emma Smith","Abridgement","Fall of Adam","And it came to pass","Scribe","Hope","Little children","Scripture","Judge","Lehi's vision","Anti-Nephi-Lehies","Laban","Captivity","Lamanites","Isaiah","Words of Mormon","* Allegory of the olive trees","Verse","Temple","* Great and abominable church","Law of Moses","Isles of the sea","Land of Nephi","Lost 116 pages","Freemen","Army","Zarahemla","Light in the wilderness","Zoramites","Lemuel","Eight Witnesses","Faith","Martin Harris","Adversary","Nephi builds a ship","Joseph Smith","Samuel the Lamanite","Mist of darkness","Bountiful","Adieu","Lamoni","Priestcraft","King Noah","First Nephi","Fourth Nephi","Change of heart","Urim and Thummim","Most correct book","Hill Cumorah","Manasseh","Moroni","Seer","* Zenos","Laman","Desolation","The brother of Jared","I have dreamed a dream","Manuscript","Last days","* Mahonri Moriancumer","Nephi breaks his bow","Wilderness","Having been born of goodly parents","Gadianton"],y),"christmas",H.p(["Jack Frost","Grandma Got Run Over by a Reindeer","Rooftop","Joseph","Jesus","I Heard the Bells on Christmas Day","Christmas tree","Christmas Eve","Fireplace","Sleigh","A Charlie Brown Christmas","We Three Kings","Wrapping paper","Ghost of Christmas Past","Winter Wonderland","Wise men","Ho, Ho, Ho","Sled","Stocking","Stable","Mary","Scrooge","Reindeer","Egg nog","December","Silent Night","Oh, Come All Ye Faithful","Carol of the Bells","I'm Dreaming of a White Christmas","Frosty the Snowman","Secret Santa","We Wish You a Merry Christmas","Star","Joy to the World","North Pole","Tinsel","A Christmas Carol","Snowman","Snowflake","Snow angel","Elf","Naughty list","Present","Santa's workshop","Snow","Christmas lights","The Grinch","Feliz Navidad","Rudolph the Red-Nosed Reindeer","Jolly","Decorate","Christmas card","Pine cone","Wreath","The 12 Days of Christmas","Happy Holidays","Milk and cookies","Away in a Manger","Bethlehem","Angel","Nativity","Here Comes Santa Claus","Deck the Halls","Bells","The First Noel","Chimney","Gingerbread house","Candy cane","Ornament","Gift","Mistletoe","Naughty or nice","Santa Claus","Manger","Jingle Bells","Ice skating","Family","Ribbon","Nutcracker","Candy","Angels We Have Heard on High","Holly","Home Alone","Shepherd","Gold","Candle","Winter","Rudolph","Santa Claus Is Coming to Town","Christmas Day","The Night Before Christmas","Toy","Little Match Girl","Bow"],y),"history",H.p(["School of the Prophets","Brigham Young","* Joseph F. Smith","Word of Wisdom","Independence, Missouri","Handcart","Witness","Wagon train","* Dispensation of the fulness of times","Joseph Smith Sr.","Salt Lake Valley","Kirtland, Ohio","Articles of Faith","* Joseph Fielding Smith","* Sunstone","Palmyra","* Porter Rockwell","* The Work and the Glory","Seer stone","Persecution","A Poor Wayfaring Man of Grief","Journal of Discourses","Church history","Peter, James, and John","Mormon Battalion","Covered wagon","Utah territory","Buried","Carthage Jail","Endowment","Presidential candidate","Doctrine and Covenants","Lorenzo Snow","Oliver Cowdery","* David Whitmer","Mormon trail","Breastplate","Temple dedication","Far West","* David O. McKay","Hyrum Smith","* Martin handcart company","James 1:5","First Vision","Emma Smith","Relief Society","Restoration","Dispensation","* John Taylor","Pioneer","Liberty Jail","Nauvoo, Illinois","Baptism for the dead","Kirtland Temple","Apostasy","Miracle","* Wilford Woodruff","Angel","Pearl of Great Price","April 6th, 1830","Law of consecration","Salt Lake Temple","Lost 116 pages","Oxcart","Translation of the Book of Mormon","Aaronic priesthood","Oregon trail","Nauvoo Temple","* Harold B. Lee","Susquehanna River","State of Deseret","* Battle of the bulls","Martin Harris","United order","Joseph Smith -- History","Joseph Smith","Angel Moroni","* Miracle of the gulls","* Howard W. Hunter","The Church of Jesus Christ of Latter-Day Saints","The Spirit of God","Freedom of religion","* Heber J. Grant","ZCMI","Baptism","Great apostasy","John the Baptist","Melchizedek priesthood","Joseph Smith Jr.","Mission","* Book of Commandments","Book of Mormon","Martyr","Lucy Mack Smith","Hill Cumorah","Gold plates","Seer","* Ezra Taft Benson","If any of you lack wisdom","* Spencer W. Kimball","Jackson County","Adam-ondi-Ahman","Zion's Camp","* Wentworth letter","Thomas S. Monson","* George Albert Smith","* Sidney Rigdon","Buffalo chips","Gordon B. Hinckley","Sacred grove"],y),"misc",H.p(["Justice and mercy","Obedience","Vision","Lineage","Physical body","Accountable","Wicked","Glory","Earth life","Advocate","Righteous","Goal","Endowment","Interpretation of tongues","Humble","Heavenly Father","Immortality","Consecrated oil","Teachable","Self-reliance","Broken bread","Agency","Inspire","Wine","Authority","Eternal marriage","Punishment","Plan of happiness","Ordinance","Children","Veil","False doctrine","Sealing","Commandment","Kneel","Nativity","Conversion","Promise","First resurrection","Grace","Good example","Eternal life","Prepare","Reverence","Curse","Justice","Baptism","Choose the right","Mortal","Seventy","Deacon","Priest","Doctrine","Honest","Adversity","Bear witness","Ancestor","Preside","Water","Personal responsibility","Final judgement","Fast offering","Holy ground","Age of accountability","Priesthood keys","Comforter","Gratitude","Confirmation","Called of God","Prompting","Olive oil","Selfless","Plan of salvation","Godhead","Believe","Holy","Blessing","Twelve apostles","* Omniscient","Exaltation","Omnipotent","Thankful","Broken heart","Patriarch","Eternal progression","Symbol","Spirit body","Love","Personal revelation","Dispensation","Outer darkness","Premortal life","* Gift of discernment","Foreordain","Priesthood","Apostasy","Elder","Temple","Ponder","Heavenly parents","Saving ordinance","War in heaven","Childlike","Letter of the law","Spirit of the law","Sermon","Family","Endure to the end","Scripture reference","Service","Silent prayer","New Jerusalem","Great Apostasy","* Priesthood line of authority","Bread","Testimony","Gift of tongues","Seer","Spirit prison","Millennium","* Unconditional love","Priesthood authority","Anoint","Religion","Covenant","Laying on hands","Revelator","High Priest"],y),"modern",H.p(["Young Women Medallion","Potluck","Personal Progress","* Provident living","Temple worthy","Ward librarian","* Semiannual General Conference","Tithing slip","Wedding reception","Sealing room","Scripture study","David Bednar","Cub Scouts","* Quarterly report","Celestial room","Polynesian Cultural Center","Ministering brother","Scripture storybook","* First quorum of the seventy","Family Search","Family Home Evening","Ward Christmas party","Family night","Standard works","Temple dedication","Congregation","Every member a missionary","Cultural hall","Personal prayer","First Presidency Christmas devotional","Ward","White clothes","Priesthood meeting","Dallin Oaks","The Friend","Young men","Mitt Romney","Mormon Channel","Deacons Quorum","First weekend of April","Collect fast offerings","Missionary Training Center","Priests Quorum","Two-way promise","Ward organist","Family history","Missionary haircut","Shirt and tie","Henry Eyring","EFY","Fireside","CTR shield","Fifth Sunday","Classroom","Service project","* Stephanie Meyer","Come, Follow Me","Senior Primary","Combined activity","C. S. Lewis","Bless the food","LDS tools","Missionary discussions","New member","Ten percent","Priesthood session","Stake Presidency","Vote of thanks","First Presidency","Visiting teacher","Sunday","Relief Society room","Sunday best","Returned missionary","Acting president","Genealogy","General authority","Ward council","Preach My Gospel","High council","Homemaking","The Ensign","Steeple","Born in the covenant","Spiritual thought","Gospel Principles","Benediction","Brother","Ward activity","Endowment session","Interview","Highlighter","Bishop's messenger","* Pedigree chart","Patriarchal blessing","The Family Proclamation","Baby blessing","Second counselor","* Avoid the appearance of evil","* Common consent","Dale Renlund","Church bookstore","* The R.M.","* David Archuleta","Folding chairs","Branch","Sacrament tray","* The 7 Habits of Highly Effective People","Adamic language","Three-hour block","Missionary companionship","First counselor","Junior Primary","Mormonad","* Pathway","Pulpit","Jeffrey Holland","Devotional","Baptismal font","Perfect the saints","Meetinghouse","Quorum","Eagle Scout","Triple combination","Provo","Mormon standard time","Elder","Ronald Rasband","Temple work","Sister missionary","* Relief Society General President","Bishopric","* JustServe","Redeem the dead","In the world but not of the world","* Threefold mission of the church","Scripture marker","Teachers Quorum","Sitting in the back row","Mia Maid","Pass the sacrament","FSY Conference","Naming and blessing","* Orson Scott Card","Quentin Cook","Laurel","Conference center","* The Best Two Years","Nonmember","Family tree","Church basketball","Emergency preparedness","Calling","Gospel Doctrine","Concluding speaker","* High Council Sunday","Quad combination","Worthy","Institute","Book of Mormon videos","* General conference bingo","Chapel","First assistant","Father's day","Church website","Unanimous","* Saturday's Warrior","Seminary teacher","Institute class","BYU-Hawaii","* Menace to society","Opening prayer","Mission president","Legacy","Member","Sacrament meeting","Proclaim the gospel","Eagle project","Release","Elders quorum president","Ulisses Soares","Scout camp","* High council room","Bishop","The house of the Lord","Christmas program","Quorum of the twelve apostles","Chalkboard","Women's conference","Deseret Book","Elders Quorum","New Era","Foyer","Missionary","Youth dance","Church","* Meet the Mormons","Faith in God Award","Relief Society","Announcements","Neil Andersen","Gym","Suit","Temple preparation class","For the Strength of Youth","Stake","Closing prayer","Sharing time","Cheerios and goldfish","Jesus the Christ","Young Women values","Nursery","Mother's day","Especially For Youth","Public speaking","Girls camp","* The six B's","Service mission","Perpetual Education Fund","First resurrection","Dieter Uchtdorf","Convert","Attendance roll","Investigator","Ward clerk","* BYU Jerusalem Center","Sister","Temple painting","Seventy","Father's blessing","* Marriott","Pass-along card","* Home-centered church-supported","Thomas S. Monson","Distribution center","Boy Scouts","Asleep on the stand","Mutual","Stake President","Green Jell-O","Deseret Industries","Missionary farewell","Temple recommend interview","MTC","University of Utah","Opening exercises","BYU","* Ken Jennings","Sunday school teacher","Temple Square","Family prayer","Utah","Singles ward","Temple cafeteria","Ministering sister","Twelve oxen","Presiding bishop","Russell M. Nelson","D. Todd Christofferson","Talk","Relief Society President","Family council","Sustain","Bishop's storehouse","Bishop's office","Tracting","* John Bytheway","Temple recommend","Blessing on the water","Seminary","Primary","Open house","Secretary","Sustaining vote","Testimony meeting","Ward calender","Young women","CTR ring","Johnny Lingo","Scripture bag","Sunday school","Two-hour block","Temple","Women's session","General Conference","Beehive","Ward missionary","Salt Lake City","Ministering","Steve Young","Covenant path","Food storage","Sacrament table","Temple worker","72-hour kit","Class","Mission home","Webelos","Good, Better, Best","Gospel library","Gerrit Gong","Foreign language","Home teacher","Ward bulletin","Primary teacher","Audit report","I know the church is true","Dedicatory prayer","High adventure","Daily repentance","M. Russell Ballard","BYU-Idaho","Lesson manual","Branch president","Tithing settlement","Gordon B. Hinckley","Temple grounds","Modesty","Gary Stevenson"],y),"music",H.p(["Search, Ponder and Pray","Musical instrument","*Sally DeFord","O Holy Night","As Sisters in Zion","+ Introduction","Nephi's Courage","Families Can Be Together Forever","+ Forte","I Am a Child of God","*W. W. Phelps","+* Mezzo-forte","+ Chorus","Accompanist","Choir director","Praise to the Man","Primary program","Music and the Spoken Word","A Poor Wayfaring Man of Grief","Tabernacle Choir at Temple Square","The Star-Spangled Banner","Popcorn Popping","Congregational hymn","We'll Bring the World His Truth","Jesus Wants Me for a Sunbeam","\u201cGive,\u201d Said the Little Stream","+ Piano","Silent Night","+ Piano lessons","Choir practice","+ Tenor","Conductor","Easter music","Opening song","Head, Shoulders, Kees, and Toes","Joy to the World","If You Could Hie to Kolob","I Know That My Redeemer Lives","+ Tune","+Violin","Follow the Prophet","Awake and Arise","The Osmonds","Oh, how lovely was the morning","+* Pianissimo","Singing time","Primary pianist","Stake choir","+ Alto","+ Soprano","+ Bass","Sign language","Book of Mormon Stories","+Flute","Hallelujah Chorus","Ring Out, Wild Bells","Love at Home","Emma Smith","First Lines and Titles","Piano","Christian rock","Song","Musical number","Chorister","Closing hymn","Hark! The Herald Angels Sing","Children's Songbook","Away in a Manger","How Great Thou Art","+ Solo","Mormon Tabernacle Choir","Hello Song","I Love to See the Temple","+ Arrangement","Hymn","The First Noel","Come Thou Fount of Every Blessing","I'm Trying to Be Like Jesus","Rest hymn","+ Duet","+ Fermata","Scripture Power","The Wise Man and the Foolish Man","A Child's Prayer","Called to Serve","+* Fortissimo","Primary music leader","Hymnbook","+ Conduct","True to the Faith","Come, Come, Ye Saints","Harp","Come, Follow Me","Because I Have Been Given Much","Pianist","The Spirit of God","Choir","+* Ritardando","Janice Kapp Perry","Piano solo","+ A cappella","Baptism","+ Verse","+ Harmony","Nearer, My God, to Thee","Onward, Christian Soldiers","High on a Mountain Top","+* Mezzo-piano","Battle Hymn of the Republic","Love One Another","How Firm a Foundation","Prelude","Sacrament hymn","O Come All Ye Faithful","Joseph Smith's First Prayer","+ Music stand","Practice song","+ Sheet music","Christmas music","Organist","Keep the Commandments","+ Treble clef","+ Melody","Organ","* 1835 Hymnbook","Be Still My Soul"],y),"scriptures",H.p(["High council","Alchohol","Constitution","Zion is the pure in heart","Word of Wisdom","Official declaration","Council in heaven","* United Order","Age of accountability","Pearl of Great Price","Tobacco","Law of consecration","Joseph Smith - Matthew","Admonition of Paul","Articles of Faith","Book of remembrance","We believe...","Worth of souls","Telestial kingdom","Three degrees of glory","Joseph Smith Translation","Book of Moses","Intelligence","Papyrus","Called of God","* Adam-ondi-Ahman","Section","Hot drinks","The 1st Article of Faith","Joseph Smith - History","Adam's transgression","Terrestrial kingdom","Celestial kingdom","Special witness","Temple dedication","Light of Christ","* Oath and Covenant of the Priesthood","New Jerusalem","Dedicatory prayer","Sacrament prayer","Mission","* Book of Commandments","Olive leaf","* Primitive Church","Section 89","Missionary","Deacon","* Purse and scrip","Priest","* Solemn assembly","Book of Abraham","Kolob","Run and not be weary","* Facsimile","Mummy","* Wentworth letter","Doctrine & Covenants","Principles and ordinances","Unrighteous dominion","The 13th Article of Faith","Strong drinks","Teacher"],y),"simple",H.p(["Obedience","Rainbow","Vision","Joseph","Word of Wisdom","Brass plates","Resurrection","Alma the Younger","I Am a Child of God","Head, Shoulders, Knees, and Toes","Chapel","Wicked","Jaredites","Wise men","Prayer","Second coming","Righteous","Opening prayer","Liahona","Covered wagon","Abinadi","Buried","Donkey","Spirit","Seed","Family Home Evening","Humble","Jerusalem","Bishop","Heavenly Father","Iron rod","Book","Pre-Earth life","Cross","Prophet","Once There Was a Snowman","Nephi","Promised land","Missionary","Fisherman","Church","Golden plates","Valiant","Personal prayer","First Vision","Tree of life","Piano","Bible","Pioneer","Love one another","Good shepherd","The Friend","Song","Plan of happiness","Children","Violin","Reverent","Chapter","Miracle","Commandment","Closing prayer","Family history","Kneel","Sharing time","I Love to See the Temple","Hymn","Nursery","Baptize","Promise","Walk on water","Last Supper","Heaven","Scripture Power","Peacemaker","Work","Spirit world","Good example","Eternal life","Angel Moroni","David and Goliath","Ten commandments","Prepare","Come, Follow Me","Flood","Manger","Egypt","Gospel","Example","Mother","Lost sheep","Courage","Adam","Sister","Mormon","Baptism","Repent","Primary room","Choose the right","John the Baptist","Apostle","Mission","The golden rule","Body","Gold plates","Sin","Healing","Captain Moroni","Gold","Honest","Sunday","Keep the Commandments","The Garden of Eden","Mountain","Water","Bow your head","Lehi","Teacher","Holy Ghost","Jesus","Charity","Christmas","Fast offering","Witness","Teancum","Sariah","Jonah and the whale","Families Can Be Together Forever","Revelation","Lion's den","Ammon","Articles of Faith","Atonement","Father","Brother","Primary program","Confirmation","Popcorn Popping","King Benjamin","Mary","Family prayer","Jesus Wants Me for a Sunbeam","Nephites","Epistle","Utah","Old Testament","\u201cGive,\u201d Said the Little Stream","Noah's ark","Nauvoo","Silent Night","Doctrine and Covenants","CTR","Noah","Baby blessing","Believe","Parable","Holy","Blessing","Think about Jesus","Opening song","Russell M. Nelson","Star","Head, Shoulders, Kees, and Toes","Twelve apostles","Scriptures","Talk","Kneel down","Sabbath day","Joy to the World","Home","Follow the Prophet","Stripling warriors","Thankful","Singing time","Talent","Book of Mormon Stories","Peter","And it came to pass","Love","Hope","Primary","Scripture","Lamb","Eight years old","Laban","CTR ring","Lamanites","Fasting","Temptation","I am a Child of God","Good Samaritan","Priesthood","Scripture bag","Away in a Manger","Verse","Temple","Bethlehem","Choose","Eve","Angel","Temple work","General Conference","Easter","Pearl of Great Price","Christian","I'm Trying to Be Like Jesus","The world","Israelites","New Testament","Disciple","Idol","Lemuel","The Wise Man and the Foolish Man","War in heaven","Closing song","Faith","Class","Nephi builds a ship","Joseph Smith","Foreign language","Samuel the Lamanite","The Church of Jesus Christ of Latter-Day Saints","Primary teacher","Fold arms","Choir","Family","Celestial kingdom","Flute","Service","King Noah","Holy Bible","Tithing","Birthday","Testimony","Bread","Sacrament","Book of Mormon","Family tree","Laman","The brother of Jared","Garden of Eden","Neighbor","Organ","President Nelson","Worthy","Sacred grove","Moses","Forgive"],y)],z,[P.o,P.i])}])
+return P.cN(["bible",H.p(["Blind","Sermon on the mount","Covet","Sheepfold","Helmet of salvation","Worship","Locust","Resurrection","Judges","Martin Luther","Protestant","Fear no evil","Second coming","Philistine","Bondage","Tower of Babel","Sacrifice","Tree of knowledge of good and evil","Stephen","Kingdom of God","* Son of the morning","Seven times seventy","Camel","Sparrow","Keys of the kingdom","Jerusalem","Thirty pieces of silver","Jacob","Cross","Damascus","Coat of many colors","Begat","No room at the inn","Torah","* Dan","Pontius Pilate","Children of Israel","Daniel","Spiritual gifts","Love your enemies","Abomination","Plague of locusts","* Become as little children","Evil","Dead Sea Scrolls","Love one another","Good shepherd","* Zebulun","Scroll","* Wolf in sheep's clothing","The garden of Gethsemane","* Apocrypha","Peculiar people","* Jeremiah","Cross-reference","Paul","Chapter","Printing press","Abraham","Holy of Holies","Sin offering","Loaves and fishes","Chariot","* Golgotha","Psalms","Proverbs","Baptize","Walk on water","Last Supper","* Day of Atonement","Tabernacle","Footnote","Redeemer","Peacemaker","Mercy seat","* Tanakh","Spirit world","Water into wine","Pillar of fire","Hell","* Star in the east","Eli","David and Goliath","Manger","Rachel","Pharisee","Shadrach, Meshach, and Abed-nego","Abel","An eye for an eye","Greek","Sacrificial lamb","Pastor","Ark of the Covenant","Lost sheep","Samson","Elisha","Seek, and ye shall find","Honour thy father and thy mother","Great court","Repent","Song of Solomon","John the Baptist","Chapter heading","Apostle","Gathering of Israel","Carpenter","The Lord's Prayer","Parable of the sower","Weeping and gnashing of teeth","Burnt offering","Star in the East","Light of the world","Fiery serpent","Temple Mount","Ruth","Burning bush","Armor of god","Tax collector","Sepulchre","Doubting Thomas","Graven image","Sandals","Jesus","Christmas","Leviathan","* Vulgate","Reformation","Jonah and the whale","Revelation","Lucifer","Atonement","* Benjamin","Blind leading the blind","Synagogue","Shield of faith","Rebekah","King Solomon","Nile river","Mary","Let my people go","Eat, drink, and be merry","Old Testament","Noah's ark","Topical Guide","Hireling","Noah","Thou shalt not kill","Matthew","Ritual","* Simeon","Holy Land","Pharaoh","Star","Twelve apostles","Pearl of great price","* Asher","Rome","John the Beloved","Apocalypse","Render unto Caesar","Lamentations","Michael","Hallelujah","Naaman","* Shewbread","Deuteronomy","Genesis","Creation of the world","Feed my sheep","Samaritan","Peter","Wisdom","Fall of Adam","Immersion","Gift of the Holy Ghost","Crown of thorns","Parchment","Luke","Scripture","Myrrh","Lazarus","Rabbi","Northern Kingdom","Temptation","Goliath","Serpent","Isaiah","Bear false witness","Bethlehem","* Babylonian captivity","Kingdom of Israel","* Delilah","Good Friday","First fruits","Altar","Law of Moses","Israelites","* Bitter herbs","Disciple","Idol","Dead Sea","Sadducee","Lions' den","Paradise","Hosanna","Feeding the multitude","Faith","Jordan River","Kingdom of Judah","Leviticus","Fire and brimstone","* Johannes Gutenberg","Pillar of salt","Wrath","Elijah","Endure to the end","Transgression","Joseph in Egypt","Potiphar","40 years in the wilderness","Nazareth","Potiphar's wife","Archangel","Forbidden fruit","Temple of Jerusalem","Wilderness","* Naphtali","Hebrew","Clean","Forgive","Rainbow","Levi","Joseph","Birthright","Lot","* Will a man rob God?","Corinthians","Firmament","Ten Commandments","Samuel","Devil","Wise men","Unclean","Furnace","Romans","Mercy","Beatitudes","Thou shalt not...","Joseph Smith Translation","Jonathan","Donkey","Spirit","Trumpet","Ninety and nine","Ten virgins","* Ancient of days","Foundation","Book","* Aramaic","Malachi","* Methuselah","Prophet","Adam and Eve","Unjust steward","Palm Sunday","* Balaam","Salt Sea","Judas","Promised land","Verily, verily","Fisherman","Enoch","Esther","* Pentecost","* Cruse of oil","Wedding in Cana","King James Version","Judaism","Mustard seed","Evangelist","Cherubim","King David","Greece","First estate","* Ephod","Let there be light","Frankincense","Thy will be done","Miracle","Zion","Bridegroom","* Shibboleth","Herod","Jericho","Heaven","Hebrews","John","Papyrus","Exodus","Greater light","Day of rest","Harp","Brother's keeper","Blood","Saint","Flood","Egypt","Gospel","Adam","Israel","* Reuben","King James","* William Tyndale","* Judge not, that ye be not judged","Tithes and offerings","Judah","Ephraim","The golden rule","Thou shalt not steal","Brazen serpent","Sin","Healing","Gold","Sarah","Ministering angel","Bible Dictionary","Mordecai","Nineveh","The Garden of Eden","Mountain","Fishers of men","* Boaz","Gentile","Teacher","Turn the other cheek","Stone tablets","Holy Ghost","Born again","Armageddon","Land of Israel","In the beginning...","Ox in the mire","Tribe","Red Sea","* Judas Iscariot","Unleavened bread","Pauline epistles","Epistle","Mark","* Gad","Parable","Sword of the spirit","Dove","Great fish","Straight and narrow","To every thing there is a season","Sackcloth and ashes","Sea of Galilee","Sabbath day","Babylon","Flesh and bones","Star of Bethlehem","* Septuagint","Mount of Olives","Tomb","Talent","* Caiaphas","Thanksgiving","Still small voice","Mount Sinai","Kingdom of Heaven","House built on a rock","Washing feet","Cain","Lamb","King Saul","Scapegoat","Fasting","Good Samaritan","Baptism of fire","Roman empire","Remember the Sabbath day","Verse","Temple","Six hundred threescore and six","* Pentateuch","Eve","Angel","Easter","Breastplate of righteousness","Inner court","Wheat and tares","Christian","The lamb and the lion","Isaac","New Testament","* Issachar","* Levitical priesthood","Aaron","Seven years of plenty","Latin","Adversary","Leper","Cubit","Calvary","Soul","Caesar","Solomon's Temple","Jonah","Widow's mite","Jesus wept.","Brimstone","Numbers","Holy Bible","Tithing","Job","The prodigal son","Passover","Sacrament","Love thy neighbour","Destroying angel","Manasseh","Acts of the Apostles","Martha","Angel Gabriel","Forgive all men","Joshua","Abrahamic covenant","Baal","Moses"],y),"book_of_mormon",H.p(["Joseph","Sam","* Stick of Joseph","Brass plates","Coriantumr","* Cavity of a rock","Alma the Younger","Devil","Book of life","Jaredites","Gadianton robbers","False prophet","Army of Helaman","Deseret","Bondage","Tower of Babel","Beatitudes","Liahona","Abinadi","Third Nephi","Voice of thunder","Zoram","Hard heart","Pride","Oliver Cowdery","Jerusalem","Iron rod","* Pride of their hearts","Jacob","Large plates of Nephi","Sword of Laban","Prophet","Ether","John Whitmer","Begat","Soft heart","The Book of Lehi","Nephi","Promised land","Index","* Tight like unto a dish","Church","Contention","Golden plates","Mosiah","Abomination","* Zeniff","Secret combinations","Tree of life","* Ziff","Alma","Narrow neck of land","Cross-reference","Chapter","Omni","Printing press","Another Testament of Jesus Christ","Alma the Elder","King-men","The Book of Mormon","Three Witnesses","Footnote","Murmur","* Curelom","* Infinite and eternal","And my father dwelt in a tent.","* A marvellous work and a wonder","Helaman","Angel Moroni","Spiritual death","* Our brother is a fool","Baptismal covenant","* Rameumptom","Plain and precious","Small plates of Nephi","Mormon","Pure love of Christ","Baptism","Chapter heading","Ishmael","Healing","Captain Moroni","Great and spacious building","Ministering angel","Pray always","Men are, that they might have joy","Lost tribes","Small and simple things","Author","Title of Liberty","Waters of Mormon","Lehi","Americas","Charity","Teancum","Engrave","Sariah","Enos","Ammon","Sons of Mosiah","The love of God","Synagogue","Palmyra","Keystone of our religion","Reign of the judges","Opposition in all things","King Benjamin","Nephites","Wickedness never was happiness","Valley of Lemuel","Eat, drink, and be merry","Topical Guide","Chief judge","Gideon","High priest","* Reformed Egyptian","Jarom","Second Nephi","Stripling warriors","Three Nephites","Lehi's dream","Perfect knowledge","* Twelve Nephite disciples","Emma Smith","Abridgement","Fall of Adam","And it came to pass","Scribe","Hope","Little children","Scripture","Judge","Lehi's vision","Anti-Nephi-Lehies","Laban","Captivity","Lamanites","Isaiah","Words of Mormon","* Allegory of the olive trees","Verse","Temple","* Great and abominable church","Law of Moses","Isles of the sea","Land of Nephi","Lost 116 pages","Freemen","Army","Zarahemla","Light in the wilderness","Zoramites","Lemuel","Eight Witnesses","Faith","Martin Harris","Adversary","Nephi builds a ship","Joseph Smith","Samuel the Lamanite","Mist of darkness","Bountiful","Adieu","Lamoni","Priestcraft","King Noah","First Nephi","Fourth Nephi","Change of heart","Urim and Thummim","Most correct book","Hill Cumorah","Manasseh","Moroni","Seer","* Zenos","Laman","Desolation","The brother of Jared","I have dreamed a dream","Manuscript","Last days","* Mahonri Moriancumer","Nephi breaks his bow","Wilderness","Having been born of goodly parents","Gadianton"],y),"christmas",H.p(["Rooftop","Joseph","Christmas tree","O Holy Night","Mittens","Sleigh","Season","A Charlie Brown Christmas","Wise men","Stocking","Scrooge","Reindeer","It's a Wonderful Life","Egg nog","December","Oh, Come All Ye Faithful","I'm Dreaming of a White Christmas","Frosty the Snowman","Snowball","Father Christmas","* I Heard the Bells on Christmas Day","* The Nightmare Before Christmas","Snowflake","Snow angel","* How the Grinch Stole Christmas","Elf","Naughty list","Present","Santa's workshop","* Reindeer games","The Grinch","Feliz Navidad","Jolly","Decorate","Christmas card","Pine cone","Wreath","* Five gold rings","Red suit","Milk and cookies","Nativity","Deck the Halls","Bells","The First Noel","Innkeeper","Baby","* Frankincense","Gift","Naughty or nice","Manger","Santa Claus","Jingle Bells","Ice skating","* Myrrh","Christmas song","Santa's lap","* Have Yourself a Merry Little Christmas","Nutcracker","Blizzard","Gloves","Holly","Shepherd","Little match girl","Gold","Candle","Rudolph","The Night Before Christmas","Stocking stuffer","Jack Frost","Jesus","Grandma Got Run Over by a Reindeer","Christmas Eve","Fireplace","* Kris Kringle","Wrapping paper","We Three Kings","Ghost of Christmas Past","Winter Wonderland","Ho, Ho, Ho","Sled","Stable","Mary","Christmas carol","Advent calendar","Silent Night","Carol of the Bells","* It Came Upon a Midnight Clear","Tradition","Secret Santa","Star","We Wish You a Merry Christmas","North Pole","Tinsel","Joy to the World","A Christmas Carol","Snowman","Silver Bells","Snow","Christmas lights","* A partridge in a pear tree","Rudolph the Red-Nosed Reindeer","Snowball fight","The 12 Days of Christmas","Happy Holidays","Bethlehem","Away in a Manger","Angel","Caroling","* Herod","Here Comes Santa Claus","You're a Mean One, Mr. Grinch","Candy cane","Gingerbread house","Chimney","Ornament","Mistletoe","The Muppet Christmas Carol","* Saint Nicholas","Family","Snow globe","Ribbon","O Christmas Tree","Candy","Angels We Have Heard on High","Home Alone","Winter","Santa Claus Is Coming to Town","Christmas Day","Toy","* One-horse open sleigh","Bow"],y),"history",H.p(["School of the Prophets","Brigham Young","* Joseph F. Smith","Word of Wisdom","Independence, Missouri","Handcart","Witness","Wagon train","* Dispensation of the fulness of times","Joseph Smith Sr.","Salt Lake Valley","Kirtland, Ohio","Articles of Faith","* Joseph Fielding Smith","* Sunstone","Palmyra","* Porter Rockwell","* The Work and the Glory","Seer stone","Persecution","A Poor Wayfaring Man of Grief","Journal of Discourses","Church history","Peter, James, and John","Mormon Battalion","Covered wagon","Utah territory","Buried","Carthage Jail","Endowment","Presidential candidate","Doctrine and Covenants","Lorenzo Snow","Oliver Cowdery","* David Whitmer","Mormon trail","Breastplate","Temple dedication","Far West","* David O. McKay","Hyrum Smith","* Martin handcart company","James 1:5","First Vision","Emma Smith","Relief Society","Restoration","Dispensation","* John Taylor","Pioneer","Liberty Jail","Nauvoo, Illinois","Baptism for the dead","Kirtland Temple","Apostasy","Miracle","* Wilford Woodruff","Angel","Pearl of Great Price","April 6th, 1830","Law of consecration","Salt Lake Temple","Lost 116 pages","Oxcart","Translation of the Book of Mormon","Aaronic priesthood","Oregon trail","Nauvoo Temple","* Harold B. Lee","Susquehanna River","State of Deseret","* Battle of the bulls","Martin Harris","United order","Joseph Smith -- History","Joseph Smith","Angel Moroni","* Miracle of the gulls","* Howard W. Hunter","The Church of Jesus Christ of Latter-Day Saints","The Spirit of God","Freedom of religion","* Heber J. Grant","ZCMI","Baptism","Great apostasy","John the Baptist","Melchizedek priesthood","Joseph Smith Jr.","Mission","* Book of Commandments","Book of Mormon","Martyr","Lucy Mack Smith","Hill Cumorah","Gold plates","Seer","* Ezra Taft Benson","If any of you lack wisdom","* Spencer W. Kimball","Jackson County","Adam-ondi-Ahman","Zion's Camp","* Wentworth letter","Thomas S. Monson","* George Albert Smith","* Sidney Rigdon","Buffalo chips","Gordon B. Hinckley","Sacred grove"],y),"misc",H.p(["Justice and mercy","Obedience","Vision","Lineage","Physical body","Accountable","Wicked","Glory","Earth life","Advocate","Righteous","Goal","Endowment","Interpretation of tongues","Humble","Heavenly Father","Immortality","Consecrated oil","Teachable","Self-reliance","Broken bread","Agency","Inspire","Wine","Authority","Eternal marriage","Punishment","Plan of happiness","Ordinance","Children","Veil","False doctrine","Sealing","Commandment","Kneel","Nativity","Conversion","Promise","First resurrection","Grace","Good example","Eternal life","Prepare","Reverence","Curse","Justice","Baptism","Choose the right","Mortal","Seventy","Deacon","Priest","Doctrine","Honest","Adversity","Bear witness","Ancestor","Preside","Water","Personal responsibility","Final judgement","Fast offering","Holy ground","Age of accountability","Priesthood keys","Comforter","Gratitude","Confirmation","Called of God","Prompting","Olive oil","Selfless","Plan of salvation","Godhead","Believe","Holy","Blessing","Twelve apostles","* Omniscient","Exaltation","Omnipotent","Thankful","Broken heart","Patriarch","Eternal progression","Symbol","Spirit body","Love","Personal revelation","Dispensation","Outer darkness","Premortal life","* Gift of discernment","Foreordain","Priesthood","Apostasy","Elder","Temple","Ponder","Heavenly parents","Saving ordinance","War in heaven","Childlike","Letter of the law","Spirit of the law","Sermon","Family","Endure to the end","Scripture reference","Service","Silent prayer","New Jerusalem","Great Apostasy","* Priesthood line of authority","Bread","Testimony","Gift of tongues","Seer","Spirit prison","Millennium","* Unconditional love","Priesthood authority","Anoint","Religion","Covenant","Laying on hands","Revelator","High Priest"],y),"modern",H.p(["Young Women Medallion","Potluck","Personal Progress","* Provident living","Temple worthy","Ward librarian","* Semiannual General Conference","Tithing slip","Wedding reception","Sealing room","Scripture study","David Bednar","Cub Scouts","* Quarterly report","Celestial room","Polynesian Cultural Center","Ministering brother","Scripture storybook","* First quorum of the seventy","Family Search","Family Home Evening","Ward Christmas party","Family night","Standard works","Temple dedication","Congregation","Every member a missionary","Cultural hall","Personal prayer","First Presidency Christmas devotional","Ward","White clothes","Priesthood meeting","Dallin Oaks","The Friend","Young men","Mitt Romney","Mormon Channel","Deacons Quorum","First weekend of April","Collect fast offerings","Missionary Training Center","Priests Quorum","Two-way promise","Ward organist","Family history","Missionary haircut","Shirt and tie","Henry Eyring","EFY","Fireside","CTR shield","Fifth Sunday","Classroom","Service project","* Stephanie Meyer","Come, Follow Me","Senior Primary","Combined activity","C. S. Lewis","Bless the food","LDS tools","Missionary discussions","New member","Ten percent","Priesthood session","Stake Presidency","Vote of thanks","First Presidency","Visiting teacher","Sunday","Relief Society room","Sunday best","Returned missionary","Acting president","Genealogy","General authority","Ward council","Preach My Gospel","High council","Homemaking","The Ensign","Steeple","Born in the covenant","Spiritual thought","Gospel Principles","Benediction","Brother","Ward activity","Endowment session","Interview","Highlighter","Bishop's messenger","* Pedigree chart","Patriarchal blessing","The Family Proclamation","Baby blessing","Second counselor","* Avoid the appearance of evil","* Common consent","Dale Renlund","Church bookstore","* The R.M.","* David Archuleta","Folding chairs","Branch","Sacrament tray","* The 7 Habits of Highly Effective People","Adamic language","Three-hour block","Missionary companionship","First counselor","Junior Primary","Mormonad","* Pathway","Pulpit","Jeffrey Holland","Devotional","Baptismal font","Perfect the saints","Meetinghouse","Quorum","Eagle Scout","Triple combination","Provo","Mormon standard time","Elder","Ronald Rasband","Temple work","Sister missionary","* Relief Society General President","Bishopric","* JustServe","Redeem the dead","In the world but not of the world","* Threefold mission of the church","Scripture marker","Teachers Quorum","Sitting in the back row","Mia Maid","Pass the sacrament","FSY Conference","Naming and blessing","* Orson Scott Card","Quentin Cook","Laurel","Conference center","* The Best Two Years","Nonmember","Family tree","Church basketball","Emergency preparedness","Calling","Gospel Doctrine","Concluding speaker","* High Council Sunday","Quad combination","Worthy","Institute","Book of Mormon videos","* General conference bingo","Chapel","First assistant","Father's day","Church website","Unanimous","* Saturday's Warrior","Seminary teacher","Institute class","BYU-Hawaii","* Menace to society","Opening prayer","Mission president","Legacy","Member","Sacrament meeting","Proclaim the gospel","Eagle project","Release","Elders quorum president","Ulisses Soares","Scout camp","* High council room","Bishop","The house of the Lord","Christmas program","Quorum of the twelve apostles","Chalkboard","Women's conference","Deseret Book","Elders Quorum","New Era","Foyer","Missionary","Youth dance","Church","* Meet the Mormons","Faith in God Award","Relief Society","Announcements","Neil Andersen","Gym","Suit","Temple preparation class","For the Strength of Youth","Stake","Closing prayer","Sharing time","Cheerios and goldfish","Jesus the Christ","Young Women values","Nursery","Mother's day","Especially For Youth","Public speaking","Girls camp","* The six B's","Service mission","Perpetual Education Fund","First resurrection","Dieter Uchtdorf","Convert","Attendance roll","Investigator","Ward clerk","* BYU Jerusalem Center","Sister","Temple painting","Seventy","Father's blessing","* Marriott","Pass-along card","* Home-centered church-supported","Thomas S. Monson","Distribution center","Boy Scouts","Asleep on the stand","Mutual","Stake President","Green Jell-O","Deseret Industries","Missionary farewell","Temple recommend interview","MTC","University of Utah","Opening exercises","BYU","* Ken Jennings","Sunday school teacher","Temple Square","Family prayer","Utah","Singles ward","Temple cafeteria","Ministering sister","Twelve oxen","Presiding bishop","Russell M. Nelson","D. Todd Christofferson","Talk","Relief Society President","Family council","Sustain","Bishop's storehouse","Bishop's office","Tracting","* John Bytheway","Temple recommend","Blessing on the water","Seminary","Primary","Open house","Secretary","Sustaining vote","Testimony meeting","Ward calender","Young women","CTR ring","Johnny Lingo","Scripture bag","Sunday school","Two-hour block","Temple","Women's session","General Conference","Beehive","Ward missionary","Salt Lake City","Ministering","Steve Young","Covenant path","Food storage","Sacrament table","Temple worker","72-hour kit","Class","Mission home","Webelos","Good, Better, Best","Gospel library","Gerrit Gong","Foreign language","Home teacher","Ward bulletin","Primary teacher","Audit report","I know the church is true","Dedicatory prayer","High adventure","Daily repentance","M. Russell Ballard","BYU-Idaho","Lesson manual","Branch president","Tithing settlement","Gordon B. Hinckley","Temple grounds","Modesty","Gary Stevenson"],y),"music",H.p(["Search, Ponder and Pray","Musical instrument","*Sally DeFord","O Holy Night","As Sisters in Zion","+ Introduction","Nephi's Courage","Families Can Be Together Forever","+ Forte","I Am a Child of God","*W. W. Phelps","+* Mezzo-forte","+ Chorus","Accompanist","Choir director","Praise to the Man","Primary program","Music and the Spoken Word","A Poor Wayfaring Man of Grief","Tabernacle Choir at Temple Square","The Star-Spangled Banner","Popcorn Popping","Congregational hymn","We'll Bring the World His Truth","Jesus Wants Me for a Sunbeam","\u201cGive,\u201d Said the Little Stream","+ Piano","Silent Night","+ Piano lessons","Choir practice","+ Tenor","Conductor","Easter music","Opening song","Head, Shoulders, Kees, and Toes","Joy to the World","If You Could Hie to Kolob","I Know That My Redeemer Lives","+ Tune","+Violin","Follow the Prophet","Awake and Arise","The Osmonds","Oh, how lovely was the morning","+* Pianissimo","Singing time","Primary pianist","Stake choir","+ Alto","+ Soprano","+ Bass","Sign language","Book of Mormon Stories","+Flute","Hallelujah Chorus","Ring Out, Wild Bells","Love at Home","Emma Smith","First Lines and Titles","Piano","Christian rock","Song","Musical number","Chorister","Closing hymn","Hark! The Herald Angels Sing","Children's Songbook","Away in a Manger","How Great Thou Art","+ Solo","Mormon Tabernacle Choir","Hello Song","I Love to See the Temple","+ Arrangement","Hymn","The First Noel","Come Thou Fount of Every Blessing","I'm Trying to Be Like Jesus","Rest hymn","+ Duet","+ Fermata","Scripture Power","The Wise Man and the Foolish Man","A Child's Prayer","Called to Serve","+* Fortissimo","Primary music leader","Hymnbook","+ Conduct","True to the Faith","Come, Come, Ye Saints","Harp","Come, Follow Me","Because I Have Been Given Much","Pianist","The Spirit of God","Choir","+* Ritardando","Janice Kapp Perry","Piano solo","+ A cappella","Baptism","+ Verse","+ Harmony","Nearer, My God, to Thee","Onward, Christian Soldiers","High on a Mountain Top","+* Mezzo-piano","Battle Hymn of the Republic","Love One Another","How Firm a Foundation","Prelude","Sacrament hymn","O Come All Ye Faithful","Joseph Smith's First Prayer","+ Music stand","Practice song","+ Sheet music","Christmas music","Organist","Keep the Commandments","+ Treble clef","+ Melody","Organ","* 1835 Hymnbook","Be Still My Soul"],y),"scriptures",H.p(["High council","Alchohol","Constitution","Zion is the pure in heart","Word of Wisdom","Official declaration","Council in heaven","* United Order","Age of accountability","Pearl of Great Price","Tobacco","Law of consecration","Joseph Smith - Matthew","Admonition of Paul","Articles of Faith","Book of remembrance","We believe...","Worth of souls","Telestial kingdom","Three degrees of glory","Joseph Smith Translation","Book of Moses","Intelligence","Papyrus","Called of God","* Adam-ondi-Ahman","Section","Hot drinks","The 1st Article of Faith","Joseph Smith - History","Adam's transgression","Terrestrial kingdom","Celestial kingdom","Special witness","Temple dedication","Light of Christ","* Oath and Covenant of the Priesthood","New Jerusalem","Dedicatory prayer","Sacrament prayer","Mission","* Book of Commandments","Olive leaf","* Primitive Church","Section 89","Missionary","Deacon","* Purse and scrip","Priest","* Solemn assembly","Book of Abraham","Kolob","Run and not be weary","* Facsimile","Mummy","* Wentworth letter","Doctrine & Covenants","Principles and ordinances","Unrighteous dominion","The 13th Article of Faith","Strong drinks","Teacher"],y),"simple",H.p(["Obedience","Rainbow","Vision","Joseph","Word of Wisdom","Brass plates","Resurrection","Alma the Younger","I Am a Child of God","Head, Shoulders, Knees, and Toes","Chapel","Wicked","Jaredites","Wise men","Prayer","Second coming","Righteous","Opening prayer","Liahona","Covered wagon","Abinadi","Buried","Donkey","Spirit","Seed","Family Home Evening","Humble","Jerusalem","Bishop","Heavenly Father","Iron rod","Book","Pre-Earth life","Cross","Prophet","Once There Was a Snowman","Nephi","Promised land","Missionary","Fisherman","Church","Golden plates","Valiant","Personal prayer","First Vision","Tree of life","Piano","Bible","Pioneer","Love one another","Good shepherd","The Friend","Song","Plan of happiness","Children","Violin","Reverent","Chapter","Miracle","Commandment","Closing prayer","Family history","Kneel","Sharing time","I Love to See the Temple","Hymn","Nursery","Baptize","Promise","Walk on water","Last Supper","Heaven","Scripture Power","Peacemaker","Work","Spirit world","Good example","Eternal life","Angel Moroni","David and Goliath","Ten commandments","Prepare","Come, Follow Me","Flood","Manger","Egypt","Gospel","Example","Mother","Lost sheep","Courage","Adam","Sister","Mormon","Baptism","Repent","Primary room","Choose the right","John the Baptist","Apostle","Mission","The golden rule","Body","Gold plates","Sin","Healing","Captain Moroni","Gold","Honest","Sunday","Keep the Commandments","The Garden of Eden","Mountain","Water","Bow your head","Lehi","Teacher","Holy Ghost","Jesus","Charity","Christmas","Fast offering","Witness","Teancum","Sariah","Jonah and the whale","Families Can Be Together Forever","Revelation","Lion's den","Ammon","Articles of Faith","Atonement","Father","Brother","Primary program","Confirmation","Popcorn Popping","King Benjamin","Mary","Family prayer","Jesus Wants Me for a Sunbeam","Nephites","Epistle","Utah","Old Testament","\u201cGive,\u201d Said the Little Stream","Noah's ark","Nauvoo","Silent Night","Doctrine and Covenants","CTR","Noah","Baby blessing","Believe","Parable","Holy","Blessing","Think about Jesus","Opening song","Russell M. Nelson","Star","Head, Shoulders, Kees, and Toes","Twelve apostles","Scriptures","Talk","Kneel down","Sabbath day","Joy to the World","Home","Follow the Prophet","Stripling warriors","Thankful","Singing time","Talent","Book of Mormon Stories","Peter","And it came to pass","Love","Hope","Primary","Scripture","Lamb","Eight years old","Laban","CTR ring","Lamanites","Fasting","Temptation","I am a Child of God","Good Samaritan","Priesthood","Scripture bag","Away in a Manger","Verse","Temple","Bethlehem","Choose","Eve","Angel","Temple work","General Conference","Easter","Pearl of Great Price","Christian","I'm Trying to Be Like Jesus","The world","Israelites","New Testament","Disciple","Idol","Lemuel","The Wise Man and the Foolish Man","War in heaven","Closing song","Faith","Class","Nephi builds a ship","Joseph Smith","Foreign language","Samuel the Lamanite","The Church of Jesus Christ of Latter-Day Saints","Primary teacher","Fold arms","Choir","Family","Celestial kingdom","Flute","Service","King Noah","Holy Bible","Tithing","Birthday","Testimony","Bread","Sacrament","Book of Mormon","Family tree","Laman","The brother of Jared","Garden of Eden","Neighbor","Organ","President Nelson","Worthy","Sacred grove","Moses","Forgive"],y)],z,[P.o,P.i])}])
 I=I.$finishIsolateConstructor(I)
 $=new I()
 init.metadata=[]
-init.types=[{func:1,ret:P.x},{func:1,args:[W.E]},{func:1,ret:-1},{func:1,ret:-1,args:[,]},{func:1},{func:1,ret:-1,args:[{func:1,ret:-1}]},{func:1,args:[,]},{func:1,ret:P.x,args:[,]},{func:1,ret:P.x,args:[,,]},{func:1,ret:P.i,args:[P.a8]},{func:1,ret:P.D,args:[W.V]},{func:1,ret:P.D,args:[P.i]},{func:1,ret:P.x,args:[P.a4]},{func:1,ret:P.D,args:[W.J,P.i,P.i,W.aT]},{func:1,args:[W.d]},{func:1,args:[,P.i]},{func:1,args:[P.i]},{func:1,ret:P.x,args:[{func:1,ret:-1}]},{func:1,ret:-1,args:[P.a],opt:[P.P]},{func:1,ret:P.x,args:[,],opt:[,]},{func:1,ret:P.G,args:[,]},{func:1,ret:P.D,args:[W.m]},{func:1,ret:-1,args:[P.i,P.i]},{func:1,ret:-1,args:[W.d]},{func:1,ret:P.i,args:[P.i]},{func:1,ret:-1,args:[W.m,W.m]},{func:1,args:[,,]},{func:1,ret:P.x,args:[W.aJ]},{func:1,ret:P.x,args:[W.d]},{func:1,ret:P.x,args:[P.i,[P.o,P.i]]},{func:1,args:[W.aS]}]
+init.types=[{func:1,ret:P.x},{func:1,args:[W.E]},{func:1,ret:-1},{func:1,ret:-1,args:[,]},{func:1},{func:1,ret:-1,args:[{func:1,ret:-1}]},{func:1,args:[,]},{func:1,ret:P.x,args:[,]},{func:1,ret:P.x,args:[,,]},{func:1,ret:P.i,args:[P.a9]},{func:1,ret:P.D,args:[W.V]},{func:1,ret:P.D,args:[P.i]},{func:1,ret:P.x,args:[P.a5]},{func:1,ret:P.D,args:[W.J,P.i,P.i,W.aT]},{func:1,args:[W.d]},{func:1,args:[,P.i]},{func:1,args:[P.i]},{func:1,ret:P.x,args:[{func:1,ret:-1}]},{func:1,ret:-1,args:[P.a],opt:[P.P]},{func:1,ret:P.x,args:[,],opt:[,]},{func:1,ret:P.G,args:[,]},{func:1,ret:P.D,args:[W.m]},{func:1,ret:-1,args:[P.i,P.i]},{func:1,ret:-1,args:[W.d]},{func:1,ret:P.i,args:[P.i]},{func:1,ret:-1,args:[W.m,W.m]},{func:1,args:[,,]},{func:1,ret:P.x,args:[W.aJ]},{func:1,ret:P.x,args:[W.d]},{func:1,ret:P.x,args:[P.i,[P.o,P.i]]},{func:1,args:[W.aS]}]
 function convertToFastObject(a){function MyClass(){}MyClass.prototype=a
 new MyClass()
 return a}function convertToSlowObject(a){a.__MAGIC_SLOW_PROPERTY=1
